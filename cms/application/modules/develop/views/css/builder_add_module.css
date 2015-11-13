@@ -1,0 +1,16 @@
+/**
+ * @package		Codifire
+ * @version		1.0
+ * @author 		Randy Nivales <randynivales@gmail.com>
+ * @copyright 	Copyright (c) 2014-2015, Randy Nivales
+ * @link		randynivales@gmail.com
+ */
+
+.checkbox label {
+	padding-right: 10px;
+}
+
+.table_column {
+	border-bottom: 1px solid #F4F4F4;
+	margin-bottom: 12px;
+}

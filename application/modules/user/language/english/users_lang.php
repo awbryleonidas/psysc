@@ -1,0 +1,67 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+// Breadcrumbs
+$lang['crumb_settings']				= 'Settings';
+
+// Labels
+$lang['first_name']					= 'First Name';
+$lang['last_name']					= 'Last Name';
+$lang['email']						= 'Email Address';
+$lang['company']					= 'Company/School';
+$lang['phone']						= 'Phone/Mobile';
+$lang['username']					= 'Username';
+$lang['password']					= 'Password';
+$lang['password_confirm']			= 'Confirm Password';
+$lang['terms']						= 'Terms and Conditions';
+
+// Buttons
+$lang['button_add']					= 'Add User';
+$lang['button_edit_this']			= 'Edit This';
+$lang['button_update']				= 'Update User';
+$lang['button_delete']				= 'Delete User';
+$lang['button_permissions']			= 'Permissions';
+$lang['button_update_permission']	= 'Update Permission';
+$lang['button_add_permission']		= 'Add Permission';
+$lang['button_activate']			= 'Activate User';
+$lang['button_suspend']				= 'Suspend User';
+
+// Index Function
+$lang['index_heading']				= 'Users';
+$lang['index_subhead']				= 'List of all users';
+$lang['index_th_id']				= 'ID';
+$lang['index_th_username']			= 'Username';
+$lang['index_th_firstname']			= 'First Name';
+$lang['index_th_lastname']			= 'Last Name';
+$lang['index_th_email']				= 'Email';
+$lang['index_th_status']			= 'Status';
+$lang['index_th_action']			= 'Action';
+
+// View Function
+$lang['view_heading']				= 'View User';
+$lang['view_subhead']				= 'View user information';
+
+// Add Function
+$lang['add_heading']				= 'Add User';
+$lang['add_subhead']				= 'Create a new user user';
+$lang['add_success']				= 'User has been successfully added';
+
+// Edit Function
+$lang['edit_heading']				= 'Edit User';
+$lang['edit_subhead']				= 'Edit a user';
+$lang['edit_success']				= 'User has been successfully updated';
+$lang['edit_leave_blank']			= 'Leave blank if you\'re not changing the password';
+
+// Delete Function
+$lang['delete_heading']				= 'Delete User';
+$lang['delete_confirm']				= 'Are you sure you want to delete this user?';
+$lang['delete_success']				= 'User has been successfully deleted';
+
+// Activate Function
+$lang['activate_heading']			= 'Activate User';
+$lang['activate_confirm']			= 'Are you sure you want to activate this user?';
+$lang['activate_success']			= 'User has been successfully activated';
+
+// Suspend Function
+$lang['suspend_heading']			= 'Suspend User';
+$lang['suspend_confirm']			= 'Are you sure you want to suspend this user?';
+$lang['suspend_success']			= 'User has been successfully suspended';
