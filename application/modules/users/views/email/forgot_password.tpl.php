@@ -1,0 +1,1 @@
+We received a request to reset your password. If you made this request, you can confirm it by clicking  <a href=" <?php echo site_url('users/reset_password/'. $forgotten_password_code); ?>">this link</a>. If you didn't request this password reset, it's ok to ignore this mail.

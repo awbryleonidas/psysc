@@ -96,8 +96,7 @@ class Breadcrumbs {
 			
 			// construct output
 			foreach ($this->breadcrumbs as $key => $crumb) {
-				$keys = array_keys($this->breadcrumbs);
-				if (end($keys) === $key) {
+				if (end(array_keys($this->breadcrumbs)) == $key) {
 					$output .= $this->crumb_last_open . '' . $crumb['page'] . '' . $this->crumb_close;
 				} else {
 					$output .= $this->crumb_open.'<a href="' . $crumb['href'] . '">' . $crumb['page'] . '</a> '.$this->crumb_divider.$this->crumb_close;

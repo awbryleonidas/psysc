@@ -23,7 +23,7 @@ $user = $this->ion_auth->user()->row();
 	<!-- Custom CSS and overrides -->
 	<link href="<?php echo assets_url('styles/styles.css'); ?>" rel="stylesheet" type="text/css" />
 
-	<link rel="icon" href="<?php echo assets_url('images/ci.png'); ?>">
+	<link rel="icon" href="<?php echo assets_url('images/favicon.png'); ?>">
 </head>
 <body>
 

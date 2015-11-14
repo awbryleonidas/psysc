@@ -30,7 +30,7 @@
  * @version 1.4.1
  * 
  */
-class Template {
+class CI_Template {
    
    var $CI;
    var $config;
@@ -56,7 +56,7 @@ class Template {
 	 * @access	public
 	 */
    
-   function Template()
+   function CI_Template()
    {
       // Copy an instance of CI so we can use the entire framework.
       $this->CI =& get_instance();
@@ -506,17 +506,17 @@ class Template {
             {
                $css .= ' media="'. $media .'"';
             }
-            $css .= ' />' . PHP_EOL;
+            $css .= ' />';
             break;
          
          case 'import':
-            $css = '<style type="text/css">@import url('. $filepath .');</style>' . PHP_EOL;
+            $css = '<style type="text/css">@import url('. $filepath .');</style>';
             break;
          
          case 'embed':
             $css = '<style type="text/css">';
             $css .= $style;
-            $css .= '</style>' . PHP_EOL;
+            $css .= '</style>';
             break;
             
          default:
@@ -533,7 +533,7 @@ class Template {
       
       return $success;
    }
-    
+      
    // --------------------------------------------------------------------
    
    /**

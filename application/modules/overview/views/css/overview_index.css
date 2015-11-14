@@ -1,0 +1,25 @@
+#bar-chart_reason #placeholder {
+    width: 700px;
+    height: 400px;
+}
+#bar-chart_reason .ticklabel {
+    max-width: 150px;
+}
+
+#bar-chart_reason .flot-x-axis div.flot-tick-label {
+    /* Rotate Axis Labels */
+    transform: translateX(60%) rotate(90deg); /* CSS3 */
+    transform-origin: 0 0;
+
+    -ms-transform: translateX(60%) rotate(90deg); /* IE */
+    -ms-transform-origin: 0 0;
+
+    -moz-transform: translateX(60%) rotate(90deg); /* Firefox */
+    -moz-transform-origin: 0 0;
+
+    -webkit-transform: translateX(60%) rotate(90deg); /* Safari and Chrome */
+    -webkit-transform-origin: 0 0;
+
+    -o-transform: translateX(60%) rotate(90deg); /* Opera */
+    -o-transform-origin: 0 0;
+}
