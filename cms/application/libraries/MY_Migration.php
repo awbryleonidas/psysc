@@ -18,7 +18,6 @@ if (!function_exists('module_exists')) {
             $files = directory_map($location, 1);
             if (is_array($files)) {
                 foreach ($files as $name) {
-                	$name = rtrim($name, '/\\');
                     if (is_dir($location . $name))
                         $modules[] = $with_location ? array($location, $name) : $name;
                 }
@@ -388,6 +387,18 @@ class MY_Migration
 	public function current()
 	{
 		return $this->version($this->_migration_version);
+	}
+
+// --------------------------------------------------------------------
+
+	/**
+	 * Get the migration version set in config
+	 *
+	 * @return    mixed    migration version
+	 */
+	public function migration_version()
+	{
+		return $this->_migration_version;
 	}
 
 // --------------------------------------------------------------------

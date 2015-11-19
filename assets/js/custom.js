@@ -1,10 +1,6 @@
-/**	
-	* SinglePro HTML 2.0	
-	* Template Scripts
-	* Created by WpFreeware Team
-
+/**
 	Custom JS
-	
+
 	1. Superslides Slider
 	2. Fixed Top Menubar
 	3. Featured Slider
@@ -17,10 +13,10 @@
 	10. CLIENTS SLIDER
 	11. Google Map
 	12. SCROLL TOP BUTTON
-	13. PRELOADER 
-	14. MENU SCROLL 
-	15. MOBILE MENU CLOSE 	
-	
+	13. PRELOADER
+	14. MENU SCROLL
+	15. MOBILE MENU CLOSE
+
 **/
 
 jQuery(function($){
@@ -358,8 +354,8 @@ jQuery(function($){
 	  var zoom= $('#map_canvas').gmap('option', 'zoom');
       
       $('#map_canvas').gmap().bind('init', function(ev, map) {
-        $('#map_canvas').gmap('addMarker', {'position': '57.7973433,12.0502107', 'bounds': true});
-        $('#map_canvas').gmap('option', 'zoom', 13);
+        $('#map_canvas').gmap('addMarker', {'position': '14.6371022,121.0256508', 'bounds': true});
+        $('#map_canvas').gmap('option', 'zoom', 18);
       });
 
 

@@ -1,25 +1,25 @@
-<div class="modal-header"> 
+<div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal">
-		<span aria-hidden="true">&times;</span> 
-		<span class="sr-only"><?php echo lang('button_close')?></span>
+		<span aria-hidden="true">&times;</span>
+		<span class="sr-only"><?=lang('button_close')?></span>
 	</button>
-	<h4 class="modal-title" id="myModalLabel"><?php echo $page_heading?></h4>
+	<h4 class="modal-title" id="myModalLabel"><?=$page_heading?></h4>
 </div>
 
 <div class="modal-body">
 	<div id="confirm-message" class="callout callout-danger callout-dismissable"></div>
-	<span class="font-130"><?php echo $page_confirm?></span>
+	<span class="font-130"><?=$page_confirm?></span>
 </div>
 
 <div class="modal-footer">
-	<span id="confirm-loading-image" class="pull-left"><img src="<?php echo assets_url('images/loading3.gif')?>" /></span>
+	<span id="confirm-loading-image" class="pull-left"><img src="<?=asset_url('img/loading3.gif')?>" /></span>
 
 	<button type="button" class="btn btn-default" data-dismiss="modal">
-		<i class="fa fa-times"></i> <?php echo lang('button_close'); ?>
+		<i class="fa fa-times"></i> <?=lang('button_close')?>
 	</button>
 
 	<button id="confirm-submit" class="btn btn-warning" type="submit">
-		<i class="fa fa-check"></i> <?php echo $page_button?>
+		<i class="fa fa-check"></i> <?=$page_button?>
 	</button>
 </div>
 
@@ -51,7 +51,7 @@ $(function(){
 			{
 				<?php if (isset($datatables_id)): ?>
 					$('<?php echo $datatables_id; ?>').dataTable().fnDraw();
-					alertify.success(o.message);
+					alertify.success("<?php echo (isset($page_success)) ? $page_success : 'Function was successfully completed'; ?>");
 				<?php else: ?>
 					window.location.reload(true);
 				<?php endif; ?>

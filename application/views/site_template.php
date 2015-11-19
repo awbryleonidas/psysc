@@ -93,7 +93,8 @@
 						<!--<li><a href="#gallery">Gallery</a></li>-->
 						<li><a href="#contact">Contact Us</a></li>
 						<!--<li><a href="#pricing">Join Us</a></li>-->
-						<li><a href="#">Sign Up</a></li>
+						<li><a href="<?php echo site_url('site/sign_up')?>">Sign Up</a></li>
+						<li><a href="<?php echo site_url('site/login')?>">Login</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>

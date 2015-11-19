@@ -58,7 +58,7 @@ $template['active_template'] = 'default';
 
 // default template
 $template['default']['template'] = 'template';
-$template['default']['regions'] = array('head', 'styles', 'header', 'content', 'footer', 'scripts');
+$template['default']['regions'] = array('styles', 'header', 'content', 'footer', 'scripts');
 $template['default']['parser'] = 'parser';
 $template['default']['parser_method'] = 'parse';
 $template['default']['parse_template'] = FALSE;
@@ -69,13 +69,6 @@ $template['blank']['regions'] = array('styles', 'header', 'content', 'footer', '
 $template['blank']['parser'] = 'parser';
 $template['blank']['parser_method'] = 'parse';
 $template['blank']['parse_template'] = FALSE;
-
-// modal
-$template['modal']['template'] = 'modal';
-$template['modal']['regions'] = array('styles', 'content', 'scripts');
-$template['modal']['parser'] = 'parser';
-$template['modal']['parser_method'] = 'parse';
-$template['modal']['parse_template'] = FALSE;
 
 /* End of file template.php */
 /* Location: ./system/application/config/template.php */

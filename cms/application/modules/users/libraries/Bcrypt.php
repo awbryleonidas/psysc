@@ -3,15 +3,16 @@
 
 class Bcrypt {
   private $rounds;
-  private $salt_prefix;
-  public function __construct($params=array('rounds'=>7, 'salt_prefix'=>'$2y$')) {
+  public function __construct($params=array('rounds'=>7)) {
+
+
+    $rounds = $params['rounds'];
 
     if(CRYPT_BLOWFISH != 1) {
       throw new Exception("bcrypt not supported in this installation. See http://php.net/crypt");
     }
 
-    $this->rounds = $params['rounds'];
-    $this->salt_prefix = $params['salt_prefix'];
+    $this->rounds = $rounds;
   }
 
   public function hash($input) {
@@ -29,7 +30,7 @@ class Bcrypt {
   }
 
   private function getSalt() {
-    $salt = sprintf($this->salt_prefix.'%02d$', $this->rounds);
+    $salt = sprintf('$2a$%02d$', $this->rounds);
 
     $bytes = $this->getRandomBytes(16);
 

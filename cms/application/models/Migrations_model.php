@@ -1,13 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Migrations_model Class
- *
- * @package		Codifire
- * @version		1.0
- * @author 		Randy Nivales <randynivales@gmail.com>
- * @copyright 	Copyright (c) 2014-2015, Randy Nivales
- * @link		randynivales@gmail.com
- */
+
 class Migrations_model extends CI_Model {
 
 	function __construct()
@@ -23,8 +15,8 @@ class Migrations_model extends CI_Model {
 			foreach ($permissions as $permission)
 			{
 				$this->db->insert('permissions', array(
-					'permission_name' => $permission, 
-					'permission_simple' => 1, 
+					'permission_name' => $permission,
+					'permission_simple' => 1,
 					'permission_active' => 1
 				));
 			}
@@ -38,14 +30,14 @@ class Migrations_model extends CI_Model {
 		{
 			foreach ($menus as $menu)
 			{
-				if ($menu['menu_parent'] == 'none')
+				if ($menu['menu_parent_id'] == 'none')
 				{
 					$parent = 0;
 				}
 				else
 				{
 					// get the parent id
-					$query = $this->db->query('SELECT menu_id FROM menus WHERE menu_link = "' . $menu['menu_parent'] . '"');
+					$query = $this->db->query('SELECT menu_id FROM menu WHERE menu_link = "' . $menu['menu_parent_id'] . '"');
 					$row = $query->row();
 					if ($row)
 					{
@@ -56,8 +48,8 @@ class Migrations_model extends CI_Model {
 						$parent = 0;
 					}
 				}
-				$menu['menu_parent'] = $parent;
-				$this->db->insert('menus', $menu);
+				$menu['menu_parent_id'] = $parent;
+				$this->db->insert('menu', $menu);
 			}
 		}
 	}
@@ -81,7 +73,7 @@ class Migrations_model extends CI_Model {
 		{
 			foreach ($menus as $menu)
 			{
-				$this->db->delete('menus', array('menu_link' => $menu['menu_link']));
+				$this->db->delete('menu', array('menu_link' => $menu['menu_link']));
 			}
 		}
 	}

@@ -1,45 +1,4 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Common Helper Functions
- *
- * @package		Codifire
- * @version		1.0
- * @author 		Randy Nivales <randynivales@gmail.com>
- * @copyright 	Copyright (c) 2014-2015, Randy Nivales
- * @link		randynivales@gmail.com
- */
-
-if (!function_exists('assets_url')) 
-{
-	function assets_url($uri = '', $group = FALSE) 
-	{
-		$CI = & get_instance();
-		
-		if (!$dir = $CI->config->item('assets_path')) 
-			$dir = 'assets/';
-		
-		if ($group) 
-			return $CI->config->base_url($dir . $group . '/' . $uri);
-		else 
-			return $CI->config->base_url($dir . $uri);
-	}
-}
-
-if (!function_exists('module_js')) 
-{
-	function module_js($module, $js) 
-	{
-		return "assets/scripts/extra/extra.js?f=$module/views/js/$js.js";
-	}
-}
-
-if (!function_exists('module_css')) 
-{
-	function module_css($module, $css) 
-	{
-		return "assets/styles/extra/extra.css?f=$module/views/css/$css.css";
-	}
-}
 
 if (!function_exists('pr')) 
 {
@@ -51,6 +10,100 @@ if (!function_exists('pr'))
 	}
 }
 
+if (!function_exists('readable_date')) 
+{
+	function readable_date($date) 
+	{
+		if ($date && ($date != '0000-00-00'))
+		{
+			$date = new DateTime($date);
+			return $date->format("D d M, Y");
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+}
+
+// if (!function_exists('site_config')) 
+// {
+// 	function site_config($config_name = FALSE) 
+// 	{
+// 		$CI =& get_instance();
+// 		$CI->load->model('settings/settings_model');
+
+// 		if ($config_name)
+// 		{
+// 			$conf = $CI->settings_model->find_by('config_name', $config_name);
+// 			return $conf->config_value;
+// 		}
+// 		else
+// 		{	
+// 			$configs = $CI->settings_model->find_all();
+			
+// 			$conf = array();
+// 			foreach ($configs as $cnf)
+// 			{
+// 				$conf[$cnf->config_name] = $cnf->config_value;
+// 			}
+
+// 			return $conf;
+// 		}
+// 	}
+// }
+
+// if (!function_exists('convert_amount')) 
+// {
+// 	function convert_amount($from_amount, $from_currency, $to_currency, $from_config = FALSE) 
+// 	{
+// 		$CI =& get_instance();
+// 		$CI->load->model('accounting/exchange_rates_model');
+
+// 		$exchange_rate_base = site_config('exchange_rate_base');
+// 		// $default_transaction_currency = site_config('default_transaction_currency');
+
+// 		// convert to base rate
+// 		$xrate = $CI->exchange_rates_model->find_by(array('exchange_rate_deleted !=' => 1, 'exchange_rate_currency' => $from_currency));
+// 		$to_amount = $from_amount / $xrate->exchange_rate_factor;
+
+// 		// convert to new currency
+// 		$xrate = $CI->exchange_rates_model->find_by(array('exchange_rate_deleted !=' => 1, 'exchange_rate_currency' => $to_currency));
+// 		$to_amount = $to_amount * $xrate->exchange_rate_factor;
+
+// 		return $to_amount;
+// 	}
+// }
+
+// if (!function_exists('currency_sign')) 
+// {
+// 	function currency_sign($currency) 
+// 	{
+// 		$sign = '&#36;';
+// 		switch($currency)
+// 		{
+// 			case 'PHP': $sign = '&#8369;'; break;
+// 			case 'USD': $sign = '&#36;'; break;
+// 			default: $sign = $currency; break;
+// 		}
+// 		return $sign;
+// 	}
+// }
+
+if (!function_exists('debug')) 
+{
+	function debug($data) 
+	{
+		log_message('debug', print_r($data, true));
+	}
+}
+
+if (!function_exists('is_serial')) 
+{
+	function is_serial($string) {
+		return (@unserialize($string) !== false || $string == 'b:0;');
+	}
+}
 
 if (!function_exists('module_list')) 
 {
@@ -186,10 +239,7 @@ if( ! function_exists('relative_time'))
 
         return "$difference $period $ending";
     }
-}
 
-if( ! function_exists('get_age'))
-{
 	function get_age($birth_date)
 	{
 		if ($birth_date == '0000-00-00') return 0;
@@ -206,10 +256,7 @@ if( ! function_exists('get_age'))
 		}
 		return $YearDiff;
 	}
-}
-
-if( ! function_exists('url_get_contents'))
-{
+	
 	function url_get_contents($Url) {
 	    if (!function_exists('curl_init')){ 
 	        die('CURL is not installed!');
@@ -222,36 +269,8 @@ if( ! function_exists('url_get_contents'))
 	    return $output;
 	}
 
-}
+} 
 
 
-if (!function_exists('create_dropdown')) 
-{
-	function create_dropdown($type, $data) 
-	{
-		$return = array();
-
-		if ($type == 'number')
-		{
-			$numbers = range(1, $data);
-
-			foreach ($numbers as $number)
-			{
-				$return[$number] = $number;
-			}
-		}
-		else if ($type == 'array')
-		{
-			$elements = explode(',', $data);
-			foreach($elements as $element)
-			{
-				$return[$element] = $element;
-			}
-		}
-
-		return $return;
-	}
-}
-
-/* End of file assets_helper.php */
-/* Location: ./application/helpers/assets_helper.php */
+/* End of file common_helper.php */
+/* Location: ./application/helpers/common_helper.php */

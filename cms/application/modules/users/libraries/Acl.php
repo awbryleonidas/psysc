@@ -2,29 +2,26 @@
 /**
  * Acl Class
  *
- * @package		Codifire
+ * This class manages the permission object
+ *
+ * @package		Acl
  * @version		1.1
  * @author 		Randy Nivales <randynivales@gmail.com>
- * @copyright 	Copyright (c) 2014-2015, Randy Nivales
- * @link		randynivales@gmail.com
+ * @copyright 	Copyright (c) 2014, Randy Nivales
+ * @link		
  */
+
 class Acl
 {
 	// protected $default_actions = array('List', 'View', 'Add', 'Edit', 'Delete');
-	protected $default_actions = array('list');
+	protected $default_actions = array('List');
 	
-	/**
-	 * Constructor
-	 *
-	 * @access	public
-	 *
-	 */
 	public function __construct()
 	{
 		$this->CI =& get_instance();
 
 		$this->CI->load->model('users/permissions_model');
-		$this->CI->load->model('users/grants_model');
+		$this->CI->load->model('users/group_perms_model');
 		$this->CI->load->library('users/ion_auth');
 		$this->CI->load->library('session');
 		// $this->CI->load->language('users');
@@ -41,12 +38,13 @@ class Acl
 	* @return  array    id of users within the current user's groups
 	* @return  false    returns false if the user has no access
 	*/
+
 	public function restrict($permission_name, $action_type = 'redirect', $redirect_url = FALSE) 
 	{
 		// check if the user is logged in
 		if (!$this->CI->ion_auth->logged_in()) 
 		{
-			redirect('users/login?return=' . urlencode(current_url()), 'refresh');
+			redirect('users/login?return=' . current_url(), 'refresh');
 		}
 		// get the logged in user
 		$user_id = $this->CI->session->userdata('user_id');
@@ -60,9 +58,9 @@ class Acl
 			// get the user's groups
 			$user_groups = $this->CI->ion_auth->get_users_groups($user_id)->result();
 			$group_ids = array();
-			foreach ($user_groups as $group) $group_ids[] = $group->id;
+			foreach ($user_groups as $group) $group_ids[] = $group->group_id;
 			
-			$result = $this->CI->grants_model->check_grants($group_ids, $permission->permission_id);
+			$result = $this->CI->group_perms_model->check_group_perms($group_ids, $permission->permission_id);
 			// log_message('debug', print_r($result, TRUE));
 			if ($result)
 			{	
@@ -79,7 +77,7 @@ class Acl
 						$user_ids = array();
 						foreach ($users as $user)
 						{
-							$user_ids[] = $user->id;
+							$user_ids[] = $user->user_id;
  						}
 
 						return $user_ids;
@@ -129,15 +127,6 @@ class Acl
 		}
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * reconstruct
-	 *
-	 * @access	public
-	 * @param	integer $group_id
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
 	public function reconstruct($group_id) 
 	{
 		$modules = controller_list();
@@ -183,18 +172,7 @@ class Acl
 		}
 	}
 	
-	// --------------------------------------------------------------------
 
-	/**
-	 * check_ownership
-	 *
-	 * @access	public
-	 * @param	integer $user_id
-	 * @param	array $group_user_ids
-	 * @param	string $action_type
-	 * @param	string $redirect_url
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
 	public function check_ownership($user_id, $group_user_ids, $action_type = 'redirect', $redirect_url = FALSE) 
 	{
 		if (in_array($user_id, $group_user_ids))
@@ -234,4 +212,119 @@ class Acl
 			}
 		}
 	}
+
+
+	// set the $return to TRUE if you just want to return the permission.  no redirect
+	// set the $redirect to a particular page. Eg. 'users/logout'
+	// public function restrict($permission_name, $return=FALSE, $redirect=FALSE, $modal=FALSE) 
+	// {
+	// 	$user_id = $this->CI->session->userdata('user_id');
+
+	// 	// check if the user is logged in
+	// 	if (!$this->CI->ion_auth->logged_in())
+	// 	{
+	// 		//redirect them to the login page
+	// 		redirect('users/login', 'refresh');
+	// 	}
+
+	// 	// set the redirect
+	// 	if ($redirect)
+	// 	{
+	// 		$redirect = $redirect; 
+	// 	}
+	// 	else if ($this->CI->session->userdata('redirect'))
+	// 	{
+	// 		$redirect = $this->CI->session->userdata('redirect');
+	// 	}
+	// 	else
+	// 	{
+	// 		$redirect = '';
+	// 	}
+
+	// 	// get the permission info
+	// 	$permission = $this->CI->permissions_model->find_by('permission_name', $permission_name);
+	// 	// pr($permission);
+	// 	// exit;
+	// 	if (is_object($permission))
+	// 	{
+	// 		// get the user's groups
+	// 		$user_groups = $this->CI->ion_auth->get_users_groups($user_id)->result();
+	// 		$group_ids = array();
+	// 		foreach ($user_groups as $group) $group_ids[] = $group->group_id;
+			
+	// 		$result = $this->CI->group_perms_model->check_group_perms($group_ids, $permission->permission_id);
+	// 		// log_message('debug', print_r($result, TRUE));
+	// 		if ($result)
+	// 		{	
+	// 			switch($result) 
+	// 			{
+	// 				case 3: // own record only
+	// 					return array($user_id);
+	// 					break;
+
+	// 				case 2: // group records
+	// 					$users = $this->CI->ion_auth->users($group_ids)->result();
+	// 					$user_ids = array();
+	// 					foreach ($users as $user)
+	// 					{
+	// 						$user_ids[] = $user->user_id;
+ // 						}
+	// 					log_message('debug', print_r($user_ids, true)); 
+	// 					return $user_ids;
+	// 					break;
+
+	// 				case 1: // all records
+	// 					return TRUE;
+	// 					break;
+
+	// 				case 0: // no access
+	// 					return FALSE;
+	// 					break;
+	// 			}
+				
+	// 		}
+	// 		else
+	// 		{
+	// 			if ($return == TRUE)
+	// 			{
+	// 				return FALSE;
+	// 			}
+	// 			else
+	// 			{
+	// 				if ($modal)
+	// 				{
+	// 					// echo '<script>window.location = "' . $redirect . '";</script>';
+	// 					echo "<script>$(document).ready(function() { $('#modal').modal('hide'); $('#modal_restricted').modal('show'); }); </script>";
+	// 					exit;
+	// 				}
+	// 				else
+	// 				{
+	// 					$this->CI->session->set_flashdata('flash_error', lang('error_page_restricted'));
+	// 					redirect($redirect, 'refresh');
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	else
+	// 	{
+	// 		if ($return == TRUE)
+	// 		{
+	// 			return FALSE;
+	// 		}
+	// 		else
+	// 		{
+	// 			if ($modal)
+	// 			{
+	// 				// echo '<script>window.location = "' . $redirect . '";</script>';
+	// 				echo "<script>$(document).ready(function() { $('#modal').modal('hide'); $('#modal_restricted').modal('show'); }); </script>";
+	// 				exit;
+	// 			}
+	// 			else
+	// 			{
+	// 				$this->CI->session->set_flashdata('flash_error', lang('error_page_restricted'));
+	// 				redirect($redirect, 'refresh');
+	// 			}
+	// 		}
+	// 	}
+	// }
 }

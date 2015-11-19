@@ -1,15 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Common Language File (English)
- *
- * @package		Codifire
- * @version		1.0
- * @author 		Randy Nivales <randynivales@gmail.com>
- * @copyright 	Copyright (c) 2014-2015, Randy Nivales
- * @link		randynivales@gmail.com
- */
 
-// Breadcrumb
+// Breadcrumb						
 $lang['crumb_home']					= '<i class="fa fa-home"></i> Dashboard';
 
 // Errors

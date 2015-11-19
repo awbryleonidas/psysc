@@ -2,11 +2,13 @@
 /**
  * Upload_folders Class
  *
- * @package		Codifire
+ * This class manages the menu object
+ *
+ * @package		Upload_folders
  * @version		1.0
  * @author 		Randy Nivales <randynivales@gmail.com>
- * @copyright 	Copyright (c) 2014-2015, Randy Nivales
- * @link		randynivales@gmail.com
+ * @copyright 	Copyright (c) 2015, Randy Nivales
+ * @link		
  */
 class Upload_folders {
 
@@ -18,20 +20,17 @@ class Upload_folders {
 	*/
 	public function __construct()
 	{
+		// $this->CI =& get_instance();
+
 		log_message('debug', "Upload_folders Class Initialized");
 	}
 	
-	// --------------------------------------------------------------------
-
 	/**
-	 * get
-	 *
-	 * Returns the current upload folder
+	 * Get the current upload folder
 	 *
 	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */	
+	 * @return	string
+	 */		
 	function get()
 	{
 		$upload_path = 'assets/uploads/';
@@ -57,6 +56,12 @@ class Upload_folders {
 
 		return $upload_path . $year . "/" . $month;
 	}
+
+	function testing()
+	{
+		return 'test';
+	}
+
 }
 
 /* End of file Upload_folders.php */

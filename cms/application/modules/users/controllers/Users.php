@@ -1,126 +1,130 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/**
- * Users Class
- *
- * @package		Codifire
- * @version		1.0
- * @author 		Randy Nivales <randynivales@gmail.com>
- * @copyright 	Copyright (c) 2014-2015, Randy Nivales
- * @link		randynivales@gmail.com
- */
-class Users extends CI_Controller 
+
+class Users extends MX_Controller
 {
-	/**
-	 * Constructor
-	 *
-	 * @access	public
-	 *
-	 */
+
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->database();
-		$this->load->library(array('ion_auth','form_validation'));
-		$this->load->helper(array('url','language'));
-
-		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
-
-		$this->lang->load('auth');
 
 		$this->load->model('users_model');
 		$this->load->model('groups_model');
-		$this->load->model('users_model');
 		$this->load->language('users');
+		$this->load->language('ion_auth');
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * index
-	 *
-	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function index()
+	function index()
 	{
-		$this->acl->restrict('users.users.list');
-		
-		// page title
+		//$this->acl->restrict('Users.Users.List');
+
+		// $data['title'] = lang('index_heading');
 		$data['page_heading'] = lang('index_heading');
 		$data['page_subhead'] = lang('index_subhead');
-		
+
 		// breadcrumbs
 		$this->breadcrumbs->push(lang('crumb_home'), site_url(''));
-		$this->breadcrumbs->push(lang('crumb_settings'), site_url('settings'));
-		$this->breadcrumbs->push(lang('index_heading'), site_url('users'));
+		$this->breadcrumbs->push(lang('crumb_users'), site_url('users'));
 
-		// render the page
-		$this->template->add_css('assets/plugins/datatables/dataTables.bootstrap.css');
-		$this->template->add_css('assets/plugins/datatables/dataTables.responsive.css');
-		$this->template->add_js('assets/plugins/datatables/jquery.dataTables.min.js');
-		$this->template->add_js('assets/plugins/datatables/dataTables.bootstrap.js');
-		$this->template->add_js('assets/plugins/datatables/dataTables.responsive.min.js');
-		
-		$this->template->add_js(module_js('users', 'users_index'));
+		$this->session->set_userdata('redirect', current_url());
+
+		$this->template->add_css('assets/plugins/datatables/css/dataTables.bootstrap.css');
+		$this->template->add_css('assets/plugins/datatables/css/dataTables.responsive.css');
+		$this->template->add_js('assets/plugins/datatables/js/jquery.dataTables.min.js');
+		$this->template->add_js('assets/plugins/datatables/js/dataTables.bootstrap.js');
+		$this->template->add_js('assets/plugins/datatables/js/dataTables.responsive.min.js');
+
+		$this->template->write_view('scripts', 'js/users_index.js');
 		$this->template->write_view('content', 'users_index', $data);
+		$this->template->render();
+
+	}
+
+	public function datatables()
+	{
+		//$this->acl->restrict('Users.Users.List');
+
+		$fields = array($this->db->dbprefix('users') . '.user_id', 'user_firstname', 'user_lastname', 'GROUP_CONCAT(DISTINCT g.group_name SEPARATOR ",<br />") as groups', 'user_active');
+
+		echo $this->users_model->get_users('active')->datatables($fields);
+	}
+
+	function view($user_id)
+	{
+		//$this->acl->restrict('Users.Users.View');
+
+		$data['page_heading'] = lang('view_heading');
+		$data['page_subhead'] = lang('view_subhead');
+		$data['page_type'] = 'view';
+
+		// breadcrumbs
+		$this->breadcrumbs->push(lang('crumb_home'), site_url(''));
+		$this->breadcrumbs->push(lang('crumb_users'), site_url('users'));
+		$this->breadcrumbs->push(lang('view_heading'), site_url('users/view/'.$user_id));
+
+		$this->session->set_userdata('redirect', current_url());
+
+		$data['record'] = $this->ion_auth->user($user_id)->row();
+
+		$data['groups'] = $this->groups_model->where('group_deleted', 0)->order_by('group_name')->find_all();
+
+		// get the current groups
+		$current_groups = $this->ion_auth->get_users_groups($user_id)->result();
+		$curr_grp = '';
+		if (isset($current_groups))
+		{
+			foreach($current_groups as $grp)
+			{
+				$curr_grp .= "{id:{$grp->group_id}, text:'{$grp->group_name}'},";
+			}
+		}
+		$data['current_groups'] = '[' . $curr_grp . ']';
+
+
+		$this->template->add_css('assets/plugins/select2/select2.css');
+		$this->template->add_css('assets/plugins/select2/select2-bootstrap.css');
+		$this->template->add_js('assets/plugins/select2/select2.min.js');
+
+		$this->template->add_css('assets/css/form_view_mode.css');
+		$this->template->write_view('scripts', 'js/users_form.js');
+		$this->template->write_view('styles', 'css/users_form.css');
+		$this->template->write_view('content', 'users_form', $data);
 		$this->template->render();
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * datatables
-	 *
-	 * @access	public
-	 * @param	mixed datatables parameters (datatables.net)
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function datatables()
+	function add()
 	{
-		$this->acl->restrict('users.users.list');
-
-		$fields = array('id', 'username', 'first_name', 'last_name', 'email', 'active');
-
-		echo $this->users_model->datatables($fields);
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * add
-	 *
-	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function add()
-	{
-		$this->acl->restrict('users.users.add', 'modal');
+		//$this->acl->restrict('Users.Users.Add');
 
 		$data['page_heading'] = lang('add_heading');
+		$data['page_subhead'] = lang('add_subhead');
 		$data['page_type'] = 'add';
 
-		if ($this->input->post())
+		// breadcrumbs
+		$this->breadcrumbs->push(lang('crumb_home'), site_url(''));
+		$this->breadcrumbs->push(lang('crumb_users'), site_url('users'));
+		$this->breadcrumbs->push(lang('add_heading'), site_url('users/add/'));
+
+		if ($this->input->post('submit'))
 		{
-			if ($this->_create_user())
+			if ($this->_save('add'))
 			{
-				echo json_encode(array('success' => true, 'message' => lang('add_success'))); exit;
+				$this->session->set_flashdata('flash_message', lang('add_success'));
+				redirect($this->session->userdata('redirect'), 'refresh');
 			}
 			else
-			{	
-				$response['success'] = FALSE;
-				$response['message'] = lang('validation_error');
-				$response['errors'] = array(
-					'first_name'		=> form_error('first_name'),
-					'last_name'			=> form_error('last_name'),
-					'email'				=> form_error('email'),
-					'username'			=> form_error('username'),
-					'password'			=> form_error('password'),
-					'confirm_password'	=> form_error('confirm_password'),
-				);
-				echo json_encode($response);
-				exit;
+			{
+				if ($this->ion_auth->errors())
+				{
+					$data['error_message'] = $this->ion_auth->errors();
+				}
+				else
+				{
+					$data['error_message'] = lang('validation_error');
+
+					// repopulate the groups
+					$current_groups = $this->groups_model->where_in('group_id', $this->input->post('groups'))->find_all();
+				}
 			}
 		}
 		else
@@ -129,7 +133,7 @@ class Users extends CI_Controller
 		}
 
 
-		$data['groups'] = $this->groups_model->order_by('name')->find_all();
+		$data['groups'] = $this->groups_model->where('group_deleted', 0)->order_by('group_name')->find_all();
 
 		// current groups
 		$curr_grp = '';
@@ -137,593 +141,507 @@ class Users extends CI_Controller
 		{
 			foreach($current_groups as $grp)
 			{
-				$curr_grp .= "{id:{$grp->id}, text:'{$grp->name}'},";
+				$curr_grp .= "{id:{$grp->group_id}, text:'{$grp->group_name}'},";
 			}
 		}
 		$data['current_groups'] = '[' . $curr_grp . ']';
 
-		$this->template->set_template('modal');
+
 		$this->template->add_css('assets/plugins/select2/select2.css');
 		$this->template->add_css('assets/plugins/select2/select2-bootstrap.css');
-		$this->template->add_js('assets/plugins/select2/select2.min.js');		
-		$this->template->add_js(module_js('users', 'users_form'));
+		$this->template->add_js('assets/plugins/select2/select2.min.js');
+
+		$this->template->write_view('scripts', 'js/users_form.js');
+		// $this->template->write_view('styles', 'css/users_form.css');
+		$this->template->write_view('content', 'users_form', $data);
+		$this->template->render();
+
+	}
+
+	function edit($user_id)
+	{
+		//$this->acl->restrict('Users.Users.Edit');
+
+		$data['page_heading'] = lang('edit_heading');
+		$data['page_subhead'] = lang('edit_subhead');
+		$data['page_type'] = 'edit';
+
+		// breadcrumbs
+		$this->breadcrumbs->push(lang('crumb_home'), site_url(''));
+		$this->breadcrumbs->push(lang('crumb_users'), site_url('users'));
+		$this->breadcrumbs->push(lang('edit_heading'), site_url('users/edit/'.$user_id));
+
+		// get the user info
+		$data['record'] = $this->ion_auth->user($user_id)->row();
+
+		// get the current groups
+		$current_groups = $this->ion_auth->get_users_groups($user_id)->result();
+
+		if ($this->input->post('submit'))
+		{
+
+			if ($this->_save('edit', $user_id))
+			{
+				$this->session->set_flashdata('flash_message', lang('edit_success'));
+				redirect($this->session->userdata('redirect'), 'refresh');
+			}
+			else
+			{
+				$data['error_message'] = lang('validation_error');
+
+				// repopulate the groups
+				$current_groups = $this->groups_model->where_in('group_id', $this->input->post('groups'))->find_all();
+
+			}
+		}
+
+		$data['groups'] = $this->groups_model->where('group_deleted', 0)->order_by('group_name')->find_all();
+
+		// current groups
+		$curr_grp = '';
+		// log_message('debug', print_r($current_groups, true));
+
+		if ($current_groups)
+		{
+			foreach($current_groups as $grp)
+			{
+				$curr_grp .= "{id:{$grp->group_id}, text:'{$grp->group_name}'},";
+			}
+		}
+		$data['current_groups'] = '[' . $curr_grp . ']';
+
+		// pr($data); exit;
+
+		$this->template->add_css('assets/plugins/select2/select2.css');
+		$this->template->add_css('assets/plugins/select2/select2-bootstrap.css');
+		$this->template->add_js('assets/plugins/select2/select2.min.js');
+
+		$this->template->write_view('scripts', 'js/users_form.js');
+		// $this->template->write_view('styles', 'css/users_form.css');
 		$this->template->write_view('content', 'users_form', $data);
 		$this->template->render();
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * permission
-	 *
-	 * @access	public
-	 * @param	integer $id
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function edit($id)
+	function login()
 	{
-		$this->acl->restrict('users.users.edit', 'modal');
+		$data['page_heading'] = 'Login';
 
-		$data['page_heading'] = lang('edit_heading');
+        if ($this->input->post('submit'))
+        {
+            $return = $this->_login();
+            if ($return==1)
+            {
+                $data['test'] =$return ;
+                if ($this->input->get('return'))
+                {
+                    header('Location: ' . $this->input->get('return'));
+                }
+                redirect('', 'refresh');
+            }
+            elseif($return==2)//if validation error
+            {
+                $data['error_message'] = lang('validation_error');
+
+                /*if ($this->ion_auth->errors())
+                {
+                    $data['error_message'] = $this->ion_auth->errors();
+                }
+                else
+                {
+                    $data['error_message'] = lang('validation_error');
+                }*/
+            }
+            elseif($return==3){//if username do not exists
+                $data['error_message'] = 'You have entered the wrong username<br><br>Please try again';
+                $data['code_username'] = 'wrong username';
+            }
+            else// default error handling
+            {
+                $ctr = $this->ion_auth->get_attempts_num($this->input->post('user_identity'));
+                $data['error_message'] = 'You have entered the wrong username or password ('. $ctr.'/5)<br><br>Please try again';
+                if($ctr>=5){
+                    $data['error_message'] = 'You have reached the maximum log in error limit';
+                    $data['error_ctr'] = 5;
+                }
+            }
+        }
+
+
+        $data['return'] = ($this->input->get('return')) ? $this->input->get('return') : '';
+
+		$this->load->view('users_login', $data);
+	}
+
+	function logout()
+	{
+		$logout = $this->ion_auth->logout();
+
+		$this->session->set_flashdata('flash_message', lang('logout_success'));
+
+		redirect('users/login', 'refresh');
+	}
+
+	function noaccess()
+	{
+		$this->load->view('users_noaccess');
+	}
+
+	function restricted()
+	{
+		$data['page_heading'] = lang('restricted_heading');
+
+		$this->load->view('users_restricted', $data);
+	}
+
+
+	function password()
+	{
+		$this->acl->restrict('Users.Users.Password', 'modal');
+
+		$data['page_heading'] = lang('password_heading');
 		$data['page_type'] = 'edit';
 
 		if ($this->input->post())
 		{
-			if ($this->_edit_user($id))
+			if ($this->_save_password())
 			{
-				echo json_encode(array('success' => true, 'message' => lang('edit_success'))); exit;
+				// $this->session->set_flashdata('flash_message', lang('edit_success'));
+				echo json_encode(array('success' => true)); exit;
 			}
 			else
-			{	
-				$response['success'] = FALSE;
-				$response['message'] = lang('validation_error');
-				$response['errors'] = array(
-					'group_name'			=> form_error('group_name'),
-					'group_description'		=> form_error('group_description')
-				);
-				echo json_encode($response);
-				exit;
-			}
-		}
-
-		$data['record'] = $this->users_model->find($id);
-
-		// get the current groups
-		$current_groups = $this->ion_auth->get_users_groups($id)->result();
-
-		$data['groups'] = $this->groups_model->order_by('name')->find_all();
-
-		// current groups
-		$curr_grp = '';
-
-		if ($current_groups)
-		{
-			foreach($current_groups as $grp)
 			{
-				$curr_grp .= "{id:{$grp->id}, text:'{$grp->name}'},";
-			}
-		}
-		$data['current_groups'] = '[' . $curr_grp . ']';
-
-		$this->template->set_template('modal');
-		$this->template->add_css('assets/plugins/select2/select2.css');
-		$this->template->add_css('assets/plugins/select2/select2-bootstrap.css');
-		$this->template->add_js('assets/plugins/select2/select2.min.js');
-		$this->template->add_js(module_js('users', 'users_form'));
-		$this->template->write_view('content', 'users_form', $data);
-		$this->template->render();
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * login
-	 *
-	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function login()
-	{
-		$this->data['page_heading'] = "Login";
-		$this->data['page_subhead'] = "Sign in to start your session";
-
-		//validate form input
-		$this->form_validation->set_rules('identity', 'Identity', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-
-		if ($this->form_validation->run($this) == TRUE)
-		{
-			//check to see if the user is logging in
-			//check for "remember me"
-			$remember = (bool) $this->input->post('remember');
-
-			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
-			{
-				//if the login is successful
-				//redirect them back to the home page or the page before the login page
-				$this->session->set_flashdata('message', $this->ion_auth->messages());
-
-				if ($this->input->post('return'))
+				if ($this->ion_auth->errors())
 				{
-					header('Location: ' . $this->input->post('return'));
+					$response['success'] = FALSE;
+					$response['message'] = 'Please correct or provide the necessary information.';//strip_tags($this->ion_auth->errors());
+					echo json_encode($response);
+					exit;
 				}
 				else
 				{
-					redirect('/', 'refresh');
+					$response['success'] = FALSE;
+					$response['message'] = strip_tags(lang('validation_error'));
+					$response['errors'] = array(
+						'old_password'				=> form_error('old_password'),
+						'new_password'				=> form_error('new_password'),
+						'new_password_confirm'		=> form_error('new_password_confirm')
+					);
+					echo json_encode($response);
+					exit;
 				}
 			}
-			else
-			{
-				//if the login was un-successful
-				$this->data['message'] = $this->ion_auth->errors();
-			}
-		}
-		else
-		{
-			//the user is not logging in so display the login page
-			//set the flash data error message if there is one
-			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-
-			$this->data['identity'] = array('name' => 'identity',
-				'id' => 'identity',
-				'type' => 'text',
-				'value' => $this->form_validation->set_value('identity'),
-			);
-			$this->data['password'] = array('name' => 'password',
-				'id' => 'password',
-				'type' => 'password',
-			);
-
-			// $this->_render_page('users/login', $this->data);
-
-			
 		}
 
-		$this->template->set_template('blank');
-		$this->template->write_view('content', 'users/login', $this->data);
-		$this->template->render();
+		$this->load->view('users_password', $data);
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * logout
-	 *
-	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function logout()
+	function profile()
 	{
-		$this->data['title'] = "Logout";
-
-		//log the user out
-		$logout = $this->ion_auth->logout();
-
-		//redirect them to the login page
-		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('users/login', 'refresh');
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * profile
-	 *
-	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function profile()
-	{
-		$this->acl->restrict('users.users.profile', 'modal');
+		$this->acl->restrict('Users.Users.Profile', 'modal');
 
 		$data['page_heading'] = lang('profile_heading');
-
-		$user = $this->ion_auth->user()->row();
+		// $data['page_subhead'] = lang('edit_subhead');
+		$data['page_type'] = 'edit';
 
 		if ($this->input->post())
 		{
-			if ($this->_change_profile($user))
+			if ($this->_save_profile())
 			{
-				echo json_encode(array('success' => true, 'message' => lang('profile_success'))); exit;
+				// $this->session->set_flashdata('flash_message', lang('edit_success'));
+				echo json_encode(array('success' => true)); exit;
 			}
 			else
-			{	
-				$response['success'] = FALSE;
-				$response['message'] = lang('validation_error');
-				$response['errors'] = array(
-					'first_name'		=> form_error('first_name'),
-					'last_name'			=> form_error('last_name'),
-					'email'				=> form_error('email')
-				);
-				echo json_encode($response);
-				exit;
+			{
+				if ($this->ion_auth->errors())
+				{
+					$response['success'] = FALSE;
+					$response['message'] = $this->ion_auth->errors();
+					echo json_encode($response);
+					exit;
+				}
+				else
+				{
+					$response['success'] = FALSE;
+					$response['message'] = lang('validation_error');
+					$response['errors'] = array(
+						'user_firstname'	=> form_error('user_firstname'),
+						'user_lastname'		=> form_error('user_lastname'),
+						'user_email'		=> form_error('user_email')
+					);
+					echo json_encode($response);
+					exit;
+				}
 			}
 		}
 
-		$data['record'] = $user;
-		$this->template->set_template('modal');
-		$this->template->add_js(module_js('users', 'users_profile'));
-		$this->template->write_view('content', 'users_profile', $data);
-		$this->template->render();
+		$data['record'] = $this->ion_auth->user($this->session->userdata('user_id'))->row();
+
+		// $this->template->write_view('content', 'groups_form', $data);
+		// $this->template->render();
+		$this->load->view('users_profile', $data);
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * password
-	 *
-	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function password()
+	function picture()
 	{
-		$this->acl->restrict('users.users.password', 'modal');
+		$this->acl->restrict('Users.Users.Picture', 'modal');
 
-		$data['page_heading'] = lang('password_heading');
-
-		if ($this->input->post())
-		{
-			if ($this->_change_password())
-			{
-				echo json_encode(array('success' => true, 'message' => lang('password_success'))); exit;
-			}
-			else
-			{	
-				$response['success'] = FALSE;
-				$response['message'] = lang('validation_error');
-				$response['errors'] = array(
-					'old'				=> form_error('old'),
-					'new'				=> form_error('new'),
-					'new_confirm'		=> form_error('new_confirm')
-				);
-				echo json_encode($response);
-				exit;
-			}
-		}
-
-
-		$this->template->set_template('modal');
-		$this->template->add_js(module_js('users', 'users_password'));
-		$this->template->write_view('content', 'users_password', $data);
-		$this->template->render();
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * photo
-	 *
-	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	function photo()
-	{	
-		$this->acl->restrict('users.users.photo');
-
-		// page title
-		$data['page_heading'] = lang('photo_heading');
-		$data['page_subhead'] = lang('photo_subhead');
-		
-		// breadcrumbs
-		$this->breadcrumbs->push(lang('crumb_home'), site_url(''));
-		$this->breadcrumbs->push(lang('crumb_settings'), site_url('settings'));
-		$this->breadcrumbs->push(lang('index_heading'), site_url('users'));
-		$this->breadcrumbs->push(lang('photo_heading'), site_url('users/photo'));
+		$data['page_heading'] = lang('picture_heading');
 
 		if (!empty($_FILES))
 		{
-			$this->_save_photo();
-			exit;
+			$this->_save_picture();
 		}
-
-		$this->template->add_css('assets/plugins/dropzone/dropzone.css');
-		$this->template->add_js('assets/plugins/dropzone/dropzone.js');
-		$this->template->add_css(module_css('users', 'users_photo'));
-		$this->template->add_js(module_js('users', 'users_photo'));
-		$this->template->write_view('content', 'users_photo', $data);
-		$this->template->render();
+		$this->load->view('users_picture', $data);
 	}
 
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * forgot_password
-	 *
-	 * @access	public
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
 	function forgot_password()
 	{
-		$this->data['page_heading'] = "Forgot Password";
-		$this->data['page_subhead'] = "Please enter your Email so we can send you an email to reset your password.";
+		$data['page_heading'] = 'Forgot Password';
 
-		//setting validation rules by checking wheather identity is username or email
-		if($this->config->item('identity', 'ion_auth') == 'username' )
+		if ($this->input->post('submit'))
 		{
-		   $this->form_validation->set_rules('email', lang('forgot_password_username_identity_label'), 'required');
-		}
-		else
-		{
-		   $this->form_validation->set_rules('email', lang('forgot_password_validation_email_label'), 'required|valid_email');
-		}
-		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-
-
-		if ($this->form_validation->run() == false)
-		{
-			//setup the input
-			$this->data['email'] = array('name' => 'email',
-				'id' => 'email', 'class' => 'form-control'
-			);
-
-			if ( $this->config->item('identity', 'ion_auth') == 'username' ){
-				$this->data['identity_label'] = lang('forgot_password_username_identity_label');
+			if ($this->_forgot_password()==1)
+			{
+				// $this->db->cache_delete('users', 'login');
+				$this->session->set_flashdata('flash_message', $this->ion_auth->messages());
+				redirect('users/login', 'refresh');
 			}
 			else
 			{
-				$this->data['identity_label'] = lang('forgot_password_email_identity_label');
-			}
+				if ($this->ion_auth->errors())
+				{
+					$data['error_message'] = $this->ion_auth->errors();
+				}
+				elseif($this->_forgot_password()==3)
+				{
+					$data['error_message'] = lang('validation_error');
+				}
+                else{
+                    $data['error_message'] = 'The e-mail address provided is not in the system. Please contact CRM support.';//
+                }
 
-			//set any errors and display the form
-			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-			// $this->_render_page('users/forgot_password', $this->data);
-
-			$this->template->set_template('blank');
-			$this->template->write_view('content', 'users/forgot_password', $this->data);
-			$this->template->render();
-		}
-		else
-		{
-			// get identity from username or email
-			if ( $this->config->item('identity', 'ion_auth') == 'username' ){
-				$identity = $this->ion_auth->where('username', strtolower($this->input->post('email')))->users()->row();
-			}
-			else
-			{
-				$identity = $this->ion_auth->where('email', strtolower($this->input->post('email')))->users()->row();
-			}
-					if(empty($identity)) {
-
-						if($this->config->item('identity', 'ion_auth') == 'username')
-						{
-								   $this->ion_auth->set_message('forgot_password_username_not_found');
-						}
-						else
-						{
-						   $this->ion_auth->set_message('forgot_password_email_not_found');
-						}
-
-						$this->session->set_flashdata('message', $this->ion_auth->messages());
-						redirect("users/forgot_password", 'refresh');
-					}
-
-			//run the forgotten password method to email an activation code to the user
-			$forgotten = $this->ion_auth->forgotten_password($identity->{$this->config->item('identity', 'ion_auth')});
-
-			if ($forgotten)
-			{
-				//if there were no errors
-				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect("users/login", 'refresh'); //we should display a confirmation page here instead of the login page
-			}
-			else
-			{
-				$this->session->set_flashdata('message', $this->ion_auth->errors());
-				redirect("users/forgot_password", 'refresh');
 			}
 		}
+
+		$this->load->view('users_forgot_password', $data);
+
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * reset_password
-	 *
-	 * @access	public
-	 * @param	string $code
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	public function reset_password($code = NULL)
+	function reset_password($code = NULL)
 	{
 		if (!$code)
 		{
 			show_404();
 		}
 
-		$user = $this->ion_auth->forgotten_password_check($code);
+		$data['page_heading'] = 'Reset Password';
 
-		if ($user)
+		if ($this->input->post('submit'))
 		{
-			//if the code is valid then display the password reset form
-
-			$this->form_validation->set_rules('new', lang('reset_password_validation_new_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
-			$this->form_validation->set_rules('new_confirm', lang('reset_password_validation_new_password_confirm_label'), 'required');
-
-			if ($this->form_validation->run() == false)
+			if ($this->_reset_password($code))
 			{
-				//display the form
-
-				//set the flash data error message if there is one
-				$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-
-				$this->data['min_password_length'] = $this->config->item('min_password_length', 'ion_auth');
-				$this->data['new_password'] = array(
-					'name' => 'new',
-					'id'   => 'new',
-				'type' => 'password',
-					'pattern' => '^.{'.$this->data['min_password_length'].'}.*$',
-				);
-				$this->data['new_password_confirm'] = array(
-					'name' => 'new_confirm',
-					'id'   => 'new_confirm',
-					'type' => 'password',
-					'pattern' => '^.{'.$this->data['min_password_length'].'}.*$',
-				);
-				$this->data['user_id'] = array(
-					'name'  => 'user_id',
-					'id'    => 'user_id',
-					'type'  => 'hidden',
-					'value' => $user->id,
-				);
-				$this->data['csrf'] = $this->_get_csrf_nonce();
-				$this->data['code'] = $code;
-
-				//render
-				$this->_render_page('users/reset_password', $this->data);
+				$this->session->set_flashdata('flash_message', $this->ion_auth->messages());
+				redirect('users/login', 'refresh');
 			}
 			else
 			{
-				// do we have a valid request?
-				if ($this->_valid_csrf_nonce() === FALSE || $user->id != $this->input->post('user_id'))
+				if ($this->ion_auth->errors())
 				{
-
-					//something fishy might be up
-					$this->ion_auth->clear_forgotten_password_code($code);
-
-					show_error(lang('error_csrf'));
-
+					$data['ion_auth_error_message'] = $this->ion_auth->errors().'The password reset link is already expired.';
 				}
 				else
 				{
-					// finally change the password
-					$identity = $user->{$this->config->item('identity', 'ion_auth')};
-
-					$change = $this->ion_auth->reset_password($identity, $this->input->post('new'));
-
-					if ($change)
-					{
-						//if the password was successfully changed
-						$this->session->set_flashdata('message', $this->ion_auth->messages());
-						redirect("users/login", 'refresh');
-					}
-					else
-					{
-						$this->session->set_flashdata('message', $this->ion_auth->errors());
-						redirect('users/reset_password/' . $code, 'refresh');
-					}
+					$data['error_message'] = lang('validation_error');
 				}
 			}
 		}
-		else
-		{
-			//if the code is invalid then send them back to the forgot password page
-			$this->session->set_flashdata('message', $this->ion_auth->errors());
-			redirect("users/forgot_password", 'refresh');
-		}
+
+		$user = $this->ion_auth->forgotten_password_check($code);
+
+		$this->load->view('users_reset_password', $data);
+
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * activate
-	 *
-	 * @access	public
-	 * @param	integer $id
-	 * @param	string $code
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	function activate($id, $code=false)
+	function activate($user_id, $code=false)
 	{
-		$this->acl->restrict('users.users.activate');
+		$this->acl->restrict('Users.Users.Activate', 'modal');
 
 		$data['page_heading'] = lang('activate_heading');
 		$data['page_confirm'] = lang('activate_confirm');
-		$data['page_button'] = lang('button_activate');
+		$data['page_success'] = lang('activate_success');
+		$data['page_button'] = lang('button_activate_user');
 		$data['datatables_id'] = '#datatables';
 
 		if ($this->input->post())
 		{
-			$this->ion_auth->activate($id);
-			echo json_encode(array('success' => true, 'message' => lang('activate_success'))); exit;
+			$activation = $this->ion_auth->activate($user_id);
+
+			echo json_encode(array('success' => true)); exit;
 		}
 
 		$this->load->view('../../../views/confirm', $data);
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * suspend
-	 *
-	 * @access	public
-	 * @param	integer $id
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	function suspend($id = NULL)
+	function deactivate($user_id = NULL)
 	{
-		$this->acl->restrict('users.users.suspend');
+		$this->acl->restrict('Users.Users.Deactivate', 'modal');
 
-		$data['page_heading'] = lang('suspend_heading');
-		$data['page_confirm'] = lang('suspend_confirm');
-		$data['page_button'] = lang('button_suspend');
+		$data['page_heading'] = lang('deactivate_heading');
+		$data['page_confirm'] = lang('deactivate_confirm');
+		$data['page_success'] = lang('deactivate_success');
+		$data['page_button'] = lang('button_deactivate_user');
 		$data['datatables_id'] = '#datatables';
 
 		if ($this->input->post())
 		{
-			$this->ion_auth->deactivate($id);
-			echo json_encode(array('success' => true, 'message' => lang('suspend_success'))); exit;
+			$this->ion_auth->deactivate($user_id);
+
+			echo json_encode(array('success' => true)); exit;
 		}
 
 		$this->load->view('../../../views/confirm', $data);
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * delete
-	 *
-	 * @access	public
-	 * @param	integer $id
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	function delete($id)
+	function delete($user_id)
 	{
-		$this->acl->restrict('users.users.delete', 'modal');
+		$this->acl->restrict('Users.Users.Delete', 'modal');
 
 		$data['page_heading'] = lang('delete_heading');
 		$data['page_confirm'] = lang('delete_confirm');
-		$data['page_button'] = lang('button_delete');
+		$data['page_success'] = lang('delete_success');
+		$data['page_button'] = lang('button_delete_user');
 		$data['datatables_id'] = '#datatables';
 
 		if ($this->input->post())
 		{
-			$this->ion_auth->remove_from_group('', $id);
-			$this->users_model->delete($id);
+			$this->ion_auth->deactivate($user_id);
+			$this->users_model->delete($user_id);
 
-			echo json_encode(array('success' => true, 'message' => lang('delete_success'))); exit;
+			echo json_encode(array('success' => true)); exit;
 		}
 
 		$this->load->view('../../../views/confirm', $data);
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * _create_user
-	 *
-	 * @access	private
-	 * @param	integer $id
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	private function _create_user()
+	private function _save($type = 'add', $user_id = 0)
 	{
-		$tables = $this->config->item('tables','ion_auth');
+		// validate inputs
+		$this->form_validation->set_rules('user_firstname', lang('label_firstname'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('user_lastname', lang('label_lastname'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('user_email', lang('label_email'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('user_username', lang('label_username'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('user_groups', lang('label_groups'), 'required');
 
-		//validate form input
-		$this->form_validation->set_rules('first_name', lang('first_name'), 'required');
-		$this->form_validation->set_rules('last_name', lang('last_name'), 'required');
-		$this->form_validation->set_rules('email', lang('email'), 'required|valid_email|is_unique['.$tables['users'].'.email]');
-		$this->form_validation->set_rules('username', lang('username'), 'required|is_unique['.$tables['users'].'.username]');
-		$this->form_validation->set_rules('password', lang('password'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
-		$this->form_validation->set_rules('password_confirm', lang('password_confirm'), 'required');
+		if ($this->input->post('user_password'))
+		{
+			$this->form_validation->set_rules('user_password', lang('label_password'), 'required|trim|xss_clean|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[user_password_confirm]');
+			$this->form_validation->set_rules('user_password_confirm', lang('label_retype_password'), 'required|trim|xss_clean');
+		}
+
+		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+
+		if ($this->form_validation->run($this) == FALSE)
+		{
+			return FALSE;
+		}
+		// pr($this->input->post('groups')); exit;
+
+		// make sure we only pass in the fields we want
+
+		if ($type == 'add')
+		{
+			$user_username 		= $this->input->post('user_username');
+			$user_password 		= $this->input->post('user_password');
+			$user_email 		= $this->input->post('user_email');
+			$user_group_data 	= $this->input->post('user_groups');
+
+			$additional_data = array(
+				'user_firstname'		=> $this->input->post('user_firstname'),
+				'user_lastname'			=> $this->input->post('user_lastname'),
+			);
+
+			$user_id = $this->ion_auth->register($user_username, $user_password, $user_email, $additional_data, $user_group_data);
+
+			return (is_numeric($user_id)) ? $user_id : FALSE;
+		}
+		else if ($type == 'edit')
+		{
+			// update the groups
+			$groups = $this->input->post('user_groups');
+			if (isset($groups) && !empty($groups))
+			{
+				$this->ion_auth->remove_from_group('', $user_id);
+
+				foreach ($groups as $group)
+				{
+					$this->ion_auth->add_to_group($group, $user_id);
+				}
+			}
+
+			// update the user
+			$data = array(
+				'user_firstname'		=> $this->input->post('user_firstname'),
+				'user_lastname'			=> $this->input->post('user_lastname'),
+				'user_username'			=> $this->input->post('user_username'),
+				'user_email'			=> $this->input->post('user_email'),
+			);
+			if (null != $this->input->post('user_password'))
+			{
+				$data['user_password'] = $this->input->post('user_password');
+			}
+
+			$this->ion_auth->update($user_id, $data);
+		}
+
+		return TRUE;
+	}
+
+    private function _login()
+    {
+        // validate inputs
+        $this->form_validation->set_rules('user_identity', lang('label_username'),'required|trim|xss_clean|max_length[20]');
+        $this->form_validation->set_rules('user_password', lang('label_password'),'required|trim|xss_clean|max_length[20]');
+
+        $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+
+        if ($this->form_validation->run($this) == FALSE)
+        {
+            return 2;
+        }
+
+        $user_remember = (bool) $this->input->post('user_remember');
+        if ($this->ion_auth->login($this->input->post('user_identity'), $this->input->post('user_password'), $user_remember))
+        {
+            return 1;
+        }
+        else
+        {
+            if($this->ion_auth->is_max_login_attempts_exceeded($this->input->post('user_identity')))
+            {
+                return 4;//false
+            }
+            if($this->ion_auth->identity_check($this->input->post('user_identity')) === FALSE){
+                return 3;
+            }
+            return 4;//$this->ion_auth->get_attempts_num($this->input->post('user_identity'));
+        }
+
+    }
+
+
+	private function _save_password()
+	{
+		// validate inputs
+		$min_password_length = $this->config->item('min_password_length', 'ion_auth');
+		$max_password_length = $this->config->item('max_password_length', 'ion_auth');
+
+		$this->form_validation->set_rules('old_password', lang('label_old_password'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('new_password', lang('label_new_password'), 'required|trim|xss_clean|min_length[' . $min_password_length . ']|max_length[' .$max_password_length . ']|matches[new_password_confirm]');
+		$this->form_validation->set_rules('new_password_confirm', lang('label_new_password2'), 'required|trim|xss_clean');
 
 		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
 
@@ -732,53 +650,28 @@ class Users extends CI_Controller
 			return FALSE;
 		}
 
-		$username 	= $this->input->post('username');
-		$email    	= strtolower($this->input->post('email'));
-		$password 	= $this->input->post('password');
-		$groups 	= $this->input->post('groups');
+		$old_password = $this->input->post('old_password');
+		$new_password = $this->input->post('new_password');
 
-		$additional_data = array(
-			'first_name'	=> $this->input->post('first_name'),
-			'last_name'		=> $this->input->post('last_name'),
-			'photo'			=> 'assets/images/unknown.jpg',
-		);
+		$identity = $this->session->userdata($this->config->item('identity', 'ion_auth'));
+		// echo $old_password; exit;
+		if (! $this->ion_auth->change_password($identity, $old_password, $new_password))
+		{
+			return False;
+		}
 
-		if ($this->ion_auth->register($username, $password, $email, $additional_data, $groups))
-		{
-			return TRUE;
-		}
-		else
-		{
-			return FALSE;
-		}
+		// $this->db->cache_delete('users', 'password');
+
+		return TRUE;
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * _edit_user
-	 *
-	 * @access	private
-	 * @param	integer $id
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	private function _edit_user($id)
+	private function _save_profile()
 	{
-		$user = $this->ion_auth->user($id)->row();
-		$groups=$this->ion_auth->groups()->result_array();
-		$currentGroups = $this->ion_auth->get_users_groups($id)->result();
-
-		// validate form input
-		$this->form_validation->set_rules('first_name', lang('edit_user_validation_fname_label'), 'required');
-		$this->form_validation->set_rules('last_name', lang('edit_user_validation_lname_label'), 'required');
-		$this->form_validation->set_rules('email', lang('email'), 'required|valid_email');
-		$this->form_validation->set_rules('username', lang('username'), 'required');
-
-		if ($this->input->post('password'))
-		{
-			$this->form_validation->set_rules('password', lang('edit_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
-			$this->form_validation->set_rules('password_confirm', lang('edit_user_validation_password_confirm_label'), 'required');
-		}
+		// validate inputs
+		$this->form_validation->set_rules('user_firstname', lang('label_firstname'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('user_lastname', lang('label_lastname'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('user_email', lang('label_email'), 'required|trim|xss_clean');
 
 		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
 
@@ -788,162 +681,44 @@ class Users extends CI_Controller
 		}
 
 		$data = array(
-			'first_name' => $this->input->post('first_name'),
-			'last_name'  => $this->input->post('last_name'),
-			'email'  => $this->input->post('email'),
-			'username'  => $this->input->post('username'),
+			'user_firstname'			=> $this->input->post('user_firstname'),
+			'user_lastname'				=> $this->input->post('user_lastname'),
+			'user_email'				=> $this->input->post('user_email'),
 		);
 
-		// update the password if it was posted
-		if ($this->input->post('password'))
+		if (! $this->ion_auth->update($this->session->userdata('user_id'), $data))
 		{
-			$data['password'] = $this->input->post('password');
+			$this->session->set_flashdata('flash_error', $this->ion_auth->errors());
+			redirect('users/profile', 'refresh');
 		}
 
-		// Only allow updating groups if user is admin
-		// if ($this->ion_auth->is_admin())
-		// {
-			// Update the groups user belongs to
-			$groupData = $this->input->post('groups');
-
-			if (isset($groupData) && !empty($groupData)) {
-
-				$this->ion_auth->remove_from_group('', $id);
-
-				foreach ($groupData as $grp) {
-					$this->ion_auth->add_to_group($grp, $id);
-				}
-			}
-		// }
-
-		if ($this->ion_auth->update($user->id, $data))
-		{
-			return TRUE;
-		}
-		else
-		{
-			return FALSE;
-		}
+		return TRUE;
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * _change_password
-	 *
-	 * @access	private
-	 * @param	integer $id
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	private function _change_password()
+	private function _save_picture()
 	{
-
-		$this->form_validation->set_rules('old', lang('change_password_validation_old_password_label'), 'required');
-		$this->form_validation->set_rules('new', lang('change_password_validation_new_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
-		$this->form_validation->set_rules('new_confirm', lang('change_password_validation_new_password_confirm_label'), 'required');
-		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
-		// $user = $this->ion_auth->user()->row();
-
-		if ($this->form_validation->run($this) == FALSE)
-		{
-			return FALSE;
-		}
-		else
-		{
-			$identity = $this->session->userdata('identity');
-
-			$change = $this->ion_auth->change_password($identity, $this->input->post('old'), $this->input->post('new'));
-
-			if ($change)
-			{
-				//if the password was successfully changed
-				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				// $this->logout();
-				return TRUE;
-			}
-			else
-			{
-				$this->session->set_flashdata('message', $this->ion_auth->errors());
-				// redirect('users/change_password', 'refresh');
-				return FALSE;
-			}
-		}
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * _change_profile
-	 *
-	 * @access	private
-	 * @param	object $user
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	private function _change_profile($user)
-	{
-		$this->form_validation->set_rules('first_name', lang('first_name'), 'required');
-		$this->form_validation->set_rules('last_name', lang('last_name'), 'required');
-		$this->form_validation->set_rules('email', lang('email'), 'required|valid_email');
-		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
-
-		if ($this->form_validation->run($this) == FALSE)
-		{
-			return FALSE;
-		}
-		else
-		{
-			$data = array(
-				'first_name' => $this->input->post('first_name'),
-				'last_name'  => $this->input->post('last_name'),
-				'email'  => strtolower($this->input->post('email'))
-			);
-
-			if ($this->ion_auth->update($user->id, $data))
-			{
-				return TRUE;
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * _save_photo
-	 *
-	 * @access	private
-	 * @param	none
-	 * @author 	Randy Nivales <randynivales@gmail.com>
-	 */
-	private function _save_photo()
-	{
-		$path = 'assets/uploads/photos/';
-
 		// get the users profile
-		$user = $this->ion_auth->user()->row();
+		$user = $this->ion_auth->user($this->session->userdata('user_id'))->row();
 
 		$config = array();
-		$config['upload_path'] = FCPATH . $path;
+		$config['upload_path'] = FCPATH.'assets/uploads/propic';
 		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= 0;
-		$config['max_width']  = 0;
-		$config['max_height']  = 0;
+		$config['max_size']	= '0';
+		$config['max_width']  = '0';
+		$config['max_height']  = '0';
 		$config['encrypt_name'] = TRUE;
 
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload('file'))
-		{	echo $this->upload->display_errors(); exit;
+		{
 			return FALSE;
 		}
 		$image_data = $this->upload->data();
-		// pr($image_data); exit;
+		// pr($image_data);
 		log_message('debug', print_r($image_data, true));
-		
-		$this->load->library('image_lib'); 
-		
+
+		$this->load->library('image_lib');
+
 		// resize the image
 		$config['image_library'] = 'gd2';
 		$config['source_image'] = $image_data['full_path'];
@@ -956,41 +731,15 @@ class Users extends CI_Controller
 		{
 		    return FALSE;
 		}
-	
+
 		// filename for the db
-		$photo = $image_data['file_name'];
-		// $this->session->set_userdata('photo', $photo);
+		$user_image = $image_data['file_name'];
+		$this->session->set_userdata('user_image', $user_image);
 
-		
+		// delete the user's previous profile picture
+		unlink(FCPATH . 'assets/uploads/propic/' . $user->user_image);
 
-		if ($this->ion_auth->update($user->id, array('photo' => $path . $photo)))
-		{
-			// delete the user's previous profile photo
-			unlink(FCPATH . $path . $user->photo);
-
-			return TRUE;
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	function _get_csrf_nonce()
-	{
-		$this->load->helper('string');
-		$key   = random_string('alnum', 8);
-		$value = random_string('alnum', 20);
-		$this->session->set_flashdata('csrfkey', $key);
-		$this->session->set_flashdata('csrfvalue', $value);
-
-		return array($key => $value);
-	}
-
-	function _valid_csrf_nonce()
-	{
-		if ($this->input->post($this->session->flashdata('csrfkey')) !== FALSE &&
-			$this->input->post($this->session->flashdata('csrfkey')) == $this->session->flashdata('csrfvalue'))
+		if ($this->ion_auth->update($this->session->userdata('user_id'), array('user_image' => $user_image)))
 		{
 			return TRUE;
 		}
@@ -1000,14 +749,62 @@ class Users extends CI_Controller
 		}
 	}
 
-	function _render_page($view, $data=null, $render=false)
+	private function _forgot_password()
 	{
 
-		$this->viewdata = (empty($data)) ? $this->data: $data;
+		// validate inputs
+		$this->form_validation->set_rules('user_email', lang('label_email'), 'required|trim|xss_clean|valid_email');
 
-		$view_html = $this->load->view($view, $this->viewdata, $render);
+		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
 
-		if (!$render) return $view_html;
+		if ($this->form_validation->run($this) == FALSE)
+		{
+			return 3;
+		}
+
+		// get identity for that email
+		$config_tables = $this->config->item('tables', 'ion_auth');
+		$identity = $this->db->where('user_email', $this->input->post('user_email'))->limit('1')->get($config_tables['users'])->row();
+		if($identity){
+
+            //run the forgotten password method to email an activation code to the user
+            $forgotten = $this->ion_auth->forgotten_password($identity->{$this->config->item('identity', 'ion_auth')});
+
+            return ($forgotten) ? 1 : 2;
+        }
+        else{
+            return 2;
+        }
+	}
+
+	private function _reset_password($code)
+	{
+		// validate inputs
+		$min_password_length = $this->config->item('min_password_length', 'ion_auth');
+		$max_password_length = $this->config->item('max_password_length', 'ion_auth');
+
+		$this->form_validation->set_rules('new_password', lang('label_new_password'), 'required|trim|xss_clean|min_length[' . $min_password_length . ']|max_length[' .$max_password_length . ']|matches[new_password_confirm]');
+
+		$this->form_validation->set_rules('new_password_confirm', lang('label_new_password2'), 'required|trim|xss_clean');
+
+		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+
+		if ($this->form_validation->run($this) == FALSE)
+		{
+			return FALSE;
+		}
+
+		$user = $this->ion_auth->forgotten_password_check($code);
+
+		if (!$user) return FALSE;
+
+		$identity = $user->{$this->config->item('identity', 'ion_auth')};
+		$change = $this->ion_auth->reset_password($identity, $this->input->post('new_password'));
+
+		return ($change) ? TRUE : FALSE;
 	}
 
 }
+
+/* End of file users.php */
+/* Location: ./application/modules/users/controllers/users.php */

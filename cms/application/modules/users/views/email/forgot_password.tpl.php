@@ -1,6 +1,1 @@
-<html>
-<body>
-	<h1><?php echo sprintf(lang('email_forgot_password_heading'), $identity);?></h1>
-	<p><?php echo sprintf(lang('email_forgot_password_subheading'), anchor('users/reset_password/'. $forgotten_password_code, lang('email_forgot_password_link')));?></p>
-</body>
-</html>
+We received a request to reset your password. If you made this request, you can confirm it by clicking  <a href=" <?php echo site_url('users/reset_password/'. $forgotten_password_code); ?>">this link</a>. If you didn't request this password reset, it's ok to ignore this mail.

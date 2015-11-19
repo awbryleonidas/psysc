@@ -1,0 +1,10 @@
+/*.modal .modal-body {
+	min-height: 420px;
+    max-height: 420px;
+    overflow-y: auto;
+}*/
+
+/*.modal .modal-body iframe {
+	min-height: 100%;
+    max-height: 100%;
+}*/
