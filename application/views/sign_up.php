@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo site_url('assets')?>/<?php echo site_url('assets')?>/img/favicon.png"/>
+	<link rel="shortcut icon" type="image/png" href="<?php echo site_url('assets')?>/img/favicon.png"/>
 
 	<!-- CSS
 	================================================== -->
@@ -86,7 +86,7 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right main_nav">
-						<li><a href="<?php echo site_url()?>">Home</a></li>
+						<li><a href="<?php echo site_url('index.php/')?>">Home</a></li>
 						<li class=""><a href="blog-archive.html">Logout</a></li>
 						<li class="active"><a href="blog-archive.html">Blog</a></li>
 					</ul>
@@ -195,7 +195,7 @@
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="footer_left">
 					<!--=========== Copyright ================-->
-					<p>© C.Leonidas, 2015</p>
+					<p>© PSYSC, 2015</p>
 					<!--=========== Copyright ================-->
 				</div>
 			</div>

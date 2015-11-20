@@ -93,10 +93,13 @@
 						<!--<li><a href="#gallery">Gallery</a></li>-->
 						<li><a href="#contact">Contact Us</a></li>
 						<!--<li><a href="#pricing">Join Us</a></li>-->
-						<li><a href="<?php echo site_url('site/sign_up')?>">Sign Up</a></li>
-						<li><a href="<?php echo site_url('site/login')?>">Login</a></li>
+						<!--<li><a href="<?php /*echo site_url('index.php/site/sign_up')*/?>">Sign Up</a></li>-->
+						<!--<li><a href="<?php /*echo site_url('index.php/site/login')*/?>">Login</a></li>-->
 					</ul>
-				</div><!--/.nav-collapse -->
+				</div>
+
+
+				<!--/.nav-collapse -->
 			</div>
 		</nav>
 	</div>
@@ -167,6 +170,7 @@
 		<!-- END SLIDER-->
 	</div>
 	<!-- END SLIDER AREA -->
+	<center><a href="<?php echo site_url('index.php/site/sign_up')?>">Sign Up</a><a href="<?php echo site_url('index.php/site/login')?>">Login</a></center>
 </header>
 <!--=========== End HEADER SECTION ================-->
 
@@ -1123,7 +1127,7 @@
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="footer_left">
 					<!--=========== Copyright ================-->
-					<p>© C.Leonidas, 2015</p>
+					<p>© PSYSC, 2015</p>
 					<!--=========== Copyright ================-->
 				</div>
 			</div>

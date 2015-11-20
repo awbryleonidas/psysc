@@ -2,424 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3463b3e-e570-4941-a796-abd2ef4ab128" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\application\migrations\001_create_nothing.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\application\migrations\002_create_details.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\application\migrations\003_create_performances.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\application\migrations\004_create_consumers.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\application\migrations\create_rnd_contacts.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\application\migrations\create_rnds.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\application\migrations\create_stores.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\application\migrations\edit_rnd_stores.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\cache\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\config\memcached.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\config\redis.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\core\BF_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\language\english\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\libraries\App_configs.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\dashboard\controllers\Dashboard.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\dashboard\language\english\dashboard_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\dashboard\models\dashboard_model.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\dashboard\views\css\dashboard_index.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\dashboard\views\dashboard_index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\dashboard\views\js\dashboard_index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\config\config.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\config\migration.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\controllers\Builder.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\controllers\Migrations.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\language\english\builder_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\language\english\migrations_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\migrations\001_rollback_develop.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\migrations\002_add_develop_menu.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\migrations\003_create_grants.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\builder_add_module.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\builder_index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\css\builder_add_module.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\css\builder_index.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\css\migrations_index.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\js\builder_add_module.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\js\migrations_index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\js\migrations_rollback.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\migrations_index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\migrations_rollback.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\config\migration.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\controllers\Template.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\language\english\template_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\migrations\001_rollback_template.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\migrations\002_create_template.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\models\Template_model.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\css\template_form.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\css\template_index.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\js\template_form.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\js\template_index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\template_checkbox.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\template_form.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\template_index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\template_input.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\template_radio.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\template_select.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\develop\views\template\views\template_textarea.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\config\migration.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\controllers\Auditlogs.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\language\english\auditlogs_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\migrations\001_rollback_reports.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\migrations\002_create_auditlogs.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\models\Auditlogs_model.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\views\auditlogs_index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\views\auditlogs_view.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\views\css\auditlogs_index.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\reports\views\js\auditlogs_index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\config\migration.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\controllers\Configs.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\controllers\Menus.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\language\english\configs_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\language\english\menus_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\migrations\001_rollback_settings.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\migrations\002_create_menus.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\migrations\003_create_configs.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\models\Configs_model.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\models\Menus_model.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\configs_form.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\configs_index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\css\menus_form.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\js\configs_form.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\js\configs_index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\js\menus_form.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\js\menus_index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\menus_form.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\settings\views\menus_index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\config\migration.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\controllers\Roles.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\language\english\auth_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\language\english\roles_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\migrations\001_rollback_users.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\migrations\002_create_users.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\migrations\003_create_permissions.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\models\Grants_model.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\change_password.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\create_group.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\create_user.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\css\roles_index.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\css\roles_permissions.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\css\users_photo.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\deactivate_user.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\edit_group.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\edit_user.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\forgot_password.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\js\permissions_form.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\js\roles_form.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\js\roles_index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\js\roles_permissions.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\js\users_password.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\js\users_photo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\login.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\reset_password.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\roles_form.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\roles_index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\roles_permissions.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\modules\users\views\users_photo.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\blank.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\cli\error_404.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\cli\error_db.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\cli\error_exception.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\cli\error_general.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\cli\error_php.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\cli\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\html\error_404.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\html\error_db.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\html\error_exception.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\html\error_general.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\html\error_php.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\html\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\errors\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\application\views\modal.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\assets\images\ci.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\core\Log.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\core\compat\hash.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\core\compat\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\core\compat\mbstring.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\core\compat\password.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\core\compat\standard.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\DB_query_builder.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\ibase\ibase_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\ibase\ibase_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\ibase\ibase_result.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\ibase\ibase_utility.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\ibase\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_4d_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_4d_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_cubrid_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_cubrid_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_dblib_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_dblib_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_firebird_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_firebird_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_ibm_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_ibm_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_informix_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_informix_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_mysql_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_mysql_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_oci_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_oci_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_odbc_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_odbc_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_pgsql_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_pgsql_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_sqlite_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_sqlite_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_sqlsrv_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\pdo\subdrivers\pdo_sqlsrv_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\sqlite3\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\sqlite3\sqlite3_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\sqlite3\sqlite3_forge.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\sqlite3\sqlite3_result.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\database\drivers\sqlite3\sqlite3_utility.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\language\english\pagination_lang.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Cache\drivers\Cache_redis.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Cache\drivers\Cache_wincache.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Encryption.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\Session.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\SessionHandlerInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\Session_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\drivers\Session_database_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\drivers\Session_files_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\drivers\Session_memcached_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\drivers\Session_redis_driver.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\drivers\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\web\etc\psyc\live\cms\system\libraries\Session\index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/assets/images/logo.png" afterPath="$PROJECT_DIR$/cms/assets/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/.gitignore" afterPath="$PROJECT_DIR$/cms/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/.htaccess" afterPath="$PROJECT_DIR$/cms/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/.htaccess" afterPath="$PROJECT_DIR$/cms/application/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/.htaccess" afterPath="$PROJECT_DIR$/cms/system/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/libraries/Acl.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/libraries/Acl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/libraries/App_menu.php" afterPath="$PROJECT_DIR$/cms/application/libraries/App_menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/MX/Base.php" afterPath="$PROJECT_DIR$/cms/application/third_party/MX/Base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/libraries/Bcrypt.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/libraries/Bcrypt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Benchmark.php" afterPath="$PROJECT_DIR$/cms/system/core/Benchmark.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/libraries/Breadcrumbs.php" afterPath="$PROJECT_DIR$/cms/application/libraries/Breadcrumbs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Cache/Cache.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Cache/Cache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/Cache_apc.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/Cache_apc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/Cache_dummy.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/Cache_dummy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/Cache_file.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/Cache_file.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/Cache_memcached.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/Cache_memcached.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Calendar.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Calendar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Cart.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Cart.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/MX/Ci.php" afterPath="$PROJECT_DIR$/cms/application/third_party/MX/Ci.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/CodeIgniter.php" afterPath="$PROJECT_DIR$/cms/system/core/CodeIgniter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Common.php" afterPath="$PROJECT_DIR$/cms/system/core/Common.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/MX/Config.php" afterPath="$PROJECT_DIR$/cms/application/third_party/MX/Config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Config.php" afterPath="$PROJECT_DIR$/cms/system/core/Config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/MX/Controller.php" afterPath="$PROJECT_DIR$/cms/application/third_party/MX/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Controller.php" afterPath="$PROJECT_DIR$/cms/system/core/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/DB.php" afterPath="$PROJECT_DIR$/cms/system/database/DB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/DB_cache.php" afterPath="$PROJECT_DIR$/cms/system/database/DB_cache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/DB_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/DB_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/DB_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/DB_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/DB_result.php" afterPath="$PROJECT_DIR$/cms/system/database/DB_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/DB_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/DB_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Driver.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Email.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Email.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Encrypt.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Encrypt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Exceptions.php" afterPath="$PROJECT_DIR$/cms/system/core/Exceptions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Form_validation.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Form_validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Ftp.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Ftp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Hooks.php" afterPath="$PROJECT_DIR$/cms/system/core/Hooks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Image_lib.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Image_lib.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Input.php" afterPath="$PROJECT_DIR$/cms/system/core/Input.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/libraries/Ion_auth.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/libraries/Ion_auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Javascript.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Javascript.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/javascript/Jquery.php" afterPath="$PROJECT_DIR$/cms/system/libraries/javascript/Jquery.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/MX/Lang.php" afterPath="$PROJECT_DIR$/cms/application/third_party/MX/Lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Lang.php" afterPath="$PROJECT_DIR$/cms/system/core/Lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/MX/Loader.php" afterPath="$PROJECT_DIR$/cms/application/third_party/MX/Loader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Loader.php" afterPath="$PROJECT_DIR$/cms/system/core/Loader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/core/MY_Loader.php" afterPath="$PROJECT_DIR$/cms/application/core/MY_Loader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/libraries/MY_Migration.php" afterPath="$PROJECT_DIR$/cms/application/libraries/MY_Migration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Migration.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Migration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Model.php" afterPath="$PROJECT_DIR$/cms/system/core/Model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/MX/Modules.php" afterPath="$PROJECT_DIR$/cms/application/third_party/MX/Modules.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Output.php" afterPath="$PROJECT_DIR$/cms/system/core/Output.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Pagination.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Pagination.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Parser.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Parser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Profiler.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Profiler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/MX/Router.php" afterPath="$PROJECT_DIR$/cms/application/third_party/MX/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Router.php" afterPath="$PROJECT_DIR$/cms/system/core/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Security.php" afterPath="$PROJECT_DIR$/cms/system/core/Security.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Table.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/libraries/Template.php" afterPath="$PROJECT_DIR$/cms/application/libraries/Template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Trackback.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Trackback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Typography.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Typography.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/URI.php" afterPath="$PROJECT_DIR$/cms/system/core/URI.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Unit_test.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Unit_test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Upload.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/libraries/Upload_folders.php" afterPath="$PROJECT_DIR$/cms/application/libraries/Upload_folders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/User_agent.php" afterPath="$PROJECT_DIR$/cms/system/libraries/User_agent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/Utf8.php" afterPath="$PROJECT_DIR$/cms/system/core/Utf8.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Xmlrpc.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Xmlrpc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Xmlrpcs.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Xmlrpcs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Zip.php" afterPath="$PROJECT_DIR$/cms/system/libraries/Zip.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/email/activate.tpl.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/email/activate.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/settings/views/application_index.php" afterPath="$PROJECT_DIR$/cms/application/modules/settings/views/application_index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/settings/language/english/application_lang.php" afterPath="$PROJECT_DIR$/cms/application/modules/settings/language/english/application_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/array_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/array_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/autoload.php" afterPath="$PROJECT_DIR$/cms/application/config/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/calendar_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/calendar_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/captcha_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/captcha_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/helpers/common_helper.php" afterPath="$PROJECT_DIR$/cms/application/helpers/common_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/language/english/common_lang.php" afterPath="$PROJECT_DIR$/cms/application/language/english/common_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/config.php" afterPath="$PROJECT_DIR$/cms/application/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/views/confirm.php" afterPath="$PROJECT_DIR$/cms/application/views/confirm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/constants.php" afterPath="$PROJECT_DIR$/cms/application/config/constants.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/cookie_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/cookie_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/cubrid_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/cubrid_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/cubrid_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/cubrid_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/cubrid_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/cubrid_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/cubrid_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/cubrid_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/custom.js" afterPath="$PROJECT_DIR$/assets/js/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/database.php" afterPath="$PROJECT_DIR$/cms/application/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/date_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/date_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/date_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/date_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/db_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/db_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/directory_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/directory_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/doctypes.php" afterPath="$PROJECT_DIR$/cms/application/config/doctypes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/download_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/download_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/email_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/email_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/email_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/email_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/file_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/file_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/foreign_chars.php" afterPath="$PROJECT_DIR$/cms/application/config/foreign_chars.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/email/forgot_password.tpl.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/email/forgot_password.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/form_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/form_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/form_validation_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/form_validation_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/ftp_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/ftp_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/hooks.php" afterPath="$PROJECT_DIR$/cms/application/config/hooks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/html_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/html_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/imglib_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/imglib_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/index.html" afterPath="$PROJECT_DIR$/cms/application/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/cache/index.html" afterPath="$PROJECT_DIR$/cms/application/cache/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/index.html" afterPath="$PROJECT_DIR$/cms/application/config/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/controllers/index.html" afterPath="$PROJECT_DIR$/cms/application/controllers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/core/index.html" afterPath="$PROJECT_DIR$/cms/application/core/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/helpers/index.html" afterPath="$PROJECT_DIR$/cms/application/helpers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/hooks/index.html" afterPath="$PROJECT_DIR$/cms/application/hooks/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/language/index.html" afterPath="$PROJECT_DIR$/cms/application/language/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/libraries/index.html" afterPath="$PROJECT_DIR$/cms/application/libraries/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/logs/index.html" afterPath="$PROJECT_DIR$/cms/application/logs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/models/index.html" afterPath="$PROJECT_DIR$/cms/application/models/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/third_party/index.html" afterPath="$PROJECT_DIR$/cms/application/third_party/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/views/index.html" afterPath="$PROJECT_DIR$/cms/application/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/index.html" afterPath="$PROJECT_DIR$/cms/system/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/core/index.html" afterPath="$PROJECT_DIR$/cms/system/core/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/index.html" afterPath="$PROJECT_DIR$/cms/system/database/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/cubrid/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mssql/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mssql/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysql/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysql/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/oci8/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/oci8/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/odbc/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/odbc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/pdo/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/pdo/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/postgre/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/postgre/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/index.html" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/fonts/index.html" afterPath="$PROJECT_DIR$/cms/system/fonts/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/index.html" afterPath="$PROJECT_DIR$/cms/system/helpers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/index.html" afterPath="$PROJECT_DIR$/cms/system/language/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/index.html" afterPath="$PROJECT_DIR$/cms/system/language/english/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/index.html" afterPath="$PROJECT_DIR$/cms/system/libraries/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Cache/index.html" afterPath="$PROJECT_DIR$/cms/system/libraries/Cache/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/index.html" afterPath="$PROJECT_DIR$/cms/system/libraries/Cache/drivers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/libraries/javascript/index.html" afterPath="$PROJECT_DIR$/cms/system/libraries/javascript/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/index.php" afterPath="$PROJECT_DIR$/cms/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/inflector_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/inflector_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/config/ion_auth.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/config/ion_auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/language/english/ion_auth_lang.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/language/english/ion_auth_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/language_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/language_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/migration.php" afterPath="$PROJECT_DIR$/cms/application/config/migration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/migration_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/migration_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/mimes.php" afterPath="$PROJECT_DIR$/cms/application/config/mimes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mssql/mssql_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mssql/mssql_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mssql/mssql_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mssql/mssql_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mssql/mssql_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mssql/mssql_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mssql/mssql_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mssql/mssql_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysql/mysql_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysql/mysql_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysql/mysql_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysql/mysql_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysql/mysql_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysql/mysql_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysql/mysql_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysql/mysql_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/mysqli_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/mysqli_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/mysqli_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/mysqli_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/mysqli_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/mysqli_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/mysqli_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/mysqli/mysqli_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/number_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/number_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/number_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/number_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/oci8/oci8_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/oci8/oci8_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/oci8/oci8_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/oci8/oci8_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/oci8/oci8_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/oci8/oci8_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/oci8/oci8_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/oci8/oci8_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/odbc/odbc_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/odbc/odbc_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/odbc/odbc_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/odbc/odbc_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/odbc/odbc_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/odbc/odbc_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/odbc/odbc_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/odbc/odbc_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/path_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/path_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/pdo/pdo_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/pdo/pdo_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/pdo/pdo_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/pdo/pdo_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/pdo/pdo_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/pdo/pdo_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/pdo/pdo_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/pdo/pdo_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/permissions_form.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/permissions_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/js/permissions_index.js" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/js/permissions_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/permissions_index.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/permissions_index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/language/english/permissions_lang.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/language/english/permissions_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/postgre/postgre_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/postgre/postgre_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/postgre/postgre_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/postgre/postgre_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/postgre/postgre_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/postgre/postgre_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/postgre/postgre_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/postgre/postgre_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/profiler.php" afterPath="$PROJECT_DIR$/cms/application/config/profiler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/profiler_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/profiler_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/routes.php" afterPath="$PROJECT_DIR$/cms/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/security_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/security_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/sign_up.php" afterPath="$PROJECT_DIR$/application/views/sign_up.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/site_template.php" afterPath="$PROJECT_DIR$/application/views/site_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/smiley_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/smiley_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/smileys.php" afterPath="$PROJECT_DIR$/cms/application/config/smileys.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/sqlite_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/sqlite_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/sqlite_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/sqlite_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/sqlite_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/sqlite_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/sqlite_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlite/sqlite_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/sqlsrv_driver.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/sqlsrv_driver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/sqlsrv_forge.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/sqlsrv_forge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/sqlsrv_result.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/sqlsrv_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/sqlsrv_utility.php" afterPath="$PROJECT_DIR$/cms/system/database/drivers/sqlsrv/sqlsrv_utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/string_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/string_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/style.css" afterPath="$PROJECT_DIR$/assets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/template.php" afterPath="$PROJECT_DIR$/cms/application/config/template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/views/template.php" afterPath="$PROJECT_DIR$/cms/application/views/template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/text_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/text_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/typography_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/typography_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/unit_test_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/unit_test_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/language/english/upload_lang.php" afterPath="$PROJECT_DIR$/cms/system/language/english/upload_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/url_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/url_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/config/user_agents.php" afterPath="$PROJECT_DIR$/cms/application/config/user_agents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/js/users_form.js" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/js/users_form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/users_form.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/users_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/js/users_index.js" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/js/users_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/users_index.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/users_index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/language/english/users_lang.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/language/english/users_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/users_password.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/users_password.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/js/users_profile.js" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/js/users_profile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/application/modules/users/views/users_profile.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/views/users_profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/system/helpers/xml_helper.php" afterPath="$PROJECT_DIR$/cms/system/helpers/xml_helper.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/site.php" afterPath="$PROJECT_DIR$/application/controllers/site.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/controllers/migrate.php" afterPath="$PROJECT_DIR$/cms/application/controllers/migrate.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/models/migrations_model.php" afterPath="$PROJECT_DIR$/cms/application/models/migrations_model.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/modules/reports/controllers/reports.php" afterPath="$PROJECT_DIR$/cms/application/modules/reports/controllers/reports.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/modules/settings/controllers/application.php" afterPath="$PROJECT_DIR$/cms/application/modules/settings/controllers/application.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/modules/users/controllers/permissions.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/controllers/permissions.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/modules/users/controllers/users.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/controllers/users.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/modules/users/models/groups_model.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/models/groups_model.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/modules/users/models/ion_auth_model.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/models/ion_auth_model.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/modules/users/models/permissions_model.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/models/permissions_model.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cms/application/modules/users/models/users_model.php" afterPath="$PROJECT_DIR$/cms/application/modules/users/models/users_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user_profile.php" afterPath="$PROJECT_DIR$/application/views/user_profile.php" />
     </list>
     <ignored path="live.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -445,7 +30,7 @@
       <file leaf-file-name="site.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="39" selection-start="1258" selection-end="1258" vertical-scroll-proportion="-19.0" vertical-offset="504" max-vertical-offset="1710">
+            <state line="51" column="42" selection-start="1020" selection-end="1020" vertical-scroll-proportion="-8.375" vertical-offset="564" max-vertical-offset="1710">
               <folding />
             </state>
           </provider>
@@ -454,28 +39,34 @@
       <file leaf-file-name="site_template.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/site_template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="68" selection-start="4080" selection-end="4080" vertical-scroll-proportion="-36.25" vertical-offset="570" max-vertical-offset="17655">
+            <state line="1129" column="30" selection-start="48112" selection-end="48112" vertical-scroll-proportion="-3.164557" vertical-offset="16685" max-vertical-offset="17715">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sign_up.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sign_up.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/sign_up.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="27" selection-start="1764" selection-end="1764" vertical-scroll-proportion="-6.58" vertical-offset="256" max-vertical-offset="3735">
+            <state line="32" column="39" selection-start="1347" selection-end="1347" vertical-scroll-proportion="0.58465284" vertical-offset="0" max-vertical-offset="3735">
               <folding>
                 <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1447928078448" expanded="true" signature="4412:4630" placeholder="..." />
+                <marker date="1447928078448" expanded="true" signature="4436:4630" placeholder="..." />
+                <marker date="1447928078448" expanded="true" signature="4454:4630" placeholder="..." />
+                <marker date="1447928078448" expanded="true" signature="4498:4630" placeholder="..." />
+                <marker date="1447928078448" expanded="true" signature="4563:4630" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_profile.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user_profile.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/user_profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="285" column="17" selection-start="11145" selection-end="11145" vertical-scroll-proportion="0.28505215" vertical-offset="4029" max-vertical-offset="6045">
+            <state line="351" column="30" selection-start="13165" selection-end="13165" vertical-scroll-proportion="-65.88608" vertical-offset="60" max-vertical-offset="6045">
               <folding>
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -494,7 +85,7 @@
       <file leaf-file-name="custom.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="11" selection-start="156" selection-end="160" vertical-scroll-proportion="-5.769231" vertical-offset="0" max-vertical-offset="6930">
+            <state line="25" column="29" selection-start="426" selection-end="426" vertical-scroll-proportion="-14.423077" vertical-offset="0" max-vertical-offset="6930">
               <folding />
             </state>
           </provider>
@@ -535,10 +126,10 @@
         <option value="$PROJECT_DIR$/assets/js/custom.js" />
         <option value="$PROJECT_DIR$/assets/style.css" />
         <option value="$PROJECT_DIR$/application/views/single_view.php" />
-        <option value="$PROJECT_DIR$/application/views/sign_up.php" />
         <option value="$PROJECT_DIR$/application/controllers/site.php" />
         <option value="$PROJECT_DIR$/application/views/site_template.php" />
         <option value="$PROJECT_DIR$/application/views/user_profile.php" />
+        <option value="$PROJECT_DIR$/application/views/sign_up.php" />
       </list>
     </option>
   </component>
@@ -700,7 +291,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../png/ice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SinglePro" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1026,13 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="156" selection-end="160" vertical-scroll-proportion="-5.769231" vertical-offset="0" max-vertical-offset="6930">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2129" column="5" selection-start="31757" selection-end="31761" vertical-scroll-proportion="-11.038462" vertical-offset="31648" max-vertical-offset="37530">
@@ -1040,34 +624,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/sign_up.php">
+    <entry file="file://$PROJECT_DIR$/assets/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="27" selection-start="1764" selection-end="1764" vertical-scroll-proportion="-6.58" vertical-offset="256" max-vertical-offset="3735">
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="25" column="29" selection-start="426" selection-end="426" vertical-scroll-proportion="-14.423077" vertical-offset="0" max-vertical-offset="6930">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/site.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="39" selection-start="1258" selection-end="1258" vertical-scroll-proportion="-19.0" vertical-offset="504" max-vertical-offset="1710">
+        <state line="51" column="42" selection-start="1020" selection-end="1020" vertical-scroll-proportion="-8.375" vertical-offset="564" max-vertical-offset="1710">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/site_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="68" selection-start="4080" selection-end="4080" vertical-scroll-proportion="-36.25" vertical-offset="570" max-vertical-offset="17655">
+        <state line="1129" column="30" selection-start="48112" selection-end="48112" vertical-scroll-proportion="-3.164557" vertical-offset="16685" max-vertical-offset="17715">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user_profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="285" column="17" selection-start="11145" selection-end="11145" vertical-scroll-proportion="0.28505215" vertical-offset="4029" max-vertical-offset="6045">
+        <state line="351" column="30" selection-start="13165" selection-end="13165" vertical-scroll-proportion="-65.88608" vertical-offset="60" max-vertical-offset="6045">
           <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/sign_up.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="39" selection-start="1347" selection-end="1347" vertical-scroll-proportion="0.58465284" vertical-offset="0" max-vertical-offset="3735">
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1447928078448" expanded="true" signature="4412:4630" placeholder="..." />
+            <marker date="1447928078448" expanded="true" signature="4436:4630" placeholder="..." />
+            <marker date="1447928078448" expanded="true" signature="4454:4630" placeholder="..." />
+            <marker date="1447928078448" expanded="true" signature="4498:4630" placeholder="..." />
+            <marker date="1447928078448" expanded="true" signature="4563:4630" placeholder="..." />
           </folding>
         </state>
       </provider>
