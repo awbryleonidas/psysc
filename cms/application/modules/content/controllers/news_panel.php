@@ -140,12 +140,12 @@ class News_panel extends MX_Controller
 	private function _save($type = 'add', $id = 0)
 	{
 		// validate inputs
-		$this->form_validation->set_rules('news_panel_caption', lang('label_message'), 'required|trim|xss_clean');
-		$this->form_validation->set_rules('news_panel_link', lang('label_active'), 'required|trim|xss_clean');
-		$this->form_validation->set_rules('news_panel_author', lang('label_news_panel_longitude'), 'required|trim|xss_clean');
-		$this->form_validation->set_rules('news_panel_tags', lang('label_news_panel_latitude'), 'required|trim|xss_clean');
-		$this->form_validation->set_rules('news_panel_header', lang('label_news_panel_date'), 'required|trim|xss_clean');
-		$this->form_validation->set_rules('news_panel_image', lang('label_news_panel_beacon_id'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('news_panel_caption', lang('label_caption'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('news_panel_link', lang('label_link'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('news_panel_author', lang('label_author'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('news_panel_tags', lang('label_tags'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('news_panel_header', lang('label_header'), 'required|trim|xss_clean');
+		$this->form_validation->set_rules('news_panel_image', lang('label_image'), 'required|trim|xss_clean');
 
 
 		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

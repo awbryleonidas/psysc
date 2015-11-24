@@ -16,7 +16,7 @@ $lang['label_id']					= 'ID';
 $lang['label_author']				= 'Author';
 $lang['label_created_on']			= 'Date Created';
 $lang['label_header']			    = 'Header';
-$lang['label_tags']			    = 'Tags';
+$lang['label_tags']			        = 'Tags';
 
 // Buttons
 $lang['button_add']					= 'Add News';

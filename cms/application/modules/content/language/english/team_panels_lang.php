@@ -5,21 +5,22 @@ $lang['crumb_module']				= 'Content';
 $lang['crumb_controller']			= 'Members';
 
 // Labels
-$lang['label_message']				= 'Member Message';
-$lang['label_active']				= 'Active';
-$lang['label_alert_type']			= 'Type';
-$lang['label_alert_latitude']		= 'Latitude';
-$lang['label_alert_longitude']		= 'Longitude';
-$lang['label_mall']		            = 'Mall';
-$lang['label_coupon']		        = 'Coupon';
-$lang['label_alert_beacon_id']	    = 'Beacon';
-$lang['label_alert_date']		    = 'Date';
-$lang['label_redirect'] 		    = 'Redirect Type';
-$lang['label_none']				    = 'None';
-$lang['label_feed']				    = 'Feed';
-$lang['label_url'] 				    = 'URL';
+$lang['label_image']				= 'Image';
+$lang['label_caption']				= 'Caption';
+$lang['label_image']				= 'Image';
 $lang['label_start']				= 'Start';
 $lang['label_end']					= 'End';
+$lang['label_brand']				= 'Brand';
+$lang['label_link']					= 'Link';
+$lang['label_id']					= 'ID';
+$lang['label_name']				    = 'Name';
+$lang['label_image']				= 'Image';
+$lang['label_created_on']			= 'Date Created';
+$lang['label_position']			    = 'Position';
+$lang['label_description']		    = 'Description';
+$lang['label_facebook']		        = 'Facebook Link';
+$lang['label_twitter']		        = 'Twitter Link';
+$lang['label_type']		            = 'Type';
 
 // Buttons
 $lang['button_add']					= 'Add Member';
@@ -29,25 +30,33 @@ $lang['button_edit_this']			= 'Edit This';
 
 
 // Index Function
-$lang['index_heading']				= 'Members';
-$lang['index_subhead']				= 'List of all alerts';
+$lang['index_heading']				= 'Member';
+$lang['index_subhead']				= 'List of all Member';
 $lang['index_id']					= 'ID';
-$lang['index_name']					= 'Member Message';
-$lang['index_status']				= 'Status';
+$lang['index_position']			    = 'Position';
+$lang['index_description']		    = 'Description';
+$lang['index_facebook']		        = 'Facebook Link';
+$lang['index_twitter']		        = 'Twitter Link';
+$lang['index_type']		            = 'Type';
+$lang['index_created_on']			= 'Date Created';
+$lang['index_name']			        = 'Name';
 $lang['index_action']				= 'Action';
+$lang['index_image']				= 'Image';
 
 // View Function
-$lang['view_heading']				= 'View Member Message';
+$lang['view_heading']				= 'View Member';
 
 // Add Function
-$lang['add_heading']				= 'Add Member Message';
+$lang['add_heading']				= 'Add Member';
+$lang['add_subhead']				= 'Add a member';
 $lang['add_success']				= 'Member has been successfully added';
 
 // Edit Function
-$lang['edit_heading']				= 'Edit Member Message';
+$lang['edit_heading']				= 'Edit Member';
+$lang['edit_subhead']				= 'Edit a member';
 $lang['edit_success']				= 'Member has been successfully updated';
 
 // Delete Function
-$lang['delete_heading']				= 'Delete Member Message';
-$lang['delete_confirm']				= 'Are you sure you want to delete this alert?';
+$lang['delete_heading']				= 'Delete Member';
+$lang['delete_confirm']				= 'Are you sure you want to delete this member?';
 $lang['delete_success']				= 'Member has been successfully deleted';
