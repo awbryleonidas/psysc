@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home_panel_model extends MY_Model
+class Home_panels_model extends MY_Model
 {
 
 	protected $table				= "home_panels";

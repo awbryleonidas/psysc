@@ -2,7 +2,7 @@
 
 // Breadcrumbs
 $lang['crumb_module']				= 'Content';
-$lang['crumb_controller']			= 'Abouts';
+$lang['crumb_controller']			= 'About';
 
 // Labels
 $lang['label_image']				= 'Image';

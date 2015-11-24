@@ -14,7 +14,7 @@
 
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_text">Text:</label>
-						<?php $formdata = array('id'=>'home_text', 'name'=>'home_text', 'value'=>set_value('home_text', isset($config['home_text']) ? $config['home_text'] : ''), 'class'=>'form-control'); ?>
+						<?php $formdata = array('id'=>'home_text', 'name'=>'home_text', 'value'=>set_value('home_text', isset($panel_1->home_panel_text) ? $panel_1->home_panel_text : ''), 'class'=>'form-control'); ?>
 						<div class="col-sm-8">
 							<?php echo form_input($formdata); ?>
 							<div class="help-text"><?=lang('text_home_text')?></div>
@@ -24,7 +24,7 @@
 
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_caption">Caption:</label>
-						<?php $formdata = array('id'=>'home_caption', 'name'=>'home_caption', 'value'=>set_value('home_caption', isset($config['home_caption']) ? $config['home_caption'] : ''), 'class'=>'form-control'); ?>
+						<?php $formdata = array('id'=>'home_caption', 'name'=>'home_caption', 'value'=>set_value('home_caption', isset($panel_1->home_panel_caption) ? $panel_1->home_panel_caption : ''), 'class'=>'form-control'); ?>
 						<div class="col-sm-8">
 							<?php echo form_input($formdata); ?>
 							<div class="help-text"><?=lang('text_home_caption')?></div>
@@ -38,14 +38,14 @@
 							<?php $home_link = array(
 								'0' => 'Home', '1' => 'About', '2' => 'Events', '3' => 'News', '4' => 'Contact Us',
 							);?>
-							<?php echo form_dropdown('home_link_to', $home_link, set_value('home_link_to', (isset($record->home_link_to) && $record->home_link_to != '') ? $record->home_link_to : ''), 'id="home_link_to" class="form-control"'); ?>
+							<?php echo form_dropdown('home_link_to', $home_link, set_value('home_link_to', (isset($panel_1->home_panel_link_to) && $panel_1->home_panel_link_to != '') ? $panel_1->home_panel_link_to : ''), 'id="home_link_to" class="form-control"'); ?>
 							<div id="error_home_link_to"></div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_link_text">Link Text:</label>
 						<div class="col-sm-8">
-							<?php $formdata = array('id'=>'home_link_text', 'name'=>'home_link_text', 'value'=>set_value('home_link_text', (isset($record->home_link_text) && $record->home_link_text !== '0000-00-00 00:00:00' ) ? $record->home_link_text : ''), 'class'=>'form-control'); ?>
+							<?php $formdata = array('id'=>'home_link_text', 'name'=>'home_link_text', 'value'=>set_value('home_link_text', (isset($panel_1->home_panel_link_text) && $panel_1->home_panel_link_text !== '' ) ? $panel_1->home_panel_link_text : ''), 'class'=>'form-control'); ?>
 							<?php echo form_input($formdata);?>
 							<div id="error_home_link_text"></div>
 						</div>
@@ -88,7 +88,7 @@
 
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_text">Text:</label>
-						<?php $formdata = array('id'=>'home_text', 'name'=>'home_text', 'value'=>set_value('home_text', isset($config['home_text']) ? $config['home_text'] : ''), 'class'=>'form-control'); ?>
+						<?php $formdata = array('id'=>'home_text', 'name'=>'home_text', 'value'=>set_value('home_text', isset($panel_2->home_panel_text) ? $panel_2->home_panel_text : ''), 'class'=>'form-control'); ?>
 						<div class="col-sm-8">
 							<?php echo form_input($formdata); ?>
 							<div class="help-text"><?=lang('text_home_text')?></div>
@@ -98,7 +98,7 @@
 
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_caption">Caption:</label>
-						<?php $formdata = array('id'=>'home_caption', 'name'=>'home_caption', 'value'=>set_value('home_caption', isset($config['home_caption']) ? $config['home_caption'] : ''), 'class'=>'form-control'); ?>
+						<?php $formdata = array('id'=>'home_caption', 'name'=>'home_caption', 'value'=>set_value('home_caption', isset($panel_2->home_panel_caption) ? $panel_2->home_panel_caption : ''), 'class'=>'form-control'); ?>
 						<div class="col-sm-8">
 							<?php echo form_input($formdata); ?>
 							<div class="help-text"><?=lang('text_home_caption')?></div>
@@ -112,14 +112,14 @@
 							<?php $home_link = array(
 								'0' => 'Home', '1' => 'About', '2' => 'Events', '3' => 'News', '4' => 'Contact Us',
 							);?>
-							<?php echo form_dropdown('home_link_to', $home_link, set_value('home_link_to', (isset($record->home_link_to) && $record->home_link_to != '') ? $record->home_link_to : ''), 'id="home_link_to" class="form-control"'); ?>
+							<?php echo form_dropdown('home_link_to', $home_link, set_value('home_link_to', (isset($panel_2->home_panel_link_to) && $panel_2->home_panel_link_to != '') ? $panel_2->home_panel_link_to : ''), 'id="home_link_to" class="form-control"'); ?>
 							<div id="error_home_link_to"></div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_link_text">Link Text:</label>
 						<div class="col-sm-8">
-							<?php $formdata = array('id'=>'home_link_text', 'name'=>'home_link_text', 'value'=>set_value('home_link_text', (isset($record->home_link_text) && $record->home_link_text !== '0000-00-00 00:00:00' ) ? $record->home_link_text : ''), 'class'=>'form-control'); ?>
+							<?php $formdata = array('id'=>'home_link_text', 'name'=>'home_link_text', 'value'=>set_value('home_link_text', (isset($panel_2->home_panel_link_text) && $panel_2->home_panel_link_text !== '' ) ? $panel_2->home_panel_link_text : ''), 'class'=>'form-control'); ?>
 							<?php echo form_input($formdata);?>
 							<div id="error_home_link_text"></div>
 						</div>
@@ -162,7 +162,7 @@
 
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_text">Text:</label>
-						<?php $formdata = array('id'=>'home_text', 'name'=>'home_text', 'value'=>set_value('home_text', isset($config['home_text']) ? $config['home_text'] : ''), 'class'=>'form-control'); ?>
+						<?php $formdata = array('id'=>'home_text', 'name'=>'home_text', 'value'=>set_value('home_text', isset($panel_3->home_panel_text) ? $panel_3->home_panel_text : ''), 'class'=>'form-control'); ?>
 						<div class="col-sm-8">
 							<?php echo form_input($formdata); ?>
 							<div class="help-text"><?=lang('text_home_text')?></div>
@@ -172,7 +172,7 @@
 
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_caption">Caption:</label>
-						<?php $formdata = array('id'=>'home_caption', 'name'=>'home_caption', 'value'=>set_value('home_caption', isset($config['home_caption']) ? $config['home_caption'] : ''), 'class'=>'form-control'); ?>
+						<?php $formdata = array('id'=>'home_caption', 'name'=>'home_caption', 'value'=>set_value('home_caption', isset($panel_3->home_panel_caption) ? $panel_3->home_panel_caption : ''), 'class'=>'form-control'); ?>
 						<div class="col-sm-8">
 							<?php echo form_input($formdata); ?>
 							<div class="help-text"><?=lang('text_home_caption')?></div>
@@ -186,14 +186,14 @@
 							<?php $home_link = array(
 								'0' => 'Home', '1' => 'About', '2' => 'Events', '3' => 'News', '4' => 'Contact Us',
 							);?>
-							<?php echo form_dropdown('home_link_to', $home_link, set_value('home_link_to', (isset($record->home_link_to) && $record->home_link_to != '') ? $record->home_link_to : ''), 'id="home_link_to" class="form-control"'); ?>
+							<?php echo form_dropdown('home_link_to', $home_link, set_value('home_link_to', (isset($panel_3->home_panel_link_to) && $panel_3->home_panel_link_to != '') ? $panel_3->home_panel_link_to : ''), 'id="home_link_to" class="form-control"'); ?>
 							<div id="error_home_link_to"></div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="home_link_text">Link Text:</label>
 						<div class="col-sm-8">
-							<?php $formdata = array('id'=>'home_link_text', 'name'=>'home_link_text', 'value'=>set_value('home_link_text', (isset($record->home_link_text) && $record->home_link_text !== '0000-00-00 00:00:00' ) ? $record->home_link_text : ''), 'class'=>'form-control'); ?>
+							<?php $formdata = array('id'=>'home_link_text', 'name'=>'home_link_text', 'value'=>set_value('home_link_text', (isset($panel_3->home_panel_link_text) && $panel_3->home_panel_link_text !== '' ) ? $panel_3->home_panel_link_text : ''), 'class'=>'form-control'); ?>
 							<?php echo form_input($formdata);?>
 							<div id="error_home_link_text"></div>
 						</div>

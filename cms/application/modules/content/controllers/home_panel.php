@@ -7,7 +7,7 @@ class Home_panel extends MX_Controller {
         parent::__construct();
 
         $this->load->language('home_panel');
-        $this->load->model('home_panel_model');
+        $this->load->model('home_panels_model');
         $this->load->model('settings/application_model');
     }
 
@@ -32,11 +32,9 @@ class Home_panel extends MX_Controller {
 			}
 		}
 
-        $data['config'] = $this->application_model->format_dropdown('config_name', 'config_value');
-        // render the page
-        $this->template->add_css('assets/plugins/datepicker/css/bootstrap-datepicker3.css');
-        $this->template->add_js('assets/plugins/datepicker/js/bootstrap-datepicker.min.js');
-
+        $data['panel_1'] = $this->home_panels_model->find_by(array('home_panel_no'=>'1'));
+        $data['panel_2'] = $this->home_panels_model->find_by(array('home_panel_no'=>'2'));
+        $data['panel_3'] = $this->home_panels_model->find_by(array('home_panel_no'=>'3'));
 
         $this->template->add_css('assets/css/extra/extra.css?f=home_panel/views/css/home_panel_index.css');
         $this->template->add_js('assets/js/extra/extra.js?f=home_panel/views/js/home_panel_index.js');
@@ -195,5 +193,5 @@ class Home_panel extends MX_Controller {
 	}
 }
 
-/* End of file home_panel_model.php */
-/* Location: ./application/modules/home_panel/controllers/home_panel_model.php */
+/* End of file home_panels_model.php */
+/* Location: ./application/modules/home_panel/controllers/home_panels_model.php */
