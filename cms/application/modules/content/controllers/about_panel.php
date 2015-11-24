@@ -142,7 +142,7 @@ class About_panel extends MX_Controller
 		{
 			return FALSE;
 		}
-		
+
 		foreach ($this->input->post() as $k => $v)
 		{
 			if ($k == 'submit'||($k == 'beacons')||($k == 'content')) break;
