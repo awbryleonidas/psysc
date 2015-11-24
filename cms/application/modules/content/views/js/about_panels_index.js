@@ -1,3 +1,4 @@
+/*
 
 $(document).ready(function() {
 	$("body").tooltip({ selector: '[tooltip-toggle=tooltip]' });
@@ -10,7 +11,7 @@ $(document).ready(function() {
 		"oSearch": {"sSearch": sSearch},
 		"bProcessing": false,
 		"bServerSide": true,
-		"sAjaxSource": "about_panels/datatables",
+		"sAjaxSource": "about_panel/datatables",
 		"lengthMenu": [[40, 100, 300, -1], [40, 100, 300, "All"]],
 		"pagingType": "simple",
 		"language": {
@@ -131,4 +132,4 @@ function GetQueryStringParams(sParam)
 			return sParameterName[1];
 		}
 	}
-}
+}*/

@@ -53,8 +53,6 @@ class About_panel extends MX_Controller
 		$fields = array('about_panel_id', 'about_panel_image_thumb', 'about_panel_brand', 'about_panel_caption', 'brand_logo', 'about_panel_starts_on', 'about_panel_active', 'about_panel_is_external');
 
 		echo $this->about_panels_model
-			->join('brands', 'brand_name = about_panel_brand', 'LEFT')
-			->where('brand_deleted', 0)
 			->order_by('about_panel_starts_on', 'desc')
 			->datatables($fields);
 	}

@@ -1,18 +1,13 @@
-
 $(document).ready(function() {
+
 	$("body").tooltip({ selector: '[tooltip-toggle=tooltip]' });
 
-	var sSearch = GetQueryStringParams('q');
-	if (sSearch) sSearch = decodeURIComponent(sSearch).trim();
-	console.log(sSearch);
-
 	var oTable = $('#datatables').dataTable({
-		"oSearch": {"sSearch": sSearch},
 		"bProcessing": false,
 		"bServerSide": true,
 		"sAjaxSource": "news_panel/datatables",
-		"lengthMenu": [[40, 100, 300, -1], [40, 100, 300, "All"]],
-		"pagingType": "simple",
+		"lengthMenu": [[10, 20, 50, 100, 300, 500, 1000], [10, 20, 50, 100, 300, 500, 1000]],
+		"pagingType": "full_numbers",
 		"language": {
 			"paginate": {
 				"previous": 'Prev',
@@ -20,61 +15,42 @@ $(document).ready(function() {
 			}
 		},
 		"bAutoWidth": false,
-		// "aaSorting": [[ 0, "asc" ]],
-		"aoColumnDefs": 
-		[
+		"aaSorting": [[ 0, "desc" ]],
+		"aoColumnDefs": [
+
 			{
+				"aTargets": [0],
+				"sClass": "col-md-1 text-center",
+			},
+
+			{
+				// "sWidth": "70px",
 				"aTargets": [1],
 				"mRender": function (data, type, full) {
-
-					var status = (full[6] == 'Hidden') ? ' inactive' : '';
-					var logo = (full[4]) ? full[4] : 'assets/img/placeholder_logo.png';
-					var t = full[5].split(/[- :]/);
-					var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-					var timeago = timeSince(d);
-					// console.log(d);
-					var asset_url = (full[7] == 1) ? '' : site_url;
-					
-					return '<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">' +
-						'<div class="thumbnail">' +
-
-						'<div class="caption caption-brand"><div class="media"><div class="media-left media-middle">' +
-						'<img width="50" class="media-object" src="' + site_url + logo + '" alt="' + full[2] + '"></div>' +
-
-						'<div class="media-body"><strong>' + full[2] + '</strong><div class="news_panel_location">' +
-						'<span class="fa fa-map-marker"></span> Mall Location<span class="hidden-md hidden-sm pull-right">'
-						+ timeago +' ago</span></div></div></div></div>' +
-
-						'<div class="thumbnail' + status + '"><a data-toggle="modal" data-target="#modal" href="news_panels/edit/' + full[0] + '">' +
-						'<img src="' + asset_url + data + '" class="img-responsive" width="100%" /></a><div class="caption caption-text"><p>' + full[3] + '</p></div></div><a data-toggle="modal" data-target="#modal" href="news_panels/delete/' + full[0] + '">Delete</a></div></div>';
+					// var last_udpate = new Date(full[6]);
+					var last_update = $.datepicker.formatDate('M dd, yy', new Date(full[1]));
+					html = last_update;
+					return html;
 				},
+				"sClass": "col-md-2",
 			},
-
 			{
-				"aTargets": [0,2,3,4,5,6],
+				// "sWidth": "80px",
+				"aTargets": [4],
+				"bSortable": false,
 				"mRender": function (data, type, full) {
-					return '<span class="hide">' + data + '</span>';
+					// html = '<a href="department/view/'+full[0]+'"><button data-toggle="modal" data-target="#department_form" title="View" class="btn btn-xs btn-success"><span class="fa fa-eye"></span></button></a>';
+
+					html = '<a href="news_panel/edit/'+full[0]+'" data-toggle="modal" data-target="#modal" tooltip-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-xs btn-warning"><span class="fa fa-pencil"></span></a>';
+
+					html += ' <a href="news_panel/delete/'+full[0]+'" data-toggle="modal" data-target="#modal" tooltip-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-xs btn-danger"><span class="fa fa-trash-o"></span></a>';
+
+					return html;
 				},
+				"sClass": "col-md-1 text-center",
 			},
-
-		],
-		"fnDrawCallback": function( oTable ) {
-			// hide the table
-			$('#datatables').hide();
-
-			// then recreate the table as divs
-			var html = '';
-			$('tr', this).each(function() {
-				$('td', this).each(function() {
-					html += $(this).html();
-					// console.log(html);
-				});
-			});
-
-			$('#thumbnails').html(html);
-		}
+		]
 	});
-
 
 	$('.btn-actions').appendTo('div.dataTables_filter');
 
@@ -84,51 +60,6 @@ $(document).ready(function() {
 		// $('.modal-body', this).empty();
 	});
 
-	// $("#modal").on("shown.bs.modal", function () {
-	//     google.maps.event.trigger(map, "resize");
-	// });
 
 
 });
-
-function timeSince(date) {
-
-	var seconds = Math.floor((new Date() - date) / 1000);
-
-	var interval = Math.floor(seconds / 31536000);
-
-	if (interval > 1) {
-		return interval + "y";
-	}
-	interval = Math.floor(seconds / 2592000);
-	if (interval > 1) {
-		return interval + "mo";
-	}
-	interval = Math.floor(seconds / 86400);
-	if (interval > 1) {
-		return interval + "d";
-	}
-	interval = Math.floor(seconds / 3600);
-	if (interval > 1) {
-		return interval + "h";
-	}
-	interval = Math.floor(seconds / 60);
-	if (interval > 1) {
-		return interval + "m";
-	}
-	return Math.floor(seconds) + "s";
-}
-
-function GetQueryStringParams(sParam)
-{
-	var sPageURL = window.location.search.substring(1);
-	var sURLVariables = sPageURL.split('&');
-	for (var i = 0; i < sURLVariables.length; i++)
-	{
-		var sParameterName = sURLVariables[i].split('=');
-		if (sParameterName[0] == sParam)
-		{
-			return sParameterName[1];
-		}
-	}
-}

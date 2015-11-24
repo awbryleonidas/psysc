@@ -111,7 +111,7 @@ class Application extends MX_Controller
             $migration_count =  $row->version;
 
             $migration_option = '<select name="rollback_count" id="rollback_count">';
-            for($i = 1; $i <= $migration_count; $i++){
+            for($i = $migration_count; $i > 0; $i--){
                 $migration_option .='<option value="'.$i.'">'.$i.'</option>';
             }
             $migration_option .= '</select>';

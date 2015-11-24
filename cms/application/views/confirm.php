@@ -12,7 +12,7 @@
 </div>
 
 <div class="modal-footer">
-	<span id="confirm-loading-image" class="pull-left"><img src="<?=asset_url('img/loading3.gif')?>" /></span>
+	<span id="confirm-loading-image" class="pull-left"><img src="<?=asset_url('images/loading3.gif')?>" /></span>
 
 	<button type="button" class="btn btn-default" data-dismiss="modal">
 		<i class="fa fa-times"></i> <?=lang('button_close')?>

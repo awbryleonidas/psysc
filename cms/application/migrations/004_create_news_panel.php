@@ -6,7 +6,7 @@
  * @version		1.0
  * @author 		Aubrey Leonidas <che.leonidas@gmail.com>
  */
-class Migration_Create_about_panel extends CI_Migration
+class Migration_Create_news_panel extends CI_Migration
 {
 	var $table = 'news_panels';
 
@@ -22,7 +22,7 @@ class Migration_Create_about_panel extends CI_Migration
 		array(
 			'menu_parent_id'	=> 'content', // none if parent or single menu
 			'menu_text' 		=> 'News',
-			'menu_link' 		=> 'content/about_panel',
+			'menu_link' 		=> 'content/news_panel',
 			'menu_permission' 	=> 'Content.News_panel.list',
 			'menu_icon' 		=> 'fa fa-newspaper-o',
 			'menu_order' 		=> 2,
@@ -42,7 +42,10 @@ class Migration_Create_about_panel extends CI_Migration
 		$this->dbforge->add_field("news_panel_id int(10) unsigned NOT NULL AUTO_INCREMENT");
 		$this->dbforge->add_field("news_panel_caption text DEFAULT NULL");
 		$this->dbforge->add_field("news_panel_image varchar(255) DEFAULT NULL");
-		$this->dbforge->add_field("news_panel_active tinyint(1) NOT NULL");
+		$this->dbforge->add_field("news_panel_header varchar(255) DEFAULT NULL");
+		$this->dbforge->add_field("news_panel_author varchar(100) DEFAULT NULL");
+		$this->dbforge->add_field("news_panel_tags text DEFAULT NULL");
+		$this->dbforge->add_field("news_panel_link varchar(255) DEFAULT NULL");
 
 		$this->dbforge->add_field("news_panel_created_by smallint(5) unsigned NOT NULL");
 		$this->dbforge->add_field("news_panel_created_on datetime NOT NULL");
@@ -53,7 +56,6 @@ class Migration_Create_about_panel extends CI_Migration
 		$this->dbforge->add_field("news_panel_deleted_on datetime NOT NULL");
 
 		$this->dbforge->add_key('news_panel_id', TRUE);
-		$this->dbforge->add_key('news_panel_active');
 		$this->dbforge->add_key('news_panel_deleted');
 		$this->dbforge->create_table($this->table, TRUE);
 
