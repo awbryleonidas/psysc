@@ -27,9 +27,9 @@ $(function() {
 	// 	$(".dz-complete").hide();
 	// });
 
-	// $('#about_panel_duration').daterangepicker({timePicker: true, timePickerIncrement: 5, format: 'YYYY-MM-DD H:mm'});
+	// $('#news_panel_duration').daterangepicker({timePicker: true, timePickerIncrement: 5, format: 'YYYY-MM-DD H:mm'});
 
-	$('#about_panel_starts_on, #about_panel_ends_on').datetimepicker({
+	$('#news_panel_starts_on, #news_panel_ends_on').datetimepicker({
 		format: 'yyyy-mm-dd hh:ii:ss',
 		autoclose: true,
 		todayBtn: true,
@@ -37,7 +37,7 @@ $(function() {
 	});
 
 	// brand
-	$('#about_panel_brand').autocomplete({
+	$('#news_panel_brand').autocomplete({
 		source: site_url + 'content/brands/search',
 		minLength: 2,
 	});

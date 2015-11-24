@@ -10,7 +10,7 @@ $(document).ready(function() {
 		"oSearch": {"sSearch": sSearch},
 		"bProcessing": false,
 		"bServerSide": true,
-		"sAjaxSource": "about_panels/datatables",
+		"sAjaxSource": "news_panel/datatables",
 		"lengthMenu": [[40, 100, 300, -1], [40, 100, 300, "All"]],
 		"pagingType": "simple",
 		"language": {
@@ -41,12 +41,12 @@ $(document).ready(function() {
 						'<div class="caption caption-brand"><div class="media"><div class="media-left media-middle">' +
 						'<img width="50" class="media-object" src="' + site_url + logo + '" alt="' + full[2] + '"></div>' +
 
-						'<div class="media-body"><strong>' + full[2] + '</strong><div class="about_panel_location">' +
+						'<div class="media-body"><strong>' + full[2] + '</strong><div class="news_panel_location">' +
 						'<span class="fa fa-map-marker"></span> Mall Location<span class="hidden-md hidden-sm pull-right">'
 						+ timeago +' ago</span></div></div></div></div>' +
 
-						'<div class="thumbnail' + status + '"><a data-toggle="modal" data-target="#modal" href="about_panels/edit/' + full[0] + '">' +
-						'<img src="' + asset_url + data + '" class="img-responsive" width="100%" /></a><div class="caption caption-text"><p>' + full[3] + '</p></div></div><a data-toggle="modal" data-target="#modal" href="about_panels/delete/' + full[0] + '">Delete</a></div></div>';
+						'<div class="thumbnail' + status + '"><a data-toggle="modal" data-target="#modal" href="news_panels/edit/' + full[0] + '">' +
+						'<img src="' + asset_url + data + '" class="img-responsive" width="100%" /></a><div class="caption caption-text"><p>' + full[3] + '</p></div></div><a data-toggle="modal" data-target="#modal" href="news_panels/delete/' + full[0] + '">Delete</a></div></div>';
 				},
 			},
 

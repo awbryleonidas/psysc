@@ -857,7 +857,7 @@ div[data-dimension] {
 	float: left;
 	display: inline;
 	width: 100%;
-	padding:80px 0px; 
+	padding:80px 0px;
 }
 
 
@@ -1081,6 +1081,8 @@ div[data-dimension] {
 	display: inline;
 	width: 100%;
 	padding: 80px 0px;
+  background-image: url("images/Blue on Dark White2.png");
+  background-repeat: repeat;
 }
 
 
