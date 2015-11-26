@@ -1081,8 +1081,8 @@ div[data-dimension] {
 	display: inline;
 	width: 100%;
 	padding: 80px 0px;
-  background-image: url("images/Blue on Dark White2.png");
-  background-repeat: repeat;
+  /*background-image: url("images/Blue on Dark White2.png");*/
+  /*background-repeat: repeat;*/
 }
 
 
@@ -1233,15 +1233,15 @@ div[data-dimension] {
 
 
 .testimonial_customer{
-	float: left;	
+	/*float: left;*/
 	display: inline;	
 	width: 100%;		
 }
 
 
 .testimonial_slider{
-	float: left;	
-	display: inline;	
+	/*float: inherit;
+	display: inline;*/
 	width: 100%;	
 }
 
@@ -1255,6 +1255,7 @@ div[data-dimension] {
 .testi_media {
   margin: 0 auto !important;
   width: 250px;
+	vertical-align: middle;
 }
 
 
@@ -1264,7 +1265,8 @@ div[data-dimension] {
 
 
 .media-heading {  
-  font-size: 20px;
+  	font-size: 20px;
+	vertical-align: middle;
 }
 
 
@@ -1281,9 +1283,9 @@ div[data-dimension] {
 
 
 .testi_img img {
-  border-radius: 100%;
-  height: 100px;
-  width: 100px;
+  /*border-radius: 100%;*/
+  height: 300px;
+  width: 500px;
 }
 
 
@@ -1736,6 +1738,19 @@ textarea .form-control {
 
 
 #blogBanner {
+  background-image: url("img/pattern.jpg");
+  background-repeat: repeat-x;
+  background-color: rgba(135, 135, 135, 0.80);
+  /*background-size: 100% 100%;*/
+  display: inline;
+  float: left;
+  height: 330px;
+  margin-top: 20px;
+  padding: 118px 0;
+  text-align: center;
+  width: 100%;
+}
+#eventsBanner {
   background-image: url("img/pattern.jpg");
   background-repeat: repeat-x;
   background-color: rgba(135, 135, 135, 0.80);

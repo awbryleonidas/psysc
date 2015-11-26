@@ -84,7 +84,7 @@
 			<label class="col-xs-2 control-label" for="team_panel_type"><?=lang('label_type')?>:</label>
 			<div class="col-xs-9">
 				<?php $alert_type = array(
-						'1' => 'Member', '2' => 'BOT'
+						'1' => 'NEC', '2' => 'BOT'
 				);?>
 				<?php echo form_dropdown('team_panel_type', $alert_type, set_value('team_panel_type', (isset($record->team_panel_type) && $record->team_panel_type != '') ? $record->team_panel_type : ''), 'id="team_panel_type" class="form-control" onchange="valueChanged()"'); ?>
 				<div id="error_team_panel_type"></div>

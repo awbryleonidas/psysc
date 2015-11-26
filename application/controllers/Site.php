@@ -32,7 +32,17 @@ class Site extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->view('site_template');
+		$this->load->model('application_model');
+		$this->load->model('home_panels_model');
+		$this->load->model('news_panels_model');
+		$this->load->model('team_panels_model');
+		$this->load->model('events_model');
+		$data['config'] = $this->application_model->format_dropdown('config_name', 'config_value');
+		$data['bots'] = $this->team_panels_model->where('team_panel_type', 2)->find_all();
+		$data['necs'] = $this->team_panels_model->where('team_panel_type', 1)->find_all();
+		$data['news'] = $this->news_panels_model->where('news_panel_deleted', 0)->find_all();
+		$data['events'] = $this->events_model->format_dropdown('event_option', 'event_option_value');
+		$this->load->view('site_template', $data);
 	}
 
 	// --------------------------------------------------------------------
@@ -95,6 +105,24 @@ class Site extends CI_Controller
 		{
 			$this->single_view();//return FALSE;
 		}
+	}
+
+	public function events_view($event = 1)
+	{
+
+		$this->load->model('events_model');
+
+		$config = $this->events_model->format_dropdown('event_option', 'event_option_value');
+		$asset_url =  $this->config->item('asset_url') ;
+		$data['title'] = $config['event_name_'.$event];
+		$data['youtube_link'] = $config['event_youtube_link_'.$event];
+		$data['description'] = $config['event_description_'.$event];
+		$data['highlight_image'] = $config['event_highlight_image_'.$event];
+		$data['highlight_description'] = $config['event_highlight_description_'.$event];
+		$data['faqs'] = $config['event_faqs_'.$event];
+		$data['register'] = $config['event_register_'.$event];
+		$data['fb_link'] = $config['event_fb_link_'.$event];
+		$this->load->view('event_view', $data);
 	}
 
 	// --------------------------------------------------------------------

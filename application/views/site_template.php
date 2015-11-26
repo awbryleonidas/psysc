@@ -116,12 +116,12 @@
 					<!-- FIRST SLIDE OVERLAY -->
 					<div class="slider_overlay"></div>
 					<!-- FIRST SLIDE MAIN IMAGE -->
-					<img src="<?php echo site_url('assets')?>/img/full-slider/full-slide7.jpg" alt="img">
+					<img src="<?php echo site_url('cms').'/'.$config['home_image_1']?>" alt="img">
 					<!-- FIRST SLIDE CAPTION-->
 					<div class="slider_caption">
-						<h2>Hi, We make Science Clubbing Fun!</h2>
-						<p>we are a group of lorem ipsum dolor</p>
-						<a href="#about" class="slider_btn">Who We are</a>
+						<h2><?php echo $config['home_text_1'] ;?></h2>
+						<p><?php echo $config['home_caption_1'] ;?></p>
+						<a href="#<?php echo $config['home_link_1'] ;?>" class="slider_btn"><?php echo $config['home_text_link_1'] ;?></a>
 					</div>
 				</li>
 
@@ -130,12 +130,12 @@
 					<!-- SECOND SLIDE OVERLAY -->
 					<div class="slider_overlay"></div>
 					<!-- SECOND SLIDE MAIN IMAGE -->
-					<img src="<?php echo site_url('assets')?>/img/full-slider/full-slide2.jpg" alt="img">
+					<img src="<?php echo site_url('cms').'/'.$config['home_image_2']?>" alt="img">
 					<!-- SECOND SLIDE CAPTION-->
 					<div class="slider_caption">
-						<h2>Are you ready to be a part of the team?</h2>
-						<p>If you have what it takes to lorem ipsum dolor</p>
-						<a href="#" class="slider_btn">Sign up now!</a>
+						<h2><?php echo $config['home_text_2'] ;?></h2>
+						<p><?php echo $config['home_caption_2'] ;?></p>
+						<a href="#<?php echo $config['home_link_2'] ;?>" class="slider_btn"><?php echo $config['home_text_link_2'] ;?></a>
 					</div>
 				</li>
 
@@ -144,12 +144,12 @@
 					<!-- THIRD SLIDE OVERLAY -->
 					<div class="slider_overlay"></div>
 					<!-- THIRD SLIDE MAIN IMAGE -->
-					<img src="<?php echo site_url('assets')?>/img/full-slider/full-slide1.jpg" alt="img">
+					<img src="<?php echo site_url('cms').'/'.$config['home_image_3']?>" alt="img">
 					<!-- THIRD SLIDE CAPTION-->
 					<div class="slider_caption">
-						<h2>Hi,We are PSYC</h2>
-						<p>Find all our latest gatherings and Events</p>
-						<a href="#events" class="slider_btn">What we are up to</a>
+						<h2><?php echo $config['home_text_3'] ;?></h2>
+						<p><?php echo $config['home_caption_3'] ;?></p>
+						<a href="#<?php echo $config['home_link_3'] ;?>" class="slider_btn"><?php echo $config['home_text_link_3'] ;?></a>
 					</div>
 				</li>
 			</ul>
@@ -170,7 +170,7 @@
 		<!-- END SLIDER-->
 	</div>
 	<!-- END SLIDER AREA -->
-	<center><a href="<?php echo site_url('index.php/site/sign_up')?>">Sign Up</a><a href="<?php echo site_url('index.php/site/login')?>">Login</a></center>
+	<span class="hide"><center><a href="<?php echo site_url('index.php/site/sign_up')?>">Sign Up</a><a href="<?php echo site_url('index.php/site/login')?>">Login</a></center></span>
 </header>
 <!--=========== End HEADER SECTION ================-->
 
@@ -184,7 +184,7 @@
 					<!-- START ABOUT HEADING -->
 					<div class="heading">
 						<h2 class="wow fadeInLeftBig">About Us</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla faucibus ornare. Phasellus luctus nisl nec lectus posuere, sed sodales diam ullamcorper. Pellentesque sagittis tincidunt magna. Pellentesque ac eros sem. Nulla nec vehicula ipsum, a dignissim diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer mollis lorem in augue consectetur egestas. In pharetra eu neque at convallis.</p>
+						<p><?php echo $config['about_us_caption'] ;?></p>
 					</div>
 
 					<!-- START ABOUT CONTENT -->
@@ -198,13 +198,14 @@
 											<div class="panel-heading">
 												<h4 class="panel-title">
 													<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-														<span class="fa fa-check-square-o"></span>About US 1
+														<span class="fa fa-check-square-o"></span><?php echo $config['about_us_panel_name_1'] ;?>
 													</a>
 												</h4>
 											</div>
 											<div id="collapseOne" class="panel-collapse collapse in">
 												<div class="panel-body">
-													Etiam id nisl sit amet massa molestie scelerisque. Vestibulum elementum volutpat consequat. Ut sed turpis vehicula, fermentum ante sed, dapibus ante. Proin non condimentum lectus, eget ultricies magna. Proin feugiat, quam ut vestibulum mollis, metus lectus vulputate elit, et aliquam tellus neque ac nulla. Proin vitae lectus hendrerit lacus posuere venenatis. Morbi non pellentesque odio.</div>
+													<?php echo $config['about_us_panel_text_1'] ;?>
+												</div>
 											</div>
 										</div>
 										<!-- START SINGLE FEATURED ITEAM #2 -->
@@ -212,41 +213,13 @@
 											<div class="panel-heading">
 												<h4 class="panel-title">
 													<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-														<span class="fa fa-check-square-o"></span>About Us 2
+														<span class="fa fa-check-square-o"></span><?php echo $config['about_us_panel_name_2'] ;?>
 													</a>
 												</h4>
 											</div>
 											<div id="collapseTwo" class="panel-collapse collapse">
 												<div class="panel-body">
-													Etiam id nisl sit amet massa molestie scelerisque. Vestibulum elementum volutpat consequat. Ut sed turpis vehicula, fermentum ante sed, dapibus ante. Proin non condimentum lectus, eget ultricies magna. Proin feugiat, quam ut vestibulum mollis, metus lectus vulputate elit, et aliquam tellus neque ac nulla. Proin vitae lectus hendrerit lacus posuere venenatis. Morbi non pellentesque odio.</div>
-											</div>
-										</div>
-										<!-- START SINGLE FEATURED ITEAM #3 -->
-										<div class="panel panel-default wow fadeInLeft">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-														<span class="fa fa-check-square-o"></span>About Us 3
-													</a>
-												</h4>
-											</div>
-											<div id="collapseThree" class="panel-collapse collapse">
-												<div class="panel-body">
-													Etiam id nisl sit amet massa molestie scelerisque. Vestibulum elementum volutpat consequat. Ut sed turpis vehicula, fermentum ante sed, dapibus ante. Proin non condimentum lectus, eget ultricies magna. Proin feugiat, quam ut vestibulum mollis, metus lectus vulputate elit, et aliquam tellus neque ac nulla. Proin vitae lectus hendrerit lacus posuere venenatis. Morbi non pellentesque odio.</div>
-											</div>
-										</div>
-										<!-- START SINGLE FEATURED ITEAM #4 -->
-										<div class="panel panel-default wow fadeInLeft">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-														<span class="fa fa-check-square-o"></span>About Us 3
-													</a>
-												</h4>
-											</div>
-											<div id="collapseFour" class="panel-collapse collapse">
-												<div class="panel-body">
-													Etiam id nisl sit amet massa molestie scelerisque. Vestibulum elementum volutpat consequat. Ut sed turpis vehicula, fermentum ante sed, dapibus ante. Proin non condimentum lectus, eget ultricies magna. Proin feugiat, quam ut vestibulum mollis, metus lectus vulputate elit, et aliquam tellus neque ac nulla. Proin vitae lectus hendrerit lacus posuere venenatis. Morbi non pellentesque odio.
+													<?php echo $config['about_us_panel_text_2'] ;?>
 												</div>
 											</div>
 										</div>
@@ -259,23 +232,15 @@
 									<div class="featured_slider">
 										<!-- SINGLE SLIDE IN THE SLIDER -->
 										<div class="single_iteam">
-											<a href="#"> <img src="<?php echo site_url('assets')?>/img/feature_img1.jpg" alt="img"></a>
+											<a href="#"> <img src="<?php echo site_url('cms').'/'.$config['about_us_panel_image_1']?>" alt="img"></a>
 										</div>
 										<!-- SINGLE SLIDE IN THE SLIDER -->
 										<div class="single_iteam">
-											<a href="#"> <img src="<?php echo site_url('assets')?>/img/feature_img2.jpg" alt="img"></a>
+											<a href="#"> <img src="<?php echo site_url('cms').'/'.$config['about_us_panel_image_2']?>" alt="img"></a>
 										</div>
 										<!-- SINGLE SLIDE IN THE SLIDER -->
 										<div class="single_iteam">
-											<a href="#"> <img src="<?php echo site_url('assets')?>/img/feature_img3.jpg" alt="img"></a>
-										</div>
-										<!-- SINGLE SLIDE IN THE SLIDER -->
-										<div class="single_iteam">
-											<a href="#"> <img src="<?php echo site_url('assets')?>/img/feature_img6.jpg" alt="img"></a>
-										</div>
-										<!-- SINGLE SLIDE IN THE SLIDER -->
-										<div class="single_iteam">
-											<a href="#"> <img src="<?php echo site_url('assets')?>/img/feature_img5.jpg" alt="img"></a>
+											<a href="#"> <img src="<?php echo site_url('cms').'/'.$config['about_us_panel_image_3']?>" alt="img"></a>
 										</div>
 									</div>
 									<!-- END FEATURED SLIDER -->
@@ -288,7 +253,7 @@
 		</div>
 	</div>
 	<!-- BEGIN SKILLS  -->
-	<div class="row">
+	<div class="row hide">
 		<div class="col-lg-12 col-md-12">
 			<div class="skills_area">
 				<div class="slider_overlay"></div>
@@ -336,6 +301,41 @@
 
 <!--=========== BEGIN TEAM SECTION ================-->
 <section id="team">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<!-- START BLOG HEADING -->
+				<div class="heading">
+					<h2 class="wow fadeInLeftBig">Board of Trustees</h2>
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="clients_content">
+					<div class="row">
+						<!-- BEGIN CLIENTS SLIDER -->
+						<div class="clients_slider">
+							<!-- BEGIN SINGLE -->
+							<?php foreach ($bots as $bot):?>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<div class="single_client">
+										<img src="<?php echo site_url('cms').'/'.$bot->team_panel_image?>" width="50%" alt="clients Brand">
+										<h4><?php echo $bot->team_panel_name?></h4>
+										<h6><?php echo $bot->team_panel_position?></h6>
+										<p>
+											<?php echo $bot->team_panel_description?>
+										</p>
+									</div>
+								</div>
+							<?php endforeach;?>
+						</div>
+						<!-- END SINGLE -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><br>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
@@ -347,124 +347,26 @@
 					<!-- BEGIN TEAM SLIDER -->
 					<div class="team_slider">
 						<!-- BEGIN SINGLE TEAM SLIDE#1 -->
+						<?php foreach ($necs as $nec):?>
 						<div class="col-lg-3 col-md-3 col-sm-4">
 							<div class="single_team wow fadeInUp">
 								<div class="team_img">
-									<img src="<?php echo site_url('assets')?>/img/team-1.jpg" alt="img">
+									<img src="<?php echo site_url('cms').'/'.$nec->team_panel_image?>" width="50%" alt="img">
 								</div>
-								<h5 class="">Juan dela Cruz</h5>
-								<span>President</span>
-								<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
+								<h5 class=""><?php echo $nec->team_panel_name?></h5>
+								<span><?php echo $nec->team_panel_position?></span>
+								<p>
+									<?php echo $nec->team_panel_description?>
+								</p>
 								<div class="team_social">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
+									<a href="<?php echo $nec->team_panel_facebook?>"><i class="fa fa-facebook"></i></a>
+									<a href="<?php echo $nec->team_panel_twitter?>"><i class="fa fa-twitter"></i></a>
+									<!--<a href="#"><i class="fa fa-google-plus"></i></a>
+									<a href="#"><i class="fa fa-linkedin"></i></a>-->
 								</div>
 							</div>
 						</div>
-						<!-- BEGIN SINGLE TEAM SLIDE#2 -->
-						<div class="col-lg-3 col-md-3 col-sm-4">
-							<div class="single_team wow fadeInUp">
-								<div class="team_img">
-									<img src="<?php echo site_url('assets')?>/img/team-2.jpg" alt="img">
-								</div>
-								<h5>Juan dela Cruz</h5>
-								<span>Vice President</span>
-								<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-								<div class="team_social">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-								</div>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE TEAM SLIDE#3 -->
-						<div class="col-lg-3 col-md-3 col-sm-4">
-							<div class="single_team wow fadeInUp">
-								<div class="team_img">
-									<img src="<?php echo site_url('assets')?>/img/team-3.jpg" alt="img">
-								</div>
-								<h5>Juan dela Cruz</h5>
-								<span>Secretary</span>
-								<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-								<div class="team_social">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-								</div>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE TEAM SLIDE#4 -->
-						<div class="col-lg-3 col-md-3 col-sm-4">
-							<div class="single_team wow fadeInUp">
-								<div class="team_img">
-									<img src="<?php echo site_url('assets')?>/img/team-4.jpg" alt="img">
-								</div>
-								<h5>Juan dela Cruz</h5>
-								<span>Treasurer</span>
-								<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-								<div class="team_social">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-								</div>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE TEAM SLIDE#5 -->
-						<div class="col-lg-3 col-md-3 col-sm-4 hide">
-							<div class="single_team wow fadeInUp">
-								<div class="team_img">
-									<img src="<?php echo site_url('assets')?>/img/team-5.jpg" alt="img">
-								</div>
-								<h5>Juan dela Cruz</h5>
-								<span>Programmer</span>
-								<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-								<div class="team_social">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-								</div>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE TEAM SLIDE#6 -->
-						<div class="col-lg-3 col-md-3 col-sm-4 hide">
-							<div class="single_team wow fadeInUp">
-								<div class="team_img">
-									<img src="<?php echo site_url('assets')?>/img/team-1.jpg" alt="img">
-								</div>
-								<h5>Juan dela Cruz</h5>
-								<span>Web Designer</span>
-								<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-								<div class="team_social">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-								</div>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE TEAM SLIDE#7 -->
-						<div class="col-lg-3 col-md-3 col-sm-4 hide">
-							<div class="single_team wow fadeInUp">
-								<div class="team_img">
-									<img src="<?php echo site_url('assets')?>/img/team-2.jpg" alt="img">
-								</div>
-								<h5>Juan dela Cruz</h5>
-								<span>Marketing Head</span>
-								<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-								<div class="team_social">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-								</div>
-							</div>
-						</div>
+						<?php endforeach;?>
 					</div>
 				</div>
 			</div>
@@ -566,60 +468,73 @@
 				<!-- START BLOG HEADING -->
 				<div class="heading">
 					<h2 class="wow fadeInLeftBig">Events</h2>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+				</div>
+			</div>
+
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="testimonial_customer col-lg-6 col-md-6 col-sm-6">
+					<!-- BEGIN TESTIMONIAL SLIDER -->
+					<ul class="testimonial_slider">
+						<!-- BEGIN SINGLE TESTIMONIAL SLIDE#1 -->
+						<li>
+							<div class="media testi_media">
+								<a class="media-center testi_img" href="#">
+									<img src="<?php echo site_url('cms/'.$events['featured_event_image_1'])?>" width="80%" alt="img">
+								</a>
+							</div>
+						</li>
+						<!-- BEGIN SINGLE TESTIMONIAL SLIDE#2 -->
+						<li>
+							<div class="media testi_media">
+								<a class="media-center testi_img" href="#">
+									<img src="<?php echo site_url('cms/'.$events['featured_event_image_2'])?>" width="80%" alt="img">
+								</a>
+							</div>
+						</li>
+						<!-- BEGIN SINGLE TESTIMONIAL SLIDE#3 -->
+						<li>
+							<div class="media testi_media">
+								<a class="media-center testi_img" href="#">
+									<img src="<?php echo site_url('cms/'.$events['featured_event_image_3'])?>" width="80%" alt="img">
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<br><br><br>
+				<h4 class="media-heading text-center"><?php echo $events['featured_event_title']?></h4>
+				<div class="text-center">
+					<p><?php echo $events['featured_event_description']?></p>
 				</div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12">
 				<div class="clients_content">
+					<span class="text-center"><small>Click images for more info</small></span>
 					<div class="row">
 						<!-- BEGIN CLIENTS SLIDER -->
 						<div class="clients_slider">
 							<!-- BEGIN SINGLE CLIENT SLIDE#1 -->
-							<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="col-lg-2 col-md-2 col-sm-2">
 								<div class="single_client">
-									<img src="<?php echo site_url('assets')?>/img/clients_img1.png" alt="clients Brand">
+									<img src="<?php echo site_url('cms/'.$events['event_highlight_image_1'])?>" width="80%" alt="<?php echo $events['event_name_1']?>">
 								</div>
 							</div>
 							<!-- BEGIN SINGLE CLIENT SLIDE#2 -->
-							<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="col-lg-2 col-md-2 col-sm-2">
 								<div class="single_client">
-									<img src="<?php echo site_url('assets')?>/img/clients_img2.png" alt="clients Brand">
+									<img src="<?php echo site_url('cms/'.$events['event_highlight_image_2'])?>" width="80%" alt="<?php echo $events['event_name_2']?>">
 								</div>
 							</div>
 							<!-- BEGIN SINGLE CLIENT SLIDE#3 -->
-							<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="col-lg-2 col-md-2 col-sm-2">
 								<div class="single_client">
-									<img src="<?php echo site_url('assets')?>/img/clients_img4.png" alt="clients Brand">
+									<img src="<?php echo site_url('cms/'.$events['event_highlight_image_3'])?>" width="80%" alt="<?php echo $events['event_name_3']?>">
 								</div>
 							</div>
 							<!-- BEGIN SINGLE CLIENT SLIDE#4 -->
-							<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="col-lg-2 col-md-2 col-sm-2">
 								<div class="single_client">
-									<img src="<?php echo site_url('assets')?>/img/clients_img3.png" alt="clients Brand">
-								</div>
-							</div>
-							<!-- BEGIN SINGLE CLIENT SLIDE#5 -->
-							<div class="col-lg-3 col-md-3 col-sm-3">
-								<div class="single_client">
-									<img src="<?php echo site_url('assets')?>/img/clients_img4.png" alt="clients Brand">
-								</div>
-							</div>
-							<!-- BEGIN SINGLE CLIENT SLIDE#6 -->
-							<div class="col-lg-3 col-md-3 col-sm-3">
-								<div class="single_client">
-									<img src="<?php echo site_url('assets')?>/img/clients_img5.png" alt="clients Brand">
-								</div>
-							</div>
-							<!-- BEGIN SINGLE CLIENT SLIDE#7 -->
-							<div class="col-lg-3 col-md-3 col-sm-3">
-								<div class="single_client">
-									<img src="<?php echo site_url('assets')?>/img/clients_img1.png" alt="clients Brand">
-								</div>
-							</div>
-							<!-- BEGIN SINGLE CLIENT SLIDE#8 -->
-							<div class="col-lg-3 col-md-3 col-sm-3">
-								<div class="single_client">
-									<img src="<?php echo site_url('assets')?>/img/clients_img2.png" alt="clients Brand">
+									<img src="<?php echo site_url('cms/'.$events['event_highlight_image_4'])?>" width="80%" alt="<?php echo $events['event_name_4']?>">
 								</div>
 							</div>
 						</div>
@@ -822,7 +737,7 @@
 				<!-- START BLOG HEADING -->
 				<div class="heading">
 					<h2 class="wow fadeInLeftBig">Latest News From Blog</h2>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+					<p></p>
 				</div>
 			</div>
 			<div class="col-lg-12 col-md-12">
@@ -832,102 +747,23 @@
 					<!-- BEGIN BLOG SLIDER -->
 					<div class="blog_slider">
 						<!-- BEGIN SINGLE BLOG -->
+						<?php foreach($news as $item):?>
 						<div class="col-lg-4 col-md-4 col-sm-4">
 							<div class="single_post wow fadeInUp">
 								<div class="blog_img">
-									<img src="<?php echo site_url('assets')?>/img/blog_img1.jpg" alt="img">
+									<img src="<?php echo site_url('cms/'.$item->news_panel_image)?>" alt="img">
 								</div>
-								<h3>Sed ut perspiciatis unde omnis</h3>
+								<h3><?php echo $item->news_panel_header?></h3>
 								<div class="post_commentbox">
-									<a href="#"><i class="fa fa-user"></i>cleonidas</a>
-									<span><i class="fa fa-calendar"></i>6:49 AM</span>
-									<a href="#"><i class="fa fa-tags"></i>Technology</a>
+									<a href="#"><i class="fa fa-user"></i><?php echo $item->news_panel_author?></a>
+									<span><i class="fa fa-calendar"></i><?php echo $item->news_panel_created_on?>/span>
+									<!--<a href="#"><i class="fa fa-tags"></i>Technology</a>-->
 								</div>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-								<a href="<?php echo site_url('assets')?>/blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
+								<p><?php echo $item->news_panel_caption?></p>
+								<a href="<?php echo $item->news_panel_link?>" class="read_more">Read More <i class="fa fa-angle-double-right"> </i></a>
 							</div>
 						</div>
-
-						<!-- BEGIN SINGLE BLOG -->
-						<div class="col-lg-4 col-md-4 col-sm-4">
-							<div class="single_post wow fadeInUp">
-								<div class="blog_img">
-									<img src="<?php echo site_url('assets')?>/img/blog_img2.jpg" alt="img">
-								</div>
-								<h3>Sed ut perspiciatis unde omnis</h3>
-								<div class="post_commentbox">
-									<a href="#"><i class="fa fa-user"></i>cleonidas</a>
-									<span><i class="fa fa-calendar"></i>6:49 AM</span>
-									<a href="#"><i class="fa fa-tags"></i>Technology</a>
-								</div>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-								<a href="<?php echo site_url('assets')?>/blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE BLOG -->
-						<div class="col-lg-4 col-md-4 col-sm-4">
-							<div class="single_post wow fadeInUp">
-								<div class="blog_img">
-									<img src="<?php echo site_url('assets')?>/img/blog_img3.jpg" alt="img">
-								</div>
-								<h3>Sed ut perspiciatis unde omnis</h3>
-								<div class="post_commentbox">
-									<a href="#"><i class="fa fa-user"></i>cleonidas</a>
-									<span><i class="fa fa-calendar"></i>6:49 AM</span>
-									<a href="#"><i class="fa fa-tags"></i>Technology</a>
-								</div>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-								<a href="<?php echo site_url('assets')?>/blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE BLOG -->
-						<div class="col-lg-4 col-md-4 col-sm-4">
-							<div class="single_post wow fadeInUp">
-								<div class="blog_img">
-									<img src="<?php echo site_url('assets')?>/img/blog_img4.jpg" alt="img">
-								</div>
-								<h3>Sed ut perspiciatis unde omnis</h3>
-								<div class="post_commentbox">
-									<a href="#"><i class="fa fa-user"></i>cleonidas</a>
-									<span><i class="fa fa-calendar"></i>6:49 AM</span>
-									<a href="#"><i class="fa fa-tags"></i>Technology</a>
-								</div>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-								<a href="<?php echo site_url('assets')?>/blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE BLOG -->
-						<div class="col-lg-4 col-md-4 col-sm-4">
-							<div class="single_post wow fadeInUp">
-								<div class="blog_img">
-									<img src="<?php echo site_url('assets')?>/img/blog_img1.jpg" alt="img">
-								</div>
-								<h3>Sed ut perspiciatis unde omnis</h3>
-								<div class="post_commentbox">
-									<a href="#"><i class="fa fa-user"></i>cleonidas</a>
-									<span><i class="fa fa-calendar"></i>6:49 AM</span>
-									<a href="#"><i class="fa fa-tags"></i>Technology</a>
-								</div>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-								<a href="<?php echo site_url('assets')?>/blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-							</div>
-						</div>
-						<!-- BEGIN SINGLE BLOG -->
-						<div class="col-lg-4 col-md-4 col-sm-4">
-							<div class="single_post wow fadeInUp">
-								<div class="blog_img">
-									<img src="<?php echo site_url('assets')?>/img/blog_img2.jpg" alt="img">
-								</div>
-								<h3>Sed ut perspiciatis unde omnis</h3>
-								<div class="post_commentbox">
-									<a href="#"><i class="fa fa-user"></i>cleonidas</a>
-									<span><i class="fa fa-calendar"></i>6:49 AM</span>
-									<a href="#"><i class="fa fa-tags"></i>Technology</a>
-								</div>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-								<a href="<?php echo site_url('assets')?>/blog-single.html" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-							</div>
-						</div>
+						<?php endforeach;?>
 					</div>
 				</div>
 			</div>

@@ -20,6 +20,11 @@ class Migration_Edit_events_01 extends CI_Migration
         $this->db->insert($this->table, array('event_option' => 'featured_event_image_2', 'event_option_value' => ''));
         $this->db->insert($this->table, array('event_option' => 'featured_event_image_3', 'event_option_value' => ''));
 
+        $this->db->insert($this->table, array('event_option' => 'event_name_1', 'event_option_value' => 'NSCM'));
+        $this->db->insert($this->table, array('event_option' => 'event_name_2', 'event_option_value' => 'NYSTESC'));
+        $this->db->insert($this->table, array('event_option' => 'event_name_3', 'event_option_value' => 'CSIW'));
+        $this->db->insert($this->table, array('event_option' => 'event_name_4', 'event_option_value' => 'SEARCH'));
+
         $this->db->insert($this->table, array('event_option' => 'event_youtube_link_1', 'event_option_value' => ''));
         $this->db->insert($this->table, array('event_option' => 'event_description_1', 'event_option_value' => ''));
         $this->db->insert($this->table, array('event_option' => 'event_highlight_image_1', 'event_option_value' => ''));
