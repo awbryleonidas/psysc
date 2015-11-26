@@ -1,19 +1,19 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class About_panel extends MX_Controller
+class Event_4 extends MX_Controller
 {
 
 	function __construct()
 	{
 		parent::__construct();
 
-		$this->load->model('settings/application_model');
-		$this->load->language('about_panels');
+		$this->load->model('events_model');
+		$this->load->language('events');
 	}
 	
 	public function index()
 	{
-		$this->acl->restrict('Content.About_panel.List');
+		$this->acl->restrict('Events.Event_4.List');
 
 		// page title
 		$data['page_heading'] = lang('index_heading');
@@ -21,17 +21,17 @@ class About_panel extends MX_Controller
 
 		// breadcrumbs
 		$this->breadcrumbs->push(lang('crumb_home'), site_url(''));
-		$this->breadcrumbs->push(lang('crumb_settings'), site_url('content'));
-		$this->breadcrumbs->push(lang('index_heading'), site_url('content/about_panel'));
+		$this->breadcrumbs->push(lang('crumb_settings'), site_url('events'));
+		$this->breadcrumbs->push(lang('index_heading'), site_url('events/event_4'));
 
-		$data['config'] = $this->application_model->format_dropdown('config_name', 'config_value');
+		$data['config'] = $this->events_model->format_dropdown('event_option', 'event_option_value');
 
 		if ($this->input->post('submit'))
 		{
 			if ($this->_save())
 			{
 				$this->session->set_flashdata('flash_message', lang('index_update_success'));
-				redirect('content/about_panel', 'refresh');
+				redirect('events/event_4', 'refresh');
 			}
 			else
 			{
@@ -40,9 +40,9 @@ class About_panel extends MX_Controller
 		}
 		// pr($data); exit;
 
-		$this->template->add_js('assets/js/extra/extra.js?f=settings/views/js/about_panels_index.js');
-		$this->template->write_view('styles', 'css/about_panels_form.css');
-		$this->template->write_view('content', 'about_panels_index', $data);
+		$this->template->add_js('assets/js/extra/extra.js?f=settings/views/js/event_4s_index.js');
+		$this->template->write_view('styles', 'css/events.css');
+		$this->template->write_view('content', 'event_4_index', $data);
 		$this->template->render();
 	}
 
@@ -64,9 +64,7 @@ class About_panel extends MX_Controller
 				$response['success'] = FALSE;
 				$response['message'] = lang('validation_error');
 				$response['errors'] = array(
-						'about_us_panel_image_1'		=> form_error('about_us_panel_image_1'),
-						'about_us_panel_image_2'		=> form_error('about_us_panel_image_2'),
-						'about_us_panel_image_3'		=> form_error('about_us_panel_image_3')
+						'event_highlight_image_4'		=> form_error('event_highlight_image_4'),
 				);
 				echo json_encode($response);
 				exit;
@@ -74,15 +72,15 @@ class About_panel extends MX_Controller
 		}
 
 
-		$data['record'] = $this->application_model->format_dropdown('config_name', 'config_value');
+		$data['record'] = $this->events_model->format_dropdown('event_option', 'event_option_value');
 		// pr($data);
 
-		$this->load->view('about_panels_form', $data);
+		$this->load->view('event_4_form', $data);
 	}
 
 	function upload()
 	{
-		$this->acl->restrict('Content.About_panel.Edit', 'modal');
+		$this->acl->restrict('Events.Event_4.Edit', 'modal');
 		// get the upload folder
 		$this->load->library('upload_folders');
 		$folder = $this->upload_folders->get();
@@ -122,18 +120,18 @@ class About_panel extends MX_Controller
 
 		if($submit == 'interface')
 		{
-			$this->form_validation->set_rules('about_us_panel_image_1', 'about_us_panel_image_1', 'trim|xss_clean');
-			$this->form_validation->set_rules('about_us_panel_image_2', 'about_us_panel_image_2', 'trim|xss_clean');
-			$this->form_validation->set_rules('about_us_panel_image_3', 'about_us_panel_image_3', 'trim|xss_clean');
+			$this->form_validation->set_rules('event_highlight_image_4', 'event_highlight_image_4', 'trim|xss_clean');
 		}
 		else
 		{
 			// about us settings
-			$this->form_validation->set_rules('about_us_caption', 'Caption', 'required|trim|xss_clean');
-			$this->form_validation->set_rules('about_us_panel_name_1', 'Panel 1', 'required|trim|xss_clean');
-			$this->form_validation->set_rules('about_us_panel_name_2', 'Panel 1 Text', 'required|trim|xss_clean');
-			$this->form_validation->set_rules('about_us_panel_text_1', 'Panel 2', 'required|trim|xss_clean');
-			$this->form_validation->set_rules('about_us_panel_text_2', 'Panel 2 Text', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('event_youtube_link_4', 'Youtube Link', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('event_description_4', 'Description', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('event_highlight_description_4', 'Description', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('event_faqs_4', 'FAQs', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('event_register_4', 'Registration', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('event_fb_link_4', 'FB Link', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('event_contact_4', 'Contact Details', 'required|trim|xss_clean');
 		}
 
 		$this->form_validation->set_error_delimiters('<span class="middle text-danger">', '</span>');
@@ -145,13 +143,11 @@ class About_panel extends MX_Controller
 
 		foreach ($this->input->post() as $k => $v)
 		{
-			if ($k == 'submit'||($k == 'beacons')||($k == 'content')) break;
+			if ($k == 'submit'||($k == 'beacons')||($k == 'events')) break;
 
-			$this->application_model->update_where('config_name', $k, array('config_value' => $v));
+			$this->events_model->update_where('event_option', $k, array('event_option_value' => $v));
 		}
 
-		$this->cache->delete('app-config');
-		// $this->db->cache_delete_all();
 
 		return TRUE;
 
@@ -159,12 +155,12 @@ class About_panel extends MX_Controller
 
 	/*public function search()
 	{
-		$records = $this->about_panels_model
-			->select ('about_panel_brand')
-			->where('about_panel_brand like', '%' . $this->input->get('term') . '%')
-			->group_by('about_panel_brand')
-			->where('about_panel_active', 1)
-			->where('about_panel_deleted', 0)
+		$records = $this->event_4s_model
+			->select ('event_4_brand')
+			->where('event_4_brand like', '%' . $this->input->get('term') . '%')
+			->group_by('event_4_brand')
+			->where('event_4_active', 1)
+			->where('event_4_deleted', 0)
 			->find_all();
 
 		$return = array();
@@ -172,14 +168,14 @@ class About_panel extends MX_Controller
 		{
 			foreach($records as $record)
 			{
-				$return[] = $record->about_panel_brand;
+				$return[] = $record->event_4_brand;
 			}
 		}
-		header('Content-Type: about_panel/json');
+		header('Event-Type: event_4/json');
 		echo json_encode($return);
 		exit;
 	}*/
 }
 
-/* End of file about_panels.php */
-/* Location: ./about_panel/modules/about_panels/controllers/about_panels.php */
+/* End of file event_4s.php */
+/* Location: ./event_4/modules/event_4s/controllers/event_4s.php */

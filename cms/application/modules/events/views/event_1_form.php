@@ -13,27 +13,26 @@
 	<div class="form-horizontal">
 
 		<div class="row">
+			<?php //var_dump($record)?>
 			<div class="form-group">
-				<label class="col-sm-3 control-label" for="panel_image">Panel Image:</label>
+				<label class="col-sm-3 control-label" for="event_highlight_image_1">Image 1:</label>
 				<div class="col-sm-4">
-					<?php echo form_open(site_url('content/home_panel/upload'), array('class'=>'dropzone', 'id' => 'dropzone6'));?>
+					<?php echo form_open(site_url('events/event_1/upload'), array('class'=>'dropzone', 'id' => 'dropzone3'));?>
 					<input type="file" name="file" class="hide" />
 					<?php echo form_close();?>
-					<div id="error_panel_image"></div>
+					<div id="error_event_highlight_image_1"></div>
 				</div>
 				<div class="col-sm-5">
-					<?php if (isset($record['panel_image'])): ?>
-						<img src="<?php echo site_url($record['panel_image']); ?>" width="120" />
+					<?php if (isset($record['event_highlight_image_1'])): ?>
+						<img src="<?php echo site_url($record['event_highlight_image_1']); ?>" width="120" />
 					<?php endif; ?>
 				</div>
 			</div>
+
 			<div class="form-group hide">
-				<label class="col-sm-2 control-label" for="panel_image">Hide This:</label>
+				<label class="col-sm-2 control-label" for="event_highlight_image_1">Hide This:</label>
 				<div class="col-sm-9">
-					<?php echo form_input(array('id'=>'panel_image', 'name'=>'panel_image', 'value'=>set_value('panel_image', isset($record['panel_image']) ? $record['panel_image'] : ''), 'class'=>'form-control'));?>
-				</div>
-				<div class="col-sm-9">
-					<?php echo form_input(array('id'=>'panel_no', 'name'=>'panel_no', 'value'=>set_value('panel_no', isset($record['panel_no']) ? $record['panel_no'] : ''), 'class'=>'form-control'));?>
+					<?php echo form_input(array('id'=>'event_highlight_image_1', 'name'=>'event_highlight_image_1', 'value'=>set_value('event_highlight_image_1', isset($record['event_highlight_image_1']) ? $record['event_highlight_image_1'] : ''), 'class'=>'form-control'));?>
 				</div>
 			</div>
 		</div>
@@ -59,11 +58,10 @@
 Dropzone.autoDiscover = false;
 $(function(){
 	
-
-   var myDropzone6 = new Dropzone("#dropzone6");
-	myDropzone6.on("success", function(file, response) {
+   var myDropzone3 = new Dropzone("#dropzone3");
+	myDropzone3.on("success", function(file, response) {
 		o = jQuery.parseJSON(response);
-		$('#panel_image').val(o.image);
+		$('#event_highlight_image_1').val(o.image);
 	});
 
 	$('#submit').click(function(e){
@@ -72,8 +70,7 @@ $(function(){
 		var ajax_url = "<?php echo current_url(); ?>";
 		var ajax_load = '<span class="help-block text-center">Loading...</span>';
 		$(ajax_load).load(ajax_url, {
-			'panel_no': $('#panel_no').val(),
-			'panel_image': $('#panel_image').val(),
+			'event_highlight_image_1': $('#event_highlight_image_1').val(),
 		}, function(data){
 			var o = jQuery.parseJSON(data);
 			if (o.success === false) {

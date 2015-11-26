@@ -10,7 +10,7 @@
  */
 class Migration_Create_home_panel extends CI_Migration
 {
-	var $table = 'home_panels';
+	var $table = 'configs';
 
 	var $permissions = array(
 		'Content.Content.List',
@@ -51,30 +51,25 @@ class Migration_Create_home_panel extends CI_Migration
 
 	public function up()
 	{
-		$fields = array(
-			'home_panel_id' 			=> array('type' => 'MEDIUMINT', 'unsigned' => TRUE, 'auto_increment' => TRUE, 'null' => FALSE),
-			'home_panel_no'				=> array('type' => 'TINYINT', 'constraint' => 1, 'null' => FALSE),
-			'home_panel_text'			=> array('type' => 'VARCHAR', 'constraint' => 100, 'null' => FALSE),
-			'home_panel_caption'		=> array('type' => 'VARCHAR', 'constraint' => 150, 'null' => FALSE),
-			'home_panel_link_to'		=> array('type' => 'VARCHAR', 'constraint' => 20, 'null' => FALSE),
-			'home_panel_link_text'		=> array('type' => 'VARCHAR', 'constraint' => 20, 'null' => FALSE),
-			'home_panel_image'				=> array('type' => 'VARCHAR', 'constraint' => 255, 'null' => FALSE),
+		//add configs per panel
+		$this->db->insert($this->table, array('config_name' => 'home_text_1', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_caption_1', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_link_1', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_text_link_1', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_image_1', 'config_value' => ''));
 
-			'home_panel_created_by' 	=> array('type' => 'MEDIUMINT', 'unsigned' => TRUE, 'null' => TRUE),
-			'home_panel_created_on' 	=> array('type' => 'DATETIME', 'null' => TRUE),
-			'home_panel_modified_by' 	=> array('type' => 'MEDIUMINT', 'unsigned' => TRUE, 'null' => TRUE),
-			'home_panel_modified_on' 	=> array('type' => 'DATETIME', 'null' => TRUE),
-			'home_panel_deleted' 		=> array('type' => 'TINYINT', 'constraint' => 1, 'unsigned' => TRUE, 'null' => FALSE),
-			'home_panel_deleted_by' 	=> array('type' => 'MEDIUMINT', 'unsigned' => TRUE, 'null' => TRUE),
-		);
+		$this->db->insert($this->table, array('config_name' => 'home_text_2', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_caption_2', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_link_2', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_text_link_2', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_image_2', 'config_value' => ''));
 
-		$this->dbforge->add_field($fields);
-		$this->dbforge->add_key('home_panel_id', TRUE);
-		$this->dbforge->add_key('home_panel_no');
+		$this->db->insert($this->table, array('config_name' => 'home_text_3', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_caption_3', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_link_3', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_text_link_3', 'config_value' => ''));
+		$this->db->insert($this->table, array('config_name' => 'home_image_3', 'config_value' => ''));
 
-		$this->dbforge->add_key('home_panel_deleted');
-		$this->dbforge->create_table($this->table, TRUE);
-		
 		// // add the module permissions
 		$this->migrations_model->add_permissions($this->permissions);
 
@@ -84,14 +79,31 @@ class Migration_Create_home_panel extends CI_Migration
 
 	public function down()
 	{
+		//delete configs
+		$this->db->delete($this->table, array('config_name' => 'home_text_1'));
+		$this->db->delete($this->table, array('config_name' => 'home_caption_1'));
+		$this->db->delete($this->table, array('config_name' => 'home_link_1'));
+		$this->db->delete($this->table, array('config_name' => 'home_text_link_1'));
+		$this->db->delete($this->table, array('config_name' => 'home_image_1'));
+
+		$this->db->delete($this->table, array('config_name' => 'home_text_2'));
+		$this->db->delete($this->table, array('config_name' => 'home_caption_2'));
+		$this->db->delete($this->table, array('config_name' => 'home_link_2'));
+		$this->db->delete($this->table, array('config_name' => 'home_text_link_2'));
+		$this->db->delete($this->table, array('config_name' => 'home_image_2'));
+
+		$this->db->delete($this->table, array('config_name' => 'home_text_3'));
+		$this->db->delete($this->table, array('config_name' => 'home_caption_3'));
+		$this->db->delete($this->table, array('config_name' => 'home_link_3'));
+		$this->db->delete($this->table, array('config_name' => 'home_text_link_3'));
+		$this->db->delete($this->table, array('config_name' => 'home_image_3'));
+
 
 		// // delete the permissions
 		$this->migrations_model->delete_permissions($this->permissions);
 
 		// // delete the menu
 		$this->migrations_model->delete_menus($this->menus);
-		
-		// drop the table
-		$this->dbforge->drop_table($this->table);
+
 	}
 }

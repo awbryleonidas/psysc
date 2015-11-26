@@ -278,7 +278,6 @@
 <script src="<?php echo asset_url('js/scripts.js'); ?>" type="text/javascript"></script>
 
 <?php echo $_scripts; // loads additional js files ?>
-<script src="http://code.highcharts.com/highcharts.js"></script>
 <!--script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script-->
 <?php if (isset($scripts)) echo '<script type="text/javascript">' . $scripts . '</script>'; // loads the module specific scripts ?>
 <?php if (isset($module_scripts)) echo '<script type="text/javascript">' . $module_scripts . '</script>'; // loads the dependent or imported module scripts ?>
