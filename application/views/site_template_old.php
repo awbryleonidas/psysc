@@ -90,7 +90,11 @@
 						<li><a href="#about">About</a></li>
 						<li><a href="#clients">Events</a></li>
 						<li><a href="#blog">News</a></li>
+						<!--<li><a href="#gallery">Gallery</a></li>-->
 						<li><a href="#contact">Contact Us</a></li>
+						<!--<li><a href="#pricing">Join Us</a></li>-->
+						<!--<li><a href="<?php /*echo site_url('index.php/site/sign_up')*/?>">Sign Up</a></li>-->
+						<!--<li><a href="<?php /*echo site_url('index.php/site/login')*/?>">Login</a></li>-->
 					</ul>
 				</div>
 
@@ -370,6 +374,91 @@
 </section>
 <!--=========== END TEAM SECTION ================-->
 
+<!--=========== BEGIN SERVICE SECTION ================-->
+<section id="service" class="hide">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<!-- BEGIN SERVICE HEADING -->
+				<div class="heading">
+					<h2 class="wow fadeInLeftBig">Our Services</h2>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<!-- BEGIN SERVICE  -->
+				<div class="service_area">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<!-- BEGIN SINGLE SERVICE -->
+							<div class="single_service wow fadeInLeft">
+								<div class="service_iconarea">
+									<span class="fa fa-line-chart service_icon"></span>
+								</div>
+								<h3 class="service_title">Planning & Strategy</h3>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<!-- BEGIN SINGLE SERVICE -->
+							<div class="single_service wow fadeInRight">
+								<div class="service_iconarea">
+									<span class="fa fa-suitcase service_icon"></span>
+								</div>
+								<h3 class="service_title">Corporate Branding</h3>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<!-- BEGIN SINGLE SERVICE -->
+							<div class="single_service wow fadeInLeft">
+								<div class="service_iconarea">
+									<span class="fa fa-eraser service_icon"></span>
+								</div>
+								<h3 class="service_title">Web Desing & Development</h3>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<!-- BEGIN SINGLE SERVICE -->
+							<div class="single_service wow fadeInRight">
+								<div class="service_iconarea">
+									<span class="fa fa-paper-plane service_icon"></span>
+								</div>
+								<h3 class="service_title">SEO,SMM and Internet marketing</h3>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<!-- BEGIN SINGLE SERVICE -->
+							<div class="single_service wow fadeInLeft">
+								<div class="service_iconarea">
+									<span class="fa fa-envelope-o service_icon"></span>
+								</div>
+								<h3 class="service_title">Email Marketing</h3>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<!-- BEGIN SINGLE SERVICE -->
+							<div class="single_service wow fadeInRight">
+								<div class="service_iconarea">
+									<span class="fa fa-support service_icon"></span>
+								</div>
+								<h3 class="service_title">Premium Customer SUpport</h3>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--=========== END SERVICE SECTION ================-->
+
 <!--=========== BEGIN CLIENTS SECTION ================-->
 <section id="clients">
 	<div class="container">
@@ -386,32 +475,38 @@
 				<ul class="testimonial_slider">
 					<!-- BEGIN SINGLE TESTIMONIAL SLIDE#1 -->
 					<li>
-						<a class="media-center testi_img" href="#">
-							<img class="displayed" src="<?php echo site_url('cms/'.$events['featured_event_image_1'])?>" width="150%" alt="img">
-						</a><br><br>
-						<h4 class="media-heading text-center"><?php echo $events['featured_event_title_1']?>1</h4>
+						<div class="media testi_media">
+							<a class="media-center testi_img" href="#">
+								<img src="<?php echo site_url('cms/'.$events['featured_event_image_1'])?>" width="80%" alt="img">
+							</a>
+						</div><br><br>
+						<h4 class="media-heading text-center"><?php echo $events['featured_event_title']?>1</h4>
 						<div class="text-center">
-							<p><?php echo $events['featured_event_description_1']?></p>
+							<p><?php echo $events['featured_event_description']?></p>
 						</div>
 					</li>
 					<!-- BEGIN SINGLE TESTIMONIAL SLIDE#2 -->
 					<li>
-						<a class="media-center testi_img" href="#">
-							<img class="displayed" src="<?php echo site_url('cms/'.$events['featured_event_image_2'])?>" width="150%" alt="img">
-						</a><br><br>
-						<h4 class="media-heading text-center"><?php echo $events['featured_event_title_2']?>2</h4>
+						<div class="media testi_media">
+							<a class="media-center testi_img" href="#">
+								<img src="<?php echo site_url('cms/'.$events['featured_event_image_2'])?>" width="80%" alt="img">
+							</a>
+						</div><br><br>
+						<h4 class="media-heading text-center"><?php echo $events['featured_event_title']?>2</h4>
 						<div class="text-center">
-							<p><?php echo $events['featured_event_description_2']?></p>
+							<p><?php echo $events['featured_event_description']?></p>
 						</div>
 					</li>
 					<!-- BEGIN SINGLE TESTIMONIAL SLIDE#3 -->
 					<li>
-						<a class="media-center testi_img" href="#">
-							<img class="displayed" src="<?php echo site_url('cms/'.$events['featured_event_image_3'])?>" width="150%" alt="img">
-						</a><br><br>
-						<h4 class="media-heading text-center"><?php echo $events['featured_event_title_3']?>3</h4>
+						<div class="media testi_media">
+							<a class="media-center testi_img" href="#">
+								<img src="<?php echo site_url('cms/'.$events['featured_event_image_3'])?>" width="80%" alt="img">
+							</a>
+						</div><br><br>
+						<h4 class="media-heading text-center"><?php echo $events['featured_event_title']?>3</h4>
 						<div class="text-center">
-							<p><?php echo $events['featured_event_description_3']?></p>
+							<p><?php echo $events['featured_event_description']?></p>
 						</div>
 					</li>
 				</ul>
@@ -459,6 +554,189 @@
 </section>
 <!--=========== END CLIENTS SECTION ================-->
 
+<!--=========== BEGIN GALLERY SECTION ================-->
+<section id="gallery" class="hide">
+	<!-- BEGIN GALLERY SECTION -->
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<div class="counter_section">
+				<!-- SKILLS COUNTER OVERLAY -->
+				<div class="slider_overlay"></div>
+				<div class="container">
+					<div class="counter_area">
+						<div class="heading">
+							<h3 class="wow fadeInLeft">Some Milestone Works</h3>
+						</div>
+						<!-- START SINGLE COUNTER-->
+						<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="counter wow fadeInUp">
+								<i class="fa fa-users fa-2x"></i>
+								<h2 class="timer count-title" id="count-number" data-to="940" data-speed="1500">400</h2>
+								<p class="count-text ">Clients</p>
+							</div>
+						</div>
+						<!-- START SINGLE COUNTER-->
+						<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="counter wow fadeInUp">
+								<i class="fa fa-tasks fa-2x"></i>
+								<h2 class="timer count-title" id="count-number2" data-to="1750" data-speed="1500">300</h2>
+								<p class="count-text ">Projects</p>
+							</div>
+						</div>
+						<!-- START SINGLE COUNTER-->
+						<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="counter wow fadeInUp">
+								<i class="fa fa-coffee fa-2x"></i>
+								<h2 class="timer count-title" id="count-number3" data-to="300" data-speed="1500">200</h2>
+								<p class="count-text ">Cup Of Coffee</p>
+							</div>
+						</div>
+						<!-- START SINGLE COUNTER-->
+						<div class="col-lg-3 col-md-3 col-sm-3">
+							<div class="counter wow fadeInUp">
+								<i class="fa fa-bullhorn fa-2x"></i>
+								<h2 class="timer count-title" id="count-number4" data-to="875" data-speed="1500">100</h2>
+								<p class="count-text ">Subscribers</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MILESTONE WORSK SECTION -->
+
+	<!-- BEGIN GALLERY SECTION -->
+	<div class="row">
+		<div class="portfolio_area">
+			<!-- BEGIN PORTFOLIO HEADER -->
+			<div class="row">
+				<div class="col-lg-12 col-md-12">
+					<div class="container">
+						<div class="heading">
+							<h2 class="wow fadeInLeftBig">Gallery</h2>
+							<p>Praesent molestie convallis convallis. Etiam venenatis odio quis euismod aliquet. Curabitur accumsan dui ante, quis rutrum neque sodales sit amet. Etiam consectetur posuere nibh, posuere congue felis lobortis sit amet. Pellentesque facilisis sed turpis nec volutpat. Morbi tempor nunc ut odio mattis auctor.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END GALLERY HEADER -->
+
+			<!-- BEGIN GALLERY GALLERY -->
+			<div class="row">
+				<div class="portfolio_gallery">
+					<div id="elastic_grid_demo"></div>
+				</div>
+			</div>
+			<!-- END GALLERY GALLERY -->
+		</div>
+	</div>
+	<!-- END PORTFOLIO GALLERY SECTION -->
+</section>
+<!--=========== END GALLERY SECTION ================-->
+
+
+<!--=========== BEGIN PRICING SECTION ================-->
+<section id="pricing" class="hide">
+	<div class="container">
+		<div class="row col-lg-12 col-md-12">
+			<!-- START ABOUT HEADING -->
+			<div class="heading">
+				<h2 class="wow fadeInLeftBig">Our Pricing</h2>
+				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+			</div>
+		</div>
+		<div class="row col-lg-12 col-md-12">
+			<div class="pricing_area">
+				<div class="row">
+					<!-- BEGIN BASIC PRICE TABLE -->
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<div class="single_price wow fadeInUp">
+							<h3>Basic</h3>
+							<div class="price">
+								<h4>25</h4>
+								<span>per month</span>
+							</div>
+							<ul class="price_features">
+								<li>Responsive <strong>Layout</strong></li>
+								<li><strong>Customizable</strong> Feature</li>
+								<li>Up to <strong>5 Projects</strong></li>
+								<li><strong>10 GB</strong> Storage</li>
+								<li>Up to <strong>100 Users</strong></li>
+								<li><strong>15 GB</strong> Bandwidth</li>
+								<li><strong>Security Suite</strong></li>
+							</ul>
+							<a href="#" class="price_btn">Select Plan</a>
+						</div>
+					</div>
+					<!-- BEGIN STANDARD PRICE TABLE -->
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<div class="single_price wow fadeInUp">
+							<h3>Standard</h3>
+							<div class="price">
+								<h4>50</h4>
+								<span>per month</span>
+							</div>
+							<ul class="price_features">
+								<li>Responsive <strong>Layout</strong></li>
+								<li><strong>Customizable</strong> Feature</li>
+								<li>Up to <strong>15 Projects</strong></li>
+								<li><strong>20 GB</strong> Storage</li>
+								<li>Up to <strong>100 Users</strong></li>
+								<li><strong>35 GB</strong> Bandwidth</li>
+								<li><strong>Security Suite</strong></li>
+							</ul>
+							<a href="#" class="price_btn">Select Plan</a>
+						</div>
+					</div>
+					<!-- BEGIN BUSINESS PRICE TABLE -->
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<div class="single_price business_price wow fadeInUp">
+							<h3>Business</h3>
+							<div class="price">
+								<h4>125</h4>
+								<span>per month</span>
+							</div>
+							<ul class="price_features">
+								<li>Responsive <strong>Layout</strong></li>
+								<li><strong>Customizable</strong> Feature</li>
+								<li><strong>Unlimited Projects</strong></li>
+								<li><strong>75 GB</strong> Storage</li>
+								<li>Up to <strong>100 Users</strong></li>
+								<li><strong>150 GB</strong> Bandwidth</li>
+								<li><strong>Security Suite</strong></li>
+							</ul>
+							<a href="#" class="price_btn">Select Plan</a>
+						</div>
+					</div>
+					<!-- BEGIN DELUX PRICE TABLE -->
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<div class="single_price wow fadeInUp">
+							<h3>Delux</h3>
+							<div class="price">
+								<h4>250</h4>
+								<span>per month</span>
+							</div>
+							<ul class="price_features">
+								<li>Responsive <strong>Layout</strong></li>
+								<li><strong>Customizable</strong> Feature</li>
+								<li><strong>Unlimited Projects</strong></li>
+								<li><strong>175 GB</strong> Storage</li>
+								<li>Up to <strong>100 Users</strong></li>
+								<li><strong>750 GB</strong> Bandwidth</li>
+								<li><strong>Security Suite</strong></li>
+							</ul>
+							<a href="#" class="price_btn">Select Plan</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--=========== END PRICING SECTION ================-->
+
+
 <!--=========== BEGIN BLOG SECTION ================-->
 <section id="blog">
 	<div class="container">
@@ -486,7 +764,7 @@
 								<h3><?php echo $item->news_panel_header?></h3>
 								<div class="post_commentbox">
 									<a href="#"><i class="fa fa-user"></i><?php echo $item->news_panel_author?></a>
-									<span><i class="fa fa-calendar"></i><?php echo $item->news_panel_created_on?></span>
+									<span><i class="fa fa-calendar"></i><?php echo $item->news_panel_created_on?>/span>
 									<!--<a href="#"><i class="fa fa-tags"></i>Technology</a>-->
 								</div>
 								<p><?php echo $item->news_panel_caption?></p>
@@ -502,6 +780,76 @@
 </section>
 <!--=========== END BLOG SECTION ================-->
 
+
+<!--=========== BEGIN TESTIMONIAL SECTION ================-->
+<section id="testimonial" class="hide">
+	<div class="container">
+		<div class="row">
+			<div class=" col-lg-7 col-md-7 col-sm-6">
+				<!-- START BLOG HEADING -->
+				<div class="heading">
+					<h2 class="wow fadeInLeftBig">Satisfied Customers</h2>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+				</div>
+			</div>
+			<div class=" col-lg-5 col-md-5 col-sm-6">
+				<div class="testimonial_customer">
+					<!-- BEGIN TESTIMONIAL SLIDER -->
+					<ul class="testimonial_slider">
+						<!-- BEGIN SINGLE TESTIMONIAL SLIDE#1 -->
+						<li>
+							<div class="media testi_media">
+								<a class="media-left testi_img" href="#">
+									<img src="img/team-1.jpg" alt="img">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">Alin Brown</h4>
+									<span>CEO</span>
+								</div>
+							</div>
+							<div class="testi_content">
+								<p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+							</div>
+						</li>
+						<!-- BEGIN SINGLE TESTIMONIAL SLIDE#2 -->
+						<li>
+							<div class="media testi_media">
+								<a class="media-left testi_img" href="#">
+									<img src="<?php echo site_url('assets')?>/img/team-2.jpg" alt="img">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">Jon Smith</h4>
+									<span>CEO</span>
+								</div>
+							</div>
+							<div class="testi_content">
+								<p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+							</div>
+						</li>
+						<!-- BEGIN SINGLE TESTIMONIAL SLIDE#3 -->
+						<li>
+							<div class="media testi_media">
+								<a class="media-left testi_img" href="#">
+									<img src="<?php echo site_url('assets')?>/img/team-4.jpg" alt="img">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">Jon Doe</h4>
+									<span>Manager</span>
+								</div>
+							</div>
+							<div class="testi_content">
+								<p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--=========== END TESTIMONIAL SECTION ================-->
+
+
 <!--=========== BEGIN CONTACT SECTION ================-->
 <section id="contact">
 	<div class="container">
@@ -510,7 +858,7 @@
 				<!-- START CONTACT HEADING -->
 				<div class="heading">
 					<h2 class="wow fadeInLeftBig">Contact Us</h2>
-					<p><?php echo $config['config_contact_text']?></p>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
 				</div>
 			</div>
 		</div>
@@ -524,11 +872,11 @@
 						<!-- FOR CONTACT FORM MESSAGE -->
 						<div id="form-messages"></div>
 
-						<form action="save_feedback" method="post">
-							<input class="form-control" type="text" placeholder="Name" name="feedback_name">
-							<input class="form-control" type="email" placeholder="Email" name="feedback_email">
-							<input class="form-control" type="text" placeholder="Subject" name="feedback_subject">
-							<textarea class="form-control" cols="30" rows="10" placeholder="Your Message"  name="feedback_message"></textarea>
+						<form>
+							<input class="form-control" type="text" placeholder="Name">
+							<input class="form-control" type="email" placeholder="Email">
+							<input class="form-control" type="text" placeholder="Subject">
+							<textarea class="form-control" cols="30" rows="10" placeholder="Your Message"></textarea>
 							<input class="submit_btn" type="submit" value="Send">
 						</form>
 					</div>
@@ -559,7 +907,7 @@
 						<div class="single_contact_feaured wow fadeInUp">
 							<i class="fa fa-phone"></i>
 							<h4>Call Us</h4>
-							<p><?php echo $config['config_contact']?></p>
+							<p>1-265-596-580</p>
 						</div>
 					</div>
 					<!-- BEGIN CALL US FEATURE -->
@@ -567,7 +915,7 @@
 						<div class="single_contact_feaured wow fadeInUp">
 							<i class="fa fa-envelope-o"></i>
 							<h4>Email Address</h4>
-							<p><?php echo $config['config_email']?></p>
+							<p>sample@gmail.com</p>
 						</div>
 					</div>
 					<!-- BEGIN CALL US FEATURE -->
@@ -575,7 +923,7 @@
 						<div class="single_contact_feaured wow fadeInUp">
 							<i class="fa fa-map-marker"></i>
 							<h4>Office Location</h4>
-							<p><?php echo $config['config_office_location']?></p>
+							<p>Your Company Office Location</p>
 						</div>
 					</div>
 					<!-- BEGIN CALL US FEATURE -->
@@ -583,7 +931,7 @@
 						<div class="single_contact_feaured wow fadeInUp">
 							<i class="fa fa-clock-o"></i>
 							<h4>Working Hours</h4>
-							<p><?php echo $config['config_working_hours']?></p>
+							<p>Monday-Friday 9.00-21.00</p>
 						</div>
 					</div>
 				</div>
@@ -601,12 +949,12 @@
 				<!-- START SUBSCRIBE HEADING -->
 				<div class="heading">
 					<h2 class="wow fadeInLeftBig">Subscribe Us</h2>
-					<p><?php echo $config['config_subscribe_text']?></p>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
 				</div>
 				<!-- BEGIN SUBSCRIVE FORM -->
-				<form class="subscribe_form" method="post" action="save_subscriber">
+				<form class="subscribe_form">
 					<div class="subscrive_group wow fadeInUp">
-						<input class="form-control subscribe_mail" type="email" placeholder="Enter your email address" name="subscriber_email">
+						<input class="form-control subscribe_mail" type="email" placeholder="Enter your email address">
 						<input class="subscr_btn" type="submit" value="Subscribe">
 					</div>
 				</form>
@@ -623,15 +971,17 @@
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="footer_left">
 					<!--=========== Copyright ================-->
-					<p>© <?php echo $config['application_name']?>, <?php echo date('Y')?></p>
+					<p>© PSYSC, 2015</p>
 					<!--=========== Copyright ================-->
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="footer_right">
 					<ul class="social_nav">
-						<li><a href="<?php echo $config['config_fb']?>"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="<?php echo $config['config_twitter']?>"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://facebook.com/che.leonidas"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/achechecheche"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://plus.google.com/+aubreyleonidas"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="https://ph.linkedin.com/pub/aubrey-leonidas/b9/b16/b7a"><i class="fa fa-linkedin"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -659,10 +1009,10 @@
 <!-- for circle counter -->
 <script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>
 <!-- for portfolio filter gallery -->
-<!--<script src="<?php /*echo site_url('assets')*/?>/js/modernizr.custom.js"></script>
-<script src="<?php /*echo site_url('assets')*/?>/js/classie.js"></script>
-<script src="<?php /*echo site_url('assets')*/?>/js/elastic_grid.min.js"></script>
-<script src="<?php /*echo site_url('assets')*/?>/js/portfolio_slider.js"></script>-->
+<script src="<?php echo site_url('assets')?>/js/modernizr.custom.js"></script>
+<script src="<?php echo site_url('assets')?>/js/classie.js"></script>
+<script src="<?php echo site_url('assets')?>/js/elastic_grid.min.js"></script>
+<script src="<?php echo site_url('assets')?>/js/portfolio_slider.js"></script>
 
 <!-- Custom js-->
 <script src="<?php echo site_url('assets')?>/js/custom.js"></script>

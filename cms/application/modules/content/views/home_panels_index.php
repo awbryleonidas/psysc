@@ -36,7 +36,7 @@
 						<label class="col-xs-3 control-label" for="home_link_1">Link:</label>
 						<div class="col-xs-8">
 							<?php $home_link = array(
-								'0' => 'Home', '1' => 'About', '2' => 'Events', '3' => 'News', '4' => 'Contact Us',
+									'about' => 'About', 'clients' => 'Events', 'blog' => 'News', 'contact' => 'Contact Us',
 							);?>
 							<?php echo form_dropdown('home_link_1', $home_link, set_value('home_link_1', (isset($config['home_link_1']) && $config['home_link_1'] != '') ? $config['home_link_1'] : ''), 'id="home_link_1" class="form-control"'); ?>
 							<div id="error_home_link_1"></div>
@@ -110,7 +110,7 @@
 						<label class="col-xs-3 control-label" for="home_link_2">Link:</label>
 						<div class="col-xs-8">
 							<?php $home_link = array(
-									'0' => 'Home', '1' => 'About', '2' => 'Events', '3' => 'News', '4' => 'Contact Us',
+									'about' => 'About', 'clients' => 'Events', 'blog' => 'News', 'contact' => 'Contact Us',
 							);?>
 							<?php echo form_dropdown('home_link_2', $home_link, set_value('home_link_2', (isset($config['home_link_2']) && $config['home_link_2'] != '') ? $config['home_link_2'] : ''), 'id="home_link_2" class="form-control"'); ?>
 							<div id="error_home_link_2"></div>
@@ -127,7 +127,7 @@
 
 					<div class="form-group">
 						<div class="col-sm-8">
-							<a href="<?=site_url('content/home_panel/change_interface/1')?>" data-toggle="modal" data-target="#modal" class="btn btn-success btn-add form-action" id="btn_add"><span class="fa fa-asterisk"></span> Change Interface</a>
+							<a href="<?=site_url('content/home_panel/change_interface/2')?>" data-toggle="modal" data-target="#modal" class="btn btn-success btn-add form-action" id="btn_add"><span class="fa fa-asterisk"></span> Change Interface</a>
 						</div>
 
 					</div>
@@ -182,7 +182,7 @@
 						<label class="col-xs-3 control-label" for="home_link_3">Link:</label>
 						<div class="col-xs-8">
 							<?php $home_link = array(
-									'0' => 'Home', '1' => 'About', '2' => 'Events', '3' => 'News', '4' => 'Contact Us',
+									'about' => 'About', 'clients' => 'Events', 'blog' => 'News', 'contact' => 'Contact Us',
 							);?>
 							<?php echo form_dropdown('home_link_3', $home_link, set_value('home_link_3', (isset($config['home_link_3']) && $config['home_link_3'] != '') ? $config['home_link_3'] : ''), 'id="home_link_3" class="form-control"'); ?>
 							<div id="error_home_link_3"></div>
@@ -199,7 +199,7 @@
 
 					<div class="form-group">
 						<div class="col-sm-8">
-							<a href="<?=site_url('content/home_panel/change_interface/1')?>" data-toggle="modal" data-target="#modal" class="btn btn-success btn-add form-action" id="btn_add"><span class="fa fa-asterisk"></span> Change Interface</a>
+							<a href="<?=site_url('content/home_panel/change_interface/3')?>" data-toggle="modal" data-target="#modal" class="btn btn-success btn-add form-action" id="btn_add"><span class="fa fa-asterisk"></span> Change Interface</a>
 						</div>
 
 					</div>

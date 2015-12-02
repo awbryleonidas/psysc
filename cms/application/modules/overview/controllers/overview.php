@@ -8,12 +8,13 @@ class Overview extends MX_Controller {
 
         $this->load->language('overview');
         $this->load->model('settings/application_model');
+        $this->load->model('feedback_model');
     }
 
     public function index()
     {
         $data['page_heading'] = lang('index_heading');
-        $data['page_subhead'] = lang('index_subhead');
+        $data['page_subhead'] = 'Feedbacks from the users';
 
         $this->session->set_userdata('redirect', current_url());
 
@@ -29,6 +30,7 @@ class Overview extends MX_Controller {
         }*/
 
         $data['config'] = $this->application_model->format_dropdown('config_name', 'config_value');
+        $data['feedbacks'] = $this->feedback_model->find_all();
         // render the page
         $this->template->add_css('assets/plugins/datepicker/css/bootstrap-datepicker3.css');
         $this->template->add_js('assets/plugins/datepicker/js/bootstrap-datepicker.min.js');

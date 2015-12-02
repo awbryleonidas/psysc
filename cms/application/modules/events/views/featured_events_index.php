@@ -12,21 +12,59 @@
 				<?php echo form_open(current_url(), array('class'=>'form-horizontal', 'role'=>'form'));?>
 
 				<div class="form-group">
-					<label class="col-sm-4 control-label" for="featured_event_title">Event Title:</label>
-					<?php $formdata = array('id'=>'featured_event_title', 'name'=>'featured_event_title', 'value'=>set_value('featured_event_title', isset($config['featured_event_title']) ? $config['featured_event_title'] : ''), 'class'=>'form-control'); ?>
+					<label class="col-sm-4 control-label" for="featured_event_title_1">Event Title 1:</label>
+					<?php $formdata = array('id'=>'featured_event_title_1', 'name'=>'featured_event_title_1', 'value'=>set_value('featured_event_title_1', isset($config['featured_event_title_1']) ? $config['featured_event_title_1'] : ''), 'class'=>'form-control'); ?>
 					<div class="col-sm-8">
 						<?php echo form_input($formdata); ?>
-						<div class="help-text"><?=lang('text_featured_event_title')?></div>
-						<?php echo form_error('featured_event_title'); ?>
+						<div class="help-text"><?=lang('text_featured_event_title_1')?></div>
+						<?php echo form_error('featured_event_title_1'); ?>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-4 control-label" for="featured_event_description">Featured Description:</label>
-					<?php $formdata = array('id'=>'featured_event_description', 'name'=>'featured_event_description', 'value'=>set_value('featured_event_description', isset($config['featured_event_description']) ? $config['featured_event_description'] : ''), 'class'=>'form-control', 'rows'=>'2'); ?>
+					<label class="col-sm-4 control-label" for="featured_event_description_1">Featured Description 1:</label>
+					<?php $formdata = array('id'=>'featured_event_description_1', 'name'=>'featured_event_description_1', 'value'=>set_value('featured_event_description_1', isset($config['featured_event_description_1']) ? $config['featured_event_description_1'] : ''), 'class'=>'form-control', 'rows'=>'2'); ?>
 					<div class="col-sm-8">
 						<?php echo form_textarea($formdata); ?>
-						<?php echo form_error('featured_event_description'); ?>
+						<?php echo form_error('featured_event_description_1'); ?>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="featured_event_title_2">Event Title 2:</label>
+					<?php $formdata = array('id'=>'featured_event_title_2', 'name'=>'featured_event_title_2', 'value'=>set_value('featured_event_title_2', isset($config['featured_event_title_2']) ? $config['featured_event_title_2'] : ''), 'class'=>'form-control'); ?>
+					<div class="col-sm-8">
+						<?php echo form_input($formdata); ?>
+						<div class="help-text"><?=lang('text_featured_event_title_2')?></div>
+						<?php echo form_error('featured_event_title_2'); ?>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="featured_event_description_2">Featured Description 2:</label>
+					<?php $formdata = array('id'=>'featured_event_description_2', 'name'=>'featured_event_description_2', 'value'=>set_value('featured_event_description_2', isset($config['featured_event_description_2']) ? $config['featured_event_description_2'] : ''), 'class'=>'form-control', 'rows'=>'2'); ?>
+					<div class="col-sm-8">
+						<?php echo form_textarea($formdata); ?>
+						<?php echo form_error('featured_event_description_2'); ?>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="featured_event_title_3">Event Title 3:</label>
+					<?php $formdata = array('id'=>'featured_event_title_3', 'name'=>'featured_event_title_3', 'value'=>set_value('featured_event_title_3', isset($config['featured_event_title_3']) ? $config['featured_event_title_3'] : ''), 'class'=>'form-control'); ?>
+					<div class="col-sm-8">
+						<?php echo form_input($formdata); ?>
+						<div class="help-text"><?=lang('text_featured_event_title_3')?></div>
+						<?php echo form_error('featured_event_title_3'); ?>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="featured_event_description_3">Featured Description 3:</label>
+					<?php $formdata = array('id'=>'featured_event_description_3', 'name'=>'featured_event_description_3', 'value'=>set_value('featured_event_description_3', isset($config['featured_event_description_3']) ? $config['featured_event_description_3'] : ''), 'class'=>'form-control', 'rows'=>'2'); ?>
+					<div class="col-sm-8">
+						<?php echo form_textarea($formdata); ?>
+						<?php echo form_error('featured_event_description_3'); ?>
 					</div>
 				</div>
 

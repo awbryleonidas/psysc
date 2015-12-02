@@ -129,8 +129,12 @@ class Featured_event extends MX_Controller
 		else
 		{
 			// about us settings
-			$this->form_validation->set_rules('featured_event_title', 'Title', 'required|trim|xss_clean');
-			$this->form_validation->set_rules('featured_event_description', 'Description', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('featured_event_title_1', 'Title', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('featured_event_description_1', 'Description', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('featured_event_title_2', 'Title', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('featured_event_description_2', 'Description', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('featured_event_title_3', 'Title', 'required|trim|xss_clean');
+			$this->form_validation->set_rules('featured_event_description_3', 'Description', 'required|trim|xss_clean');
 		}
 
 		$this->form_validation->set_error_delimiters('<span class="middle text-danger">', '</span>');

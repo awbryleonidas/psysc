@@ -124,6 +124,37 @@ class Site extends CI_Controller
 		$data['fb_link'] = $config['event_fb_link_'.$event];
 		$this->load->view('event_view', $data);
 	}
+	public function landing_page($indicator = 'Subscribed')
+	{
+		$this->load->model('application_model');
+		$data['config'] = $this->application_model->format_dropdown('config_name', 'config_value');
+		$data['title'] = $indicator;
+		$data['message'] = ($indicator=='Feedback')? 'Thanks for sending your feedback.':'Thanks for your subscription. Please check your email for future updates';
+		$this->load->view('landing_page', $data);
+	}
+
+	public function save_feedback()
+	{
+		$data = array(
+			'feedback_name' => $this->input->post('feedback_name'),
+			'feedback_email' => $this->input->post('feedback_email'),
+			'feedback_subject' => $this->input->post('feedback_subject'),
+			'feedback_message' => $this->input->post('feedback_message'),
+		);
+		$this->load->model('feedback_model');
+		$this->feedback_model->insert($data);
+		$this->landing_page('Feedback');
+	}
+
+	public function save_subscriber()
+	{
+		$data = array(
+			'subscriber_email' => $this->input->post('subscriber_email'),
+		);
+		$this->load->model('subscriber_model');
+		$this->subscriber_model->insert($data);
+		$this->landing_page();
+	}
 
 	// --------------------------------------------------------------------
 
