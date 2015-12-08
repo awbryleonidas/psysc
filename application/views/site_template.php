@@ -219,6 +219,36 @@
 												</div>
 											</div>
 										</div>
+										<!-- START SINGLE FEATURED ITEAM #2 -->
+										<div class="panel panel-default wow fadeInLeft">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+														<span class="fa fa-check-square-o"></span><?php echo $config['about_us_panel_name_3'] ;?>
+													</a>
+												</h4>
+											</div>
+											<div id="collapseTwo" class="panel-collapse collapse">
+												<div class="panel-body">
+													<?php echo $config['about_us_panel_text_3'] ;?>
+												</div>
+											</div>
+										</div>
+										<!-- START SINGLE FEATURED ITEAM #2 -->
+										<div class="panel panel-default wow fadeInLeft">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+														<span class="fa fa-check-square-o"></span><?php echo $config['about_us_panel_name_4'] ;?>
+													</a>
+												</h4>
+											</div>
+											<div id="collapseTwo" class="panel-collapse collapse">
+												<div class="panel-body">
+													<?php echo $config['about_us_panel_text_4'] ;?>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -387,7 +417,7 @@
 					<!-- BEGIN SINGLE TESTIMONIAL SLIDE#1 -->
 					<li>
 						<a class="media-center testi_img" href="#">
-							<img class="displayed" src="<?php echo site_url('cms/'.$events['featured_event_image_1'])?>" width="150%" alt="img">
+							<img class="displayed" src="<?php echo site_url('cms/'.$events['featured_event_image_1'])?>" width="100%" alt="img">
 						</a><br><br>
 						<h4 class="media-heading text-center"><?php echo $events['featured_event_title_1']?>1</h4>
 						<div class="text-center">
@@ -549,7 +579,7 @@
 <!--=========== BEGIN CONTACT FEATURE SECTION ================-->
 <section id="contactFeature">
 	<!-- SKILLS COUNTER OVERLAY -->
-	<div class="slider_overlay"></div>
+	<!--<div class="slider_overlay"></div>-->
 	<div class="row">
 		<div class="col-lg-12 col-md-12">
 			<div class="container">
